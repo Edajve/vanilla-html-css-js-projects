@@ -1,0 +1,202 @@
+[
+    {
+        "question": "Who wrote the play 'Romeo and Juliet'?",
+        "a": "William Shakespeare",
+        "b": "Charles Dickens",
+        "c": "Jane Austen",
+        "d": "Mark Twain",
+        "correct": "a"
+    },
+    {
+        "question": "Which planet is known as the 'Red Planet'?",
+        "a": "Earth",
+        "b": "Venus",
+        "c": "Mars",
+        "d": "Jupiter",
+        "correct": "c"
+    },
+    {
+        "question": "What is the largest planet in our solar system?",
+        "a": "Earth",
+        "b": "Venus",
+        "c": "Mars",
+        "d": "Jupiter",
+        "correct": "d"
+    },
+    {
+        "question": "In which year was the Eiffel Tower completed?",
+        "a": "1889",
+        "b": "1901",
+        "c": "1925",
+        "d": "1950",
+        "correct": "a"
+    },
+    {
+        "question": "Which gas is the most abundant in the Earth's atmosphere?",
+        "a": "Oxygen",
+        "b": "Carbon Dioxide",
+        "c": "Nitrogen",
+        "d": "Argon",
+        "correct": "c"
+    },
+    {
+        "question": "What is the capital of Canada?",
+        "a": "Toronto",
+        "b": "Vancouver",
+        "c": "Ottawa",
+        "d": "Montreal",
+        "correct": "c"
+    },
+    {
+        "question": "Who is the author of 'Pride and Prejudice'?",
+        "a": "Charles Dickens",
+        "b": "Jane Austen",
+        "c": "Emily Brontë",
+        "d": "George Orwell",
+        "correct": "b"
+    },
+    {
+        "question": "What is the largest mammal on Earth?",
+        "a": "African Elephant",
+        "b": "Blue Whale",
+        "c": "Giraffe",
+        "d": "Hippopotamus",
+        "correct": "b"
+    },
+    {
+        "question": "Which planet is known as the 'Morning Star'?",
+        "a": "Earth",
+        "b": "Venus",
+        "c": "Mars",
+        "d": "Jupiter",
+        "correct": "b"
+    },
+    {
+        "question": "Who is known as the 'Father of Modern Physics'?",
+        "a": "Isaac Newton",
+        "b": "Galileo Galilei",
+        "c": "Albert Einstein",
+        "d": "Nikola Tesla",
+        "correct": "c"
+    },
+    {
+        "question": "What is the chemical symbol for silver?",
+        "a": "Ag",
+        "b": "Au",
+        "c": "Si",
+        "d": "Sr",
+        "correct": "a"
+    },
+    {
+        "question": "Which country is famous for its tulips and windmills?",
+        "a": "Germany",
+        "b": "France",
+        "c": "Netherlands",
+        "d": "Italy",
+        "correct": "c"
+    },
+    {
+        "question": "In which year did the Titanic sink?",
+        "a": "1912",
+        "b": "1923",
+        "c": "1934",
+        "d": "1945",
+        "correct": "a"
+    },
+    {
+        "question": "Who wrote the novel '1984'?",
+        "a": "George Orwell",
+        "b": "Aldous Huxley",
+        "c": "Ray Bradbury",
+        "d": "F. Scott Fitzgerald",
+        "correct": "a"
+    },
+    {
+        "question": "What is the largest desert in the world?",
+        "a": "Sahara Desert",
+        "b": "Arctic Desert",
+        "c": "Gobi Desert",
+        "d": "Atacama Desert",
+        "correct": "a"
+    },
+    {
+        "question": "What is the largest planet in our solar system?",
+        "a": "Earth",
+        "b": "Venus",
+        "c": "Mars",
+        "d": "Jupiter",
+        "correct": "d"
+    },
+    {
+        "question": "Who painted the Mona Lisa?",
+        "a": "Vincent van Gogh",
+        "b": "Leonardo da Vinci",
+        "c": "Pablo Picasso",
+        "d": "Michelangelo",
+        "correct": "b"
+    },
+    {
+        "question": "Which gas is responsible for the color of the Earth's sky?",
+        "a": "Oxygen",
+        "b": "Carbon Dioxide",
+        "c": "Nitrogen",
+        "d": "Ozone",
+        "correct": "c"
+    },
+    {
+        "question": "What is the largest organ in the human body?",
+        "a": "Heart",
+        "b": "Liver",
+        "c": "Skin",
+        "d": "Brain",
+        "correct": "c"
+    },
+    {
+        "question": "Which country is known as the Land of the Rising Sun?",
+        "a": "China",
+        "b": "India",
+        "c": "Japan",
+        "d": "South Korea",
+        "correct": "c"
+    },
+    {
+        "question": "What is the chemical symbol for gold?",
+        "a": "Go",
+        "b": "Ag",
+        "c": "Au",
+        "d": "Ge",
+        "correct": "c"
+    },
+    {
+        "question": "In which year did Christopher Columbus first arrive in the Americas?",
+        "a": "1492",
+        "b": "1507",
+        "c": "1521",
+        "d": "1536",
+        "correct": "a"
+    },
+    {
+        "question": "Who wrote the play 'Macbeth'?",
+        "a": "William Shakespeare",
+        "b": "Charles Dickens",
+        "c": "Jane Austen",
+        "d": "Mark Twain",
+        "correct": "a"
+    },
+    {
+        "question": "Which planet is often referred to as the 'Red Planet'?",
+        "a": "Earth",
+        "b": "Venus",
+        "c": "Mars",
+        "d": "Jupiter",
+        "correct": "c"
+    },
+    {
+        "question": "What is the capital of Australia?",
+        "a": "Sydney",
+        "b": "Melbourne",
+        "c": "Canberra",
+        "d": "Brisbane",
+        "correct": "c"
+    }
+]

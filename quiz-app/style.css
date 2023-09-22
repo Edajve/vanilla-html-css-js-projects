@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Inclusive Sans', sans-serif;
+}
+
+:root {
+    --primary-card-color: #29323c;
+    --secondary-card-color: #485563;
+    --background-primary-color: rgb(227, 220, 220);
+    --background-secondary-color: rgba(206, 208, 230, 0.854);
+    --light-grey-scheme: rgba(142, 142, 142, 0.159);
+    --light-dark-scheme: rgba(142, 142, 142, 0.159);
+}
+
+body {
+    margin: 0;
+    background-image: linear-gradient(
+        to bottom,
+        var( --background-primary-color),
+        var( --background-secondary-color)
+    );
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+
+}
+
+.question-container {
+    margin-top: 6rem;
+    border: 1px solid black;
+    width: 20rem;
+    height: 34rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.card-header-div {
+    background-image: linear-gradient(
+        to right,
+        var(--secondary-card-color),
+        var(--primary-card-color)
+    );
+    order: 0;
+    height: 5rem;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-text {
+    color: var(--background-primary-color);
+    font-size: large;
+}
+
+#exit-btn-in-header {
+    cursor: pointer;
+    color: var(--background-primary-color);
+}
+
+#exit-btn-in-header span {
+    font-size: 2.1rem;
+}
+
+.card-body-div {
+    order: 1;
+    flex-grow: 13;
+    display: flex;
+    flex-direction: column
+}
+
+.quiz-status-div {
+    order: 0;
+    padding: 0 1.5rem;
+    padding-top: 1rem;
+}
+
+.numerical-progression-of-questions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.inline {
+    display: inline
+}
+
+#numerator {
+    font-size: large;
+    color: var(--secondary-card-color)
+}
+
+.small-font {
+    font-size: small;
+}
+
+.progression-bar {
+    background-color: var(--light-grey-scheme);
+    /* width is passed progamatically */
+    border-radius: 15px;
+}
+
+.progression {
+    background-image: linear-gradient(
+        to right,
+        var(--secondary-card-color),
+        var(--primary-card-color)
+    );
+    padding: 1%;
+    text-align: right;
+    border-radius: 15px;
+    height: 1rem;
+    /* width is passed progamatically */
+    margin-bottom: 1rem;
+}
+
+.question-container-div {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 1.5rem;
+    height: 70%;
+}
+
+.question-and-answer-card-div {
+    width: 180%;
+    height: 95%;
+    background-color: var(--light-grey-scheme);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.question-div {
+    padding: 1.5rem;
+    text-align: center;
+    background-color: var(--light-dark-scheme);
+    border-radius: 10px 10px 0 0;
+}
+
+#question-text {
+    font-size: 1rem;
+    color: var(--secondary-card-color);
+}
+
+.answers-div {
+    flex-grow: 1;
+}
+
+.answers-text {
+    font-size: small;
+}
+
+ul {
+    line-height: 1.3rem;
+    list-style: upper-alpha;
+}
+
+.multiple-choice-div {
+    order: 2;
+    height: 5rem;  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.answer-box {
+    width: 3.5rem;
+    height: 3.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    background-color: var(--light-grey-scheme);
+    cursor: pointer;
+}
+
+.answer-box:hover {
+    background-color: var(--secondary-card-color);
+}
+
+.correct-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.incorrect-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.incorrect-icon span {
+    font-size: 1rem;
+}
+
+.correct-icon span {
+    font-size: 1rem;
+}
+
+.button-clicked {
+    border: 1px solid var(--primary-card-color);
+}

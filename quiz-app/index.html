@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inclusive+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Quiz</title>
+</head>
+<body>
+    <i class="icofont-arrow-first"></i>
+    <div class="question-container">
+        <div class="card-header-div">
+            <div class="header-text ">Fun Fact Quiz</div>
+            <div id="exit-btn-in-header">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+            </div>
+        </div>
+        <div class="card-body-div">
+            <div class="quiz-status-div">
+                <div class="numerical-progression-of-questions">
+                    <div class="out-of-questions-div">
+                        <strong id="numerator" class="inline"></strong>
+                        <p id="denominator" class="inline small-font"></p>
+                    </div>
+                    <div class="correct-vs-fail-div">
+                        <div class="correct-text inline">
+                            <div class="correct-icon inline">
+                                <span class="material-symbols-outlined check-icon">check_circle</span>
+                            </div>
+                            <div>
+                                <p id="correct-number" class="inline small-font"></p>
+                            </div>
+                        </div>
+                        <div class="incorrect-text inline">
+                            <div class="incorrect-icon inline">
+                                <span class="material-symbols-outlined">
+                                cancel
+                                </span>
+                            </div>
+                            <div>
+                                <p id="incorrect-number" class="inline small-font"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="progression-bar">
+                    <div class="progression"></div>
+                </div>
+            </div>
+            <div class="question-container-div">
+                <div class="question-and-answer-card-div">
+                    <div class="question-div">
+                        <div id="question-text" class="">
+                        </div>
+                    </div>
+                    <div class="answers-div">
+                        <ul>
+                            <li id="answer-for-a" class="answers-text"></li>
+                            <li id="answer-for-b" class="answers-text"></li>
+                            <li id="answer-for-c" class="answers-text"></li>
+                            <li id="answer-for-d" class="answers-text"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="multiple-choice-div">
+                <div id="answer-a" class="answer-box">A</div>
+                <div id="answer-b" class="answer-box">B</div>
+                <div id="answer-c" class="answer-box">C</div>
+                <div id="answer-d" class="answer-box">D</div>
+            </div>
+        </div>
+        <i class="icofont-arrow-first"></i>
+    </div>
+</body>
+<script src="./app.js"></script>
+</html>

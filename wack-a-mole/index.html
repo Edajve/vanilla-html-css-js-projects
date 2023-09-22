@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wack-A-Mole</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="main-container">
+        <div class="game-header">
+            <h1 class="header-text">Wack-A-Mole</h1>
+        </div>
+        <div class="game-display">
+            <aside class="stats-panel">
+                <li class="list-tag side-panel-text">
+                    <ul class="timer">Time Left: 0.00</ul>
+                    <ul class="score">Score: 0</ul>
+                </li>
+                <div class="buttons-and-control">
+                        <p class="difficulty">Difficulty</p>
+                    <div class="drop-down-div">
+                        <label for="dropdown">Select difficulty :</label>
+                        <select id="dropdown">
+                          <option value="Select Difficulty" selected>Select Difficulty</option>
+                          <option value="Easy">Easy</option>
+                          <option value="Medium">Medium</option>
+                          <option value="Hard">Hard</option>
+                          <option value="Extreme">Extreme</option>
+                        </select>
+                    </div>
+                    <button class="restart">Start</button>
+                </div>
+            </aside>
+            <div class="game-board-panel">
+                <div class="board">
+                    <div id="box-item-1" class="box-item"></div>
+                    <div id="box-item-2" class="box-item"></div>
+                    <div id="box-item-3" class="box-item"></div>
+                    <div id="box-item-4" class="box-item"></div>
+                    <div id="box-item-5" class="box-item"></div>
+                    <div id="box-item-6" class="box-item"></div>
+                    <div id="box-item-7" class="box-item"></div>
+                    <div id="box-item-8" class="box-item"></div>
+                    <div id="box-item-9" class="box-item"></div>
+                    <div id="box-item-10" class="box-item"></div>
+                    <div id="box-item-11" class="box-item"></div>
+                    <div id="box-item-12" class="box-item"></div>
+                    <div id="box-item-13" class="box-item"></div>
+                    <div id="box-item-14" class="box-item"></div>
+                    <div id="box-item-15" class="box-item"></div>
+                    <div id="box-item-16" class="box-item"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="./app.js"></script>
+</html>

@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    color: var(--main-font-color);
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Inclusive Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --primary-background-color: #151636;
+    --secondary-background-color: #3C4464;
+    --primary-color-scheme: #4B5177;
+    --main-font-color: #646C94;
+    --font-hover-color: #7a82ac;
+    --default-single-progress-bar-color: #63A2EC;
+    --empty-single-progress-bar-color: #202327;
+}
+
+body {
+    margin: 0;
+    background-image: linear-gradient(to right top, #151636, #1e2141, #282c4d, #323858, #3c4464);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-container {
+    height: 7rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-button-container {
+    order: 1;
+    width: 25rem;
+    padding-top: 5rem;
+}
+
+.nav-buttons {
+    display: inline;
+    padding: 0 1rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+.nav-buttons:hover {
+    color: var(--font-hover-color);
+}
+
+.progress-bar-container {
+    order: 0;
+    background-color: var(--primary-color-scheme);
+    width: 65vw;
+    height: 2rem;
+    border-radius: 25px;
+    margin-left: 2rem;
+    margin-top: 5rem;
+    padding-left: 2.2rem;
+
+    /* flex work for child div's */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.progression-increments-container {
+    order: 0;
+    height: 1.3rem;
+    margin-top: .4rem;   
+}
+
+.progression-comment-container {
+    order: 1;
+    width: 11.5rem;
+    color: white;
+    font-weight: bold;
+    align-items: center; 
+    text-align: center;
+    padding-top: .4rem;
+}
+
+.single-progress-bar {
+    width: 10.2rem;
+    display: inline-block;
+    height: .6rem;
+    background-color: var(--default-single-progress-bar-color);
+    border-radius: 30px;
+    margin-right: .5rem;
+}
+
+.current-bar {
+    background-color: var(--empty-single-progress-bar-color);
+}
