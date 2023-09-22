@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/navbar.css">
     <link rel="stylesheet" href="./styles/home-page.css">
+    <link rel="stylesheet" href="./styles/set-style-page.css">
+    <link rel="stylesheet" href="./styles/footer-styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inclusive+Sans&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inclusive+Sans&family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+
     <title>Client Booking</title>
 </head>
 <body>
@@ -34,7 +35,7 @@
     <main class="homepage-main-container" style="display: none">
         <div class="homepage-call-to-action-container">
             <h1 class="homepage-h1">
-                <h1 class="home-page-header">Set an appointment at Sophistocated Salon</h1>
+                <h1 class="home-page-header">Set an appointment with Sophistocated Salon</h1>
                 <p class="homepage-call-to-action-description">
                     *Please review the Booking Policy page before booking for efficent service
                 </p>
@@ -43,6 +44,78 @@
         </div>
     </main>
     <!-- step 1:  styles -->
+    <main class="set-styles-main-container">
+        <div class="step-1-body-container">
+            <div class="backlog-styles-div">
+                <h2 class="title">Select Service</h2>
+                <div class="scrollable-style-div">
+                    <div id"1" class="individual-style item">
+                        <div class="header-and-description-container">
+                            <h3 class="individual-service-header">Service Number One</h3>
+                            <p class="price-text">  . . . $125</p>
+                            <p class="individual-service-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe nihil at tempora.</p>
+                        </div>
+                        <div class="select-button-div">
+                            <button class="select-button" role="button">Select</button>
+                        </div>
+                    </div>
+                    <div id"2" class="individual-style item">
+                        <div class="header-and-description-container">
+                            <h3 class="individual-service-header">Service Number Two</h3>
+                            <p class="price-text">  . . . $85</p>
+                            <p class="individual-service-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe nihil at tempora.</p>
+                        </div>
+                        <div class="select-button-div">
+                            <button class="select-button" role="button">Select</button>
+                        </div>
+                    </div>
+                    <div id"3" class="individual-style item">
+                        <div class="header-and-description-container">
+                            <h3 class="individual-service-header">Service Number Three</h3>
+                            <p class="price-text">  . . . $100</p>
+                            <p class="individual-service-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe nihil at tempora.</p>
+                        </div>
+                        <div class="select-button-div">
+                            <button class="select-button" role="button">Select</button>
+                        </div>
+                    </div>
+                    <div id"4" class="individual-style item">
+                        <div class="header-and-description-container">
+                            <h3 class="individual-service-header">Service Number Four</h3>
+                            <p class="price-text">  . . . $150</p>
+                            <p class="individual-service-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe nihil at tempora.</p>
+                        </div>
+                        <div class="select-button-div">
+                            <button class="select-button" role="button">Select</button>
+                        </div>
+                    </div>
+                    <div id"5" class="individual-style item">
+                        <div class="header-and-description-container">
+                            <h3 class="individual-service-header">Service Number Five</h3>
+                            <p class="price-text">  . . . $120</p>
+                            <p class="individual-service-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe nihil at tempora.</p>
+                        </div>
+                        <div class="select-button-div">
+                            <button class="select-button" role="button">Select</button>
+                        </div>
+                    </div>
+                </div>
+                <textarea id="comment" name="comment" rows="4" cols="50" placeholder="If you do not choose from services above. Please explain the service you want and upload a picutre"></textarea>
+                <form action="/action_page.php">
+                    <input type="file" id="myFile" name="filename">
+                  </form>
+            </div>
+            <div class="currently-chosen-styles-div"></div>
+        </div>
+        <footer class="footer-navigation-container">
+            <div id="previous-step-btn">
+                <button class="navigation-button" role="button">Prev</button>
+            </div>
+            <div id="next-step-btn">
+                <button class="navigation-button" role="button">Next</button>
+            </div>
+        </footer>
+    </main>
 </body>
 <script src="./app.js"></script>
 </html>
