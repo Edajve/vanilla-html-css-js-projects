@@ -1,9 +1,6 @@
 * {
     box-sizing: border-box;
-    color: var(--main-font-color);
-    font-family: 'Comfortaa', cursive;
-    font-family: 'Inclusive Sans', sans-serif;
-    font-family: 'Roboto', sans-serif;
+     color: var(--main-font-color);
 }
 
 :root {
@@ -14,12 +11,14 @@
     --font-hover-color: #7a82ac;
     --default-single-progress-bar-color: #63A2EC;
     --empty-single-progress-bar-color: #202327;
+    --primary-font: 'Roboto', sans-serif;
+    --secondary-font: 'Inclusive Sans', sans-serif;
 }
 
 body {
     margin: 0;
     background-image: linear-gradient(to right top, #151636, #1e2141, #282c4d, #323858, #3c4464);
-    height: 100vh;
+    height: 120vh;
     display: flex;
     flex-direction: column;
 }
@@ -42,6 +41,7 @@ body {
     padding: 0 1rem;
     cursor: pointer;
     font-size: 1.3rem;
+    font-family: var( --primary-font);
 }
 
 .nav-buttons:hover {
@@ -74,7 +74,7 @@ body {
     order: 1;
     width: 11.5rem;
     color: white;
-    font-weight: bold;
+    font-family: var(--primary-font);
     align-items: center; 
     text-align: center;
     padding-top: .4rem;

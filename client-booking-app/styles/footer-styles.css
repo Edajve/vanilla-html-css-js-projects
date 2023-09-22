@@ -13,7 +13,7 @@
 
 .navigation-button {
   appearance: none;
-  background-color: var(--secondary-backgroundn-color);
+  background-color: var(--secondary-background-color);
   border: 2px solid var(--secondary-background-color);
   border-radius: 15px;
   box-sizing: border-box;
