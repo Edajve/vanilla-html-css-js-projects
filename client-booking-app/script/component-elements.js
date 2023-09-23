@@ -10,11 +10,13 @@ export const page = {
     },
     homePage: {
         elements : {
+            containerDiv: document.querySelector('.set-styles-main-container'),
             setBookingBtn: document.getElementById('set-booking-btn')
         }
     },
     setServicePage: {
         elements: {
+            container: document.querySelector('.set-styles-main-container'),
             allSetBtn: document.querySelectorAll('.items'),
             textArea: document.getElementById('comment'),
             browseBtn: document.getElementById('myFile')
