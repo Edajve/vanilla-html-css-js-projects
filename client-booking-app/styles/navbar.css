@@ -84,11 +84,12 @@ body {
     width: 10.2rem;
     display: inline-block;
     height: .6rem;
-    background-color: var(--default-single-progress-bar-color);
+    background-color: var(--empty-single-progress-bar-color);
     border-radius: 30px;
     margin-right: .5rem;
 }
 
-.current-bar {
-    background-color: var(--empty-single-progress-bar-color);
+/* used to hightlight progress bars */
+.highlighted-bar {
+    background-color: var(--default-single-progress-bar-color);
 }

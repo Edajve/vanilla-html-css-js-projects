@@ -10,8 +10,8 @@ export const page = {
     },
     homePage: {
         elements : {
-            containerDiv: document.querySelector('.set-styles-main-container'),
-            setBookingBtn: document.getElementById('set-booking-btn')
+            containerDiv: document.querySelector('.homepage-main-container'),
+            setBookingBtn: document.querySelector('.homepage-cta-button')
         }
     },
     setServicePage: {
