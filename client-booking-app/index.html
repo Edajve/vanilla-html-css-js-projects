@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inclusive+Sans&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
     <title>Client Booking</title>
 </head>
@@ -100,12 +102,72 @@
                         </div>
                     </div>
                 </div>
-                <textarea id="comment" name="comment" rows="4" cols="50" placeholder="If you do not choose from services above. Please explain the service you want and upload a picutre"></textarea>
+                <textarea id="comment" name="comment" rows="4" cols="50" placeholder="If you do not choose from the services above. Please explain the service you want with an uploaded picture"></textarea>
                 <form action="/action_page.php">
                     <input type="file" id="myFile" name="filename">
                   </form>
             </div>
-            <div class="currently-chosen-styles-div"></div>
+                <div class="invoice-div">
+                    <div class="invoice-children-divs header-div">
+                       <h4 class="invoice-header-text">Invoice</h4>
+                       <div class="price-div">
+                        <strong class="price-text">Price</strong>
+                        <p class="number-price">$750.00</p>
+                       </div>
+                    </div>
+                    <hr class="divider">
+                    <div class="invoice-children-divs service-info-div">
+                       <div id="invoice-1" class="single-invoice">
+                            <div class="invoice-text-div">
+                                <strong class="invoice-name">Service Number Four</strong>
+                            </div>
+                            <div class="invoice-price-div">
+                                <p class="invoice-price-text">$150.00</p>
+                            </div>
+                       </div>
+                       <div id="invoice-1" class="single-invoice">
+                            <div class="invoice-text-div">
+                                <strong class="invoice-name">Service Number Four</strong>
+                            </div>
+                            <div class="invoice-price-div">
+                                <p class="invoice-price-text">$150.00</p>
+                            </div>
+                        </div>
+                        <div id="invoice-1" class="single-invoice">
+                             <div class="invoice-text-div">
+                                <strong class="invoice-name">Service Number Four</strong>
+                            </div>
+                            <div class="invoice-price-div">
+                                <p class="invoice-price-text">$150.00</p>
+                            </div>
+                        </div>
+                        <div id="invoice-1" class="single-invoice">
+                            <div class="invoice-text-div">
+                               <strong class="invoice-name">Service Number Four</strong>
+                           </div>
+                           <div class="invoice-price-div">
+                               <p class="invoice-price-text">$150.00</p>
+                           </div>
+                       </div>
+                       <div id="invoice-1" class="single-invoice">
+                            <div class="invoice-text-div">
+                                <strong class="invoice-name">Service Number Four</strong>
+                            </div>
+                            <div class="invoice-price-div">
+                                <p class="invoice-price-text">$150.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="divider">
+                    <div class="invoice-children-divs users-comment-and-pic">
+                        <p class="comment-verification">Comment
+                            <i class="far fa-check-circle" style="color: #41ab41;"></i>
+                        </p>
+                        <p class="photo-verification">Photo 
+                            <i class="fas fa-times" style="color: #d4372a;"></i>
+                        </p>
+                    </div>
+                </div>
         </div>
         <footer class="footer-navigation-container">
             <div id="previous-step-btn">
