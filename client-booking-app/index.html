@@ -12,18 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inclusive+Sans&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-
     <title>Client Booking</title>
 </head>
 <body>
     <nav class="nav-container">
         <div class="progress-bar-container">
             <div class="progression-increments-container">
-                <div class="single-progress-bar"></div>
-                <div class="single-progress-bar"></div>
-                <div class="single-progress-bar"></div>
-                <div class="single-progress-bar current-bar"></div>
+                <div id="progression_1" class="single-progress-bar"></div>
+                <div id="progression_2" class="single-progress-bar"></div>
+                <div id="progression_3" class="single-progress-bar"></div>
+                <div id="progression_4" class="single-progress-bar current-bar"></div>
             </div>
             <div class="progression-comment-container">Step 1: Schedule</div>
         </div>
@@ -34,14 +32,14 @@
         </div>
     </nav>
     <!-- homepage -->
-    <main class="homepage-main-container" style="display: none">
+    <main class="homepage-main-container" style="display: none;">
         <div class="homepage-call-to-action-container">
             <h1 class="homepage-h1">
                 <h1 class="home-page-header">Set an appointment with Sophistocated Salon</h1>
                 <p class="homepage-call-to-action-description">
                     *Please review the Booking Policy page before booking for efficent service
                 </p>
-                <button class="homepage-cta-button" role="button">Set Booking</button>
+                <button id="set-booking-btn" class="homepage-cta-button" role="button">Set Booking</button>
             </h1>
         </div>
     </main>
@@ -171,13 +169,13 @@
         </div>
         <footer class="footer-navigation-container">
             <div id="previous-step-btn">
-                <button class="navigation-button" role="button">Prev</button>
+                <button id="prev-btn" class="navigation-button" role="button">Prev</button>
             </div>
             <div id="next-step-btn">
-                <button class="navigation-button" role="button">Next</button>
+                <button id="next-btn" class="navigation-button" role="button">Next</button>
             </div>
         </footer>
     </main>
 </body>
-<script src="./app.js"></script>
+<script type="module" src="./script/app.js"></script>
 </html>
