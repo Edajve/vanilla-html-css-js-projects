@@ -1,0 +1,110 @@
+.about-me-container {
+    width: 98vw;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.all-text {
+    height: 100vh;
+    padding: 4rem;
+}
+
+.personal-information {
+    height: 100vh;
+    width: 50rem;
+    position: relative;
+}
+
+.vertical-line {
+    border-left: 2px solid var(--secondary-background-color);
+    height: 70vh;
+    margin-top: 2rem;
+}
+
+.header-text {
+    
+}
+
+.paragraph, .header-text, .subtext {
+    font-family: 'Lora', serif;
+}
+
+.circle {
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba(69, 69, 73, 0.682);
+    border-radius: 50%;
+    margin-top: 2rem;
+    top: -10%;
+    left: 35%;
+    transform: translateX(50%); /* Center it horizontally */
+    transform: translateY(50%); /* Center it horizontally */
+    z-index: 2;
+    position:sticky;
+}
+
+.fas {
+    width: 4rem;
+    height: 4rem;
+    margin-top: 2.5rem;
+    margin-left: 2.5rem;
+}
+
+.profile-card {
+    width: 75%;
+    height: 40%;
+    background-color: var(--secondary-background-color);
+    position: relative;
+    z-index: 1;
+    margin: 2rem;
+    padding: 2.3rem 0 ;
+}
+
+.circle, .profile-card {
+    margin: 0 auto;
+}
+
+.divider {
+    border: 1px solid var(--primary-color-scheme);
+    margin: 0px auto; 
+    width: 70%;
+}
+
+.main-name {
+    text-align: center;
+    font-family: var(--primary-font);
+}
+
+.social-media-tag {
+    text-align: center;
+    font-size: small;
+    font-family: var(--primary-font);
+}
+
+.location {
+    top: 2%;
+    font-family: var(--primary-font);
+}
+
+.location-circle {
+    width: 60%;
+    height: 9%;
+    background-color: var(--empty-single-progress-bar-color);
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.social-media-icons {
+    width: 100%;
+    height: 5rem;
+    margin-top: 2rem;
+}
+
+.icon {
+    size: 2rem;
+    padding: 1rem;
+}
