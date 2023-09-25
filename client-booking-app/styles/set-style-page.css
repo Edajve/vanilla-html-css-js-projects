@@ -170,14 +170,12 @@
     border: 1px solid var(--primary-color-scheme);
     margin: 0px auto; 
     width: 80%;
-    
 }
 
 .price-text {
     color: green;
     font-size: medium;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
 }
 
 .number-price {
@@ -203,14 +201,6 @@
 font-size: large;
 }
 
-.invoice-text-div {
-
-}
-
-.invoice-price-div {
-
-}
-
 .invoice-header-text {
     color: white;
     font-size: 1rem;
@@ -227,12 +217,4 @@ font-size: large;
 .users-comment-and-pic {
     height: 6rem;
     padding: 0 2rem;
-}
-
-.comment-verification {
-
-}
-
-.photo-verification {
-
 }
