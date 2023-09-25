@@ -22,6 +22,11 @@ export const page = {
             browseBtn: document.getElementById('myFile')
         }
     },
+    pricesPage: {
+        elements: {
+            container: document.querySelector('.main-prices-container')
+        }
+    },
     footer: {
         elements: {
             prevBtn: document.getElementById('prev-btn'),
