@@ -13,7 +13,8 @@
     --empty-single-progress-bar-color:rgba(30, 21, 61, 0.481);
     --primary-font: 'Roboto', sans-serif;
     --secondary-font: 'Inclusive Sans', sans-serif;
-    --color-white: white
+    --color-white: white;
+    --color-wheat: wheat;
 }
 
 body {
@@ -74,7 +75,7 @@ body {
 .progression-comment-container {
     order: 1;
     width: 11.5rem;
-    color: white;
+    color: var(--color-wheat);
     font-family: var(--primary-font);
     align-items: center; 
     text-align: center;
