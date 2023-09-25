@@ -1,6 +1,6 @@
 import { stateEnum } from "./state-enum.js"
 import homePage from "./page-operations/home-page.js"
-import setBookingPage from "./page-operations/set-booking-page.js";
+import setStylesPage from "./page-operations/set-style-page.js";
 import footerComponent from "./page-operations/footer-component.js";
 import progressBar from "./page-operations/progress-bar.js";
 import pricesPage from "./page-operations/prices-page.js";
@@ -13,7 +13,7 @@ export const machine = {
                 if (action.type === 'pick_service') {
                     progressBar.increaseBarIcon()
                     homePage.closeHomePage()
-                    setBookingPage.openSetBookingPage()
+                    setStylesPage.openSetBookingPage()
                     this.changeState("pick_service")
                 } else if (action.type === 'price_navigation') {
                     homePage.closeHomePage()
@@ -30,7 +30,20 @@ export const machine = {
             }
         },
         'price_navigation': {
-
+            navigation: function(action) {
+                console.log(action.type);
+                if(action.type === 'home') {
+                    console.log("right here");
+                    //navigate back to whatever was the previous state
+                    /*
+                    Think about a way to remember what the previous state was
+                    when they enterded this state, so that when the previous button is clicked
+                    i can know which page to go back to. The problem is that in order to know
+                    what the state was when going back, i have to capture the state when navigating
+                    into this page, and them get that state when going back.
+                    */
+                }
+            }
         },
         'setBooking': {
 

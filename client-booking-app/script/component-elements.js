@@ -24,7 +24,8 @@ export const page = {
     },
     pricesPage: {
         elements: {
-            container: document.querySelector('.main-prices-container')
+            container: document.querySelector('.main-prices-container'),
+            leftChevron: document.querySelector('.prices-back-btn')
         }
     },
     footer: {

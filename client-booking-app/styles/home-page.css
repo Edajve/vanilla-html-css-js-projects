@@ -25,6 +25,7 @@
 .homepage-call-to-action-description{
     padding-left: 2rem;
     margin-bottom: 2rem;
+    color: var(--color-wheat);
 }
 
 /* CALL TO ACTION BUTTON */

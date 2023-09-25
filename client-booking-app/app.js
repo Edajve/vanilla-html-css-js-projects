@@ -15,3 +15,8 @@ page.footer.elements.prevBtn.addEventListener('click', function() {
 page.navBar.elements.pricesText.addEventListener('click', function() {
     machine.dispatch('navigation', [{type: 'price_navigation'}])
 })
+
+// back button in pries
+page.pricesPage.elements.leftChevron.addEventListener('click', function() {
+    machine.dispatch('navigation', [{type: machine.state}])
+})
