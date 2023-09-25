@@ -1,6 +1,7 @@
 import { stateEnum } from "./state-enum.js"
 import homePage from "./page-operations/home-page.js"
 import setBookingPage from "./page-operations/set-booking-page.js";
+import footerComponent from "./page-operations/footer-component.js";
 import progressBar from "./page-operations/progress-bar.js";
 
 export const machine = {
@@ -17,7 +18,11 @@ export const machine = {
             }
         },
         'pick_service': {
-
+            navigation: function (action) {
+                if (action.type === 'previous_button') {
+                    footerComponent.prevBtnClicked()
+                }
+            }
         },
         'price_navigation': {
 

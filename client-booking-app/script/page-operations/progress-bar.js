@@ -19,6 +19,24 @@ function updateNavText(index) {
     progressText.innerHTML = state[index]
 }
 
+export function isFirstStep() {
+    var amountHighlighted = 0;
+    const array = Array.from(arrayOfBars)
+    
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].classList.contains('highlighted-bar')) {
+            amountHighlighted += 1
+        }
+    }
+
+    if (amountHighlighted === 1) {
+        if (array[0].id === 'progression_0') {
+            return true
+        }
+    }
+    return false;
+}
+
 export function increaseBarIcon(){
     const targetIndex = lastHighlightedBar() + 1
     document.getElementById(`progression_${targetIndex}`).classList.add('highlighted-bar')
@@ -26,5 +44,6 @@ export function increaseBarIcon(){
 }
 
 export default {
-    increaseBarIcon
+    increaseBarIcon,
+    isFirstStep
 }
