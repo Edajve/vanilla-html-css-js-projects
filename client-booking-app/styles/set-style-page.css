@@ -129,6 +129,8 @@
     font-family:var(--primary-font);
 }
 
+
+
 #comment {
     max-width: 75%;
     min-width: 75%;
@@ -209,7 +211,6 @@ font-size: large;
 
 .service-info-div {
     height: 15rem;
-
     margin-top: 10px;
     overflow: auto;
 }
