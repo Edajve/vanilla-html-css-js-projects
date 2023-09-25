@@ -6,9 +6,60 @@
     flex-direction: row;
 }
 
+/* CSS button 28 */
+.prices-back-btn {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid var(--primary-color-scheme);
+    border-radius: 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 10px;
+    min-width: 0;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 5%;
+    will-change: transform;
+  }
+  
+  .prices-back-btn:disabled {
+    pointer-events: none;
+  }
+  
+  .fa-chevron-left {
+      margin: 0;
+      padding: 0;
+      margin-left: 0;
+      padding-top: .8rem;
+  }
+  
+  .prices-back-btn:hover {
+    color: #fff;
+    background-color: var(--primary-color-scheme);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .prices-back-btn:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  
+  
+
 .all-text {
     height: 100vh;
-    padding: 4rem;
+    padding: 2rem;
+    padding-top: 0rem;
 }
 
 .personal-information {
@@ -24,17 +75,20 @@
 }
 
 .header-text {
-    
+    color: white;
+    font-size: 3rem;
+    padding-left: 2rem;
 }
 
 .paragraph, .header-text, .subtext {
     font-family: 'Lora', serif;
+    color: white;
 }
 
 .circle {
     width: 6rem;
     height: 6rem;
-    background-color: rgba(69, 69, 73, 0.682);
+    background-color: rgba(69, 69, 73, 0.852);
     border-radius: 50%;
     margin-top: 2rem;
     top: -10%;
@@ -60,9 +114,10 @@
     z-index: 1;
     margin: 2rem;
     padding: 2.3rem 0 ;
+    border: 15px;
 }
 
-.circle, .profile-card {
+.circle,.profile-card {
     margin: 0 auto;
 }
 
@@ -75,17 +130,20 @@
 .main-name {
     text-align: center;
     font-family: var(--primary-font);
+    color: white;
 }
 
 .social-media-tag {
     text-align: center;
     font-size: small;
     font-family: var(--primary-font);
+    color: white;
 }
 
 .location {
     top: 2%;
     font-family: var(--primary-font);
+    color: white;
 }
 
 .location-circle {
