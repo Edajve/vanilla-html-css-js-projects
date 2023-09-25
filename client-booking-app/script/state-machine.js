@@ -3,6 +3,7 @@ import homePage from "./page-operations/home-page.js"
 import setBookingPage from "./page-operations/set-booking-page.js";
 import footerComponent from "./page-operations/footer-component.js";
 import progressBar from "./page-operations/progress-bar.js";
+import pricesPage from "./page-operations/prices-page.js";
 
 export const machine = {
     state: stateEnum.HOME,
@@ -14,6 +15,10 @@ export const machine = {
                     homePage.closeHomePage()
                     setBookingPage.openSetBookingPage()
                     this.changeState("pick_service")
+                } else if (action.type === 'price_navigation') {
+                    homePage.closeHomePage()
+                    pricesPage.navigate()
+                    this.changeState("price_navigation")
                 }
             }
         },
