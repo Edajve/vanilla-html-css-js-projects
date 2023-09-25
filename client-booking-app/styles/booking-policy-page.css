@@ -1,0 +1,23 @@
+.booking-policy-container {
+    background-color: var(--secondary-background-color);
+    width: 20rem;
+    height: 30rem;
+    border-radius: 10px;
+    margin: 2rem 4rem;
+    padding: 1rem;
+}
+
+.booking-policy-header {
+    font-family: var(--primary-font);
+}
+
+.list-container-parent {
+    list-style: circle;
+    line-height: 2rem;
+    padding-left: 1.4rem;
+}
+
+.item {
+    font-family: var(--primary-font);
+}
+
