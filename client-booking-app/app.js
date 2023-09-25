@@ -1,7 +1,12 @@
 import { page } from "./script/component-elements.js";
 import { machine } from "./script/state-machine.js";
-import { stateEnum } from "./script/state-enum.js";
 
+// homepage
 page.homePage.elements.setBookingBtn.addEventListener('click', function() {
-    machine.dispatch(stateEnum.PICK_SERVICE, [{ type: 'pick_service' }]);
+    machine.dispatch('navigation', [{ type: 'pick_service' }]);
+})
+
+// selecting service page
+page.footer.elements.prevBtn.addEventListener('click', function() {
+    machine.dispatch('navigation', [{type: 'previous_button'}])
 })
