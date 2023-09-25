@@ -11,7 +11,7 @@ export const machine = {
                 if (action.type === 'pick_service') {
                     homePage.closeHomePage()
                     setBookingPage.openSetBookingPage()
-                    //progressBar.increaseBarIcon()
+                    progressBar.increaseBarIcon()
                     this.changeState("pick_service")
                 } else {
                     console.log('this is the else statement')
