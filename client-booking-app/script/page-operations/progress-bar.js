@@ -1,7 +1,9 @@
 import { page } from "../component-elements.js"
 
 const arrayOfBars = page.navBar.elements.allProgressionBars
-const progressText = page.navBar.textArea
+const progressText = page.navBar.elements.progressStepsText
+
+const state = ['Step 1: Service', 'Step 2: Booking', 'Step 3: Information', 'Step 4: Finalize']
 
 function lastHighlightedBar() {
     for (let i = 0; i < arrayOfBars.length - 1; i++) {
@@ -13,9 +15,14 @@ function lastHighlightedBar() {
     return arrayOfBars.length - 1
 }
 
+function updateNavText(index) {
+    progressText.innerHTML = state[index]
+}
+
 export function increaseBarIcon(){
-    const targetBar = lastHighlightedBar() + 1
-    document.getElementById(`progression_${targetBar}`).classList.add('highlighted-bar')
+    const targetIndex = lastHighlightedBar() + 1
+    document.getElementById(`progression_${targetIndex}`).classList.add('highlighted-bar')
+    updateNavText(targetIndex)
 }
 
 export default {
