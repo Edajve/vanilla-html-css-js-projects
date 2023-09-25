@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="./styles/navbar.css">
     <link rel="stylesheet" href="./styles/home-page.css">
     <link rel="stylesheet" href="./styles/set-style-page.css">
     <link rel="stylesheet" href="./styles/footer-styles.css">
+    <link rel="stylesheet" href="./styles/prices-page.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inclusive+Sans&family=Roboto:wght@100&display=swap" rel="stylesheet">
@@ -33,7 +36,7 @@
         </div>
     </nav>
     <!-- homepage -->
-    <main class="homepage-main-container">
+    <main class="homepage-main-container" style="display: none;">
         <div class="homepage-call-to-action-container">
             <h1 class="homepage-h1">
                 <h1 class="home-page-header">Set an appointment with Sophistocated Salon</h1>
@@ -177,6 +180,126 @@
             </div>
         </footer>
     </main>
+    <!-- Prices page -->
+    <div class="main-prices-container" style="display: none;">
+        <div class="prices-description">
+            <h1 class="prices-text">Base Prices & Services</h1>
+            <div class="prices-subtext-container">
+                <p>* If you want a service outside of these prices, please include
+                    a description of what you want along with a picture. I will
+                    contact you with prices once complete with booking process.
+                </p>
+            </div>
+        </div>
+        <div class="prices-container">
+            <div class="price-card" id="price_0">
+                <div class="card-header-div card-component">
+                    <h2 class="card-price">$125</h2>
+                    <p class="card-name">Lorem, ipsum.</p>
+                </div>
+                <hr class="divider">
+                <div class="card-body-div card-component">
+                    <ul class="list-container">
+                        <ul class="list-item">Lorem ipsum dolor sit.</ul>
+                        <ul class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</ul>
+                        <ul class="list-item">Lorem, ipsum.</ul>
+                        <ul class="list-item">Lorem ipsum dolor sit amet.</ul>
+                    </ul>
+                </div>
+                <hr class="divider">
+                <div class="card-footer-div card-component">
+                    <p class="depsit-price">20% Deposit at least three days before service date</p>
+                </div>
+            </div>
+            <div class="price-card" id="price_1">
+                <div class="card-header-div card-component">
+                    <h2 class="card-price">$85</h2>
+                    <p class="card-name">Lorem, ipsum.</p>
+                </div>
+                <hr class="divider">
+                <div class="card-body-div card-component">
+                    <ul class="list-container">
+                        <ul class="list-item">Lorem ipsum dolor sit.</ul>
+                        <ul class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</ul>
+                        <ul class="list-item">Lorem, ipsum.</ul>
+                        <ul class="list-item">Lorem ipsum dolor sit amet.</ul>
+                    </ul>
+                </div>
+                <hr class="divider">
+                <div class="card-footer-div card-component">
+                    <p class="depsit-price">10% Deposit at least three days before service date</p>
+                </div>
+            </div>
+            <div class="price-card" id="price_2">
+                <div class="card-header-div card-component">
+                    <h2 class="card-price">$205</h2>
+                    <p class="card-name">Lorem, ipsum.</p>
+                </div>
+                <hr class="divider">
+                <div class="card-body-div card-component">
+                    <ul class="list-container">
+                        <ul class="list-item">Lorem ipsum dolor sit.</ul>
+                        <ul class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</ul>
+                        <ul class="list-item">Lorem, ipsum.</ul>
+                        <ul class="list-item">Lorem ipsum dolor sit amet.</ul>
+                    </ul>
+                </div>
+                <hr class="divider">
+                <div class="card-footer-div card-component">
+                    <p class="depsit-price">20% Deposit at least three days before service date</p>
+                </div>
+            </div>
+            <div class="price-card" id="price_3">
+                <div class="card-header-div card-component">
+                    <h2 class="card-price">$155</h2>
+                    <p class="card-name">Lorem, ipsum.</p>
+                </div>
+                <hr class="divider">
+                <div class="card-body-div card-component">
+                    <ul class="list-container">
+                        <ul class="list-item">Lorem ipsum dolor sit.</ul>
+                        <ul class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</ul>
+                        <ul class="list-item">Lorem, ipsum.</ul>
+                        <ul class="list-item">Lorem ipsum dolor sit amet.</ul>
+                    </ul>
+                </div>
+                <hr class="divider">
+                <div class="card-footer-div card-component">
+                    <p class="depsit-price">20% Deposit at least three days before service date</p>
+                </div>
+            </div>
+            <div class="price-card" id="price_4">
+                <div class="card-header-div card-component">
+                    <h2 class="card-price">$90</h2>
+                    <p class="card-name">Lorem, ipsum.</p>
+                </div>
+                <hr class="divider">
+                <div class="card-body-div card-component">
+                    <ul class="list-container">
+                        <ul class="list-item">Lorem ipsum dolor sit.</ul>
+                        <ul class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</ul>
+                        <ul class="list-item">Lorem, ipsum.</ul>
+                        <ul class="list-item">Lorem ipsum dolor sit amet.</ul>
+                    </ul>
+                </div>
+                <hr class="divider">
+                <div class="card-footer-div card-component">
+                    <p class="depsit-price">10% Deposit at least three days before service date</p>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    <!-- Booking policy page -->
+    <div class="booking-policy-container">
+        <h1 class="booking-policy-header">Booking Policy</h1>
+        <ul class="list-container-parent">
+            <li class="item">Please Be on time</li>
+            <li class="item">Please be reasonably responsive and messages/calls</li>
+            <li class="item">Children are okay</li>
+            <li class="item">No smoking in facility</li>
+        </ul>
+    </div>
 </body>
 <script type="module" src="./app.js"></script>
 </html>
