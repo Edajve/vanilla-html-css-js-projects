@@ -30,7 +30,8 @@ export const page = {
     },
     bookinPolicyPage: {
         elements: {
-            container: document.querySelector('.mainner')
+            container: document.querySelector('.mainner'),
+            leftChevron: document.getElementById('back-btn-in-policy-page')
         }
     },
     footer: {

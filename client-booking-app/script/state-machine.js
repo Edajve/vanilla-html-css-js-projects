@@ -22,8 +22,8 @@ export const machine = {
                     pricesPage.navigate()
                     this.changeState(state.NAV_PRICE)
                 } else if (action.type === state.BOOKING_POLICY) {
-                    // open booking policy page
                     bookingPolicy.openPage()
+                    this.changeState(state.BOOKING_POLICY)
                 }
             }
         },
@@ -38,6 +38,7 @@ export const machine = {
             navigation: function(action) {
                 if (action.type === 'returnWhereYouCameFrom') {
                     pricesPage.closePage()
+                    console.log('this is the previous state ', this.previousState);
 
                     switch (this.previousState) {
                         case state.HOME:
@@ -54,12 +55,34 @@ export const machine = {
 
                 } else {
                     console.log("the action.type is not \'returnWhereYouCameFrom\'," +
-                    "but this page is only mean to visit and navigate back to where you came from");
+                    "but this page is only meant to visit and navigate back to where you came from");
                 }
             }
         },
-        'setBooking': {
+        'booking_policy': {
+            navigation: function(action) {
+                if (action.type === 'returnWhereYouCameFrom') {
+                    // close the booking policy page
+                    bookingPolicy.closePage()
 
+                    switch (this.previousState) {
+                        case state.HOME:
+                            homePage.openPage()
+                            this.changeState(state.HOME)
+                            break;
+                        case null:
+                            console.log('this only happens if you get to the prices page without navigating to it. AKA impossible');
+                            break;
+                        default:
+                            console.error("default in state-machine.js, inside price navigation")
+                            break;
+                    }
+
+                } else {
+                    console.log("the action.type is not \'returnWhereYouCameFrom\'," +
+                    "but this page is only meant to visit and navigate back to where you came from");
+                }
+            }
         },
         'about_me': {
 
@@ -67,7 +90,7 @@ export const machine = {
         'know_your_cutsomer': {
 
         },
-        'booking': {
+        'booking_step': {
 
         },
         'finalize': {

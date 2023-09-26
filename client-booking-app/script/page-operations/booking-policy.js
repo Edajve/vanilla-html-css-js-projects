@@ -6,6 +6,11 @@ export function openPage() {
     container.style.display = ""
 }
 
+export function closePage() {
+    container.style.display = 'none'
+}
+
 export default {
-    openPage
+    openPage,
+    closePage
 }
