@@ -1,4 +1,4 @@
-export const stateEnum = {
+export const state = {
     HOME: 'home',
     NAV_PRICE: 'price_navigation',
     BOOKING_POLICY: 'setBooking',

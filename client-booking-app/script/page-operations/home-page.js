@@ -1,10 +1,15 @@
 import { page } from "../component-elements.js";
+const homePageContainerDiv = page.homePage.elements.containerDiv;
 
 export function closeHomePage() {
-    const homePageContainerDiv = page.homePage.elements.containerDiv;
     homePageContainerDiv.style.display = "none";
 }
 
+export function openPage() {
+ homePageContainerDiv.style.display = ''
+}
+
 export default {
-    closeHomePage
+    closeHomePage,
+    openPage
 }

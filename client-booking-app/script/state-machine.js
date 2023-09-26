@@ -1,4 +1,4 @@
-import { stateEnum } from "./state-enum.js"
+import { state } from "./state.js"
 import homePage from "./page-operations/home-page.js"
 import setStylesPage from "./page-operations/set-style-page.js";
 import footerComponent from "./page-operations/footer-component.js";
@@ -6,42 +6,51 @@ import progressBar from "./page-operations/progress-bar.js";
 import pricesPage from "./page-operations/prices-page.js";
 
 export const machine = {
-    state: stateEnum.HOME,
+    state: state.HOME,
+    previousState: null,
     transitions: {
         'home': {
             navigation: function (action) {
-                if (action.type === 'pick_service') {
+                if (action.type === state.PICK_SERVICE) {
                     progressBar.increaseBarIcon()
                     homePage.closeHomePage()
                     setStylesPage.openSetBookingPage()
-                    this.changeState("pick_service")
-                } else if (action.type === 'price_navigation') {
+                    this.changeState(state.PICK_SERVICE)
+                } else if (action.type === state.NAV_PRICE) {
                     homePage.closeHomePage()
                     pricesPage.navigate()
-                    this.changeState("price_navigation")
+                    this.changeState(state.NAV_PRICE)
                 }
             }
         },
         'pick_service': {
             navigation: function (action) {
                 if (action.type === 'previous_button') {
-                    footerComponent.prevBtnClicked()
+                    footerComponent.prevBtnClicked() //this doesnt do anything yet
                 }
             }
         },
         'price_navigation': {
             navigation: function(action) {
-                console.log(action.type);
-                if(action.type === 'home') {
-                    console.log("right here");
-                    //navigate back to whatever was the previous state
-                    /*
-                    Think about a way to remember what the previous state was
-                    when they enterded this state, so that when the previous button is clicked
-                    i can know which page to go back to. The problem is that in order to know
-                    what the state was when going back, i have to capture the state when navigating
-                    into this page, and them get that state when going back.
-                    */
+                if(action.type === 'returnWhereYouCameFrom') {
+                    pricesPage.closePage()
+
+                    switch (this.previousState) {
+                        case state.HOME:
+                            homePage.openPage()
+                            this.changeState(state.HOME)
+                            break;
+                        case null:
+                            console.log('this only happens if you get to the prices page without navigating to it. AKA impossible');
+                            break;
+                        default:
+                            console.error("default in state-machine.js, inside price navigation")
+                            break;
+                    }
+
+                } else {
+                    console.log("the action.type is not \'returnWhereYouCameFrom\'," +
+                    "but this page is only mean to visit and navigate back to where you came from");
                 }
             }
         },
@@ -62,16 +71,16 @@ export const machine = {
         }
     },
     dispatch(actionName, ...payload) {
-                const actions = this.transitions[this.state];
-                const action = this.transitions[this.state][actionName];
+        const action = this.transitions[this.state][actionName];
         
-                if (action) {
-                    action.apply(machine, ...payload);
-                } else {
-                    console.log("action is not valid for current state");
-                }
-            },
-            changeState(newState) {
-                this.state = newState;
-            }
+        if (action) {
+            action.apply(machine, ...payload);
+        } else {
+            console.log("action is not valid for current state");
+        }
+    },
+    changeState(newState) {
+        this.previousState = this.state;
+        this.state = newState;
+    }
 };
