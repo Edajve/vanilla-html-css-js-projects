@@ -5,6 +5,7 @@ import footerComponent from "./page-operations/footer-component.js";
 import progressBar from "./page-operations/progress-bar.js";
 import pricesPage from "./page-operations/prices-page.js";
 import bookingPolicy from "./page-operations/booking-policy.js";
+import aboutMePage from "./page-operations/about-me-page.js";
 
 export const machine = {
     state: state.HOME,
@@ -24,6 +25,12 @@ export const machine = {
                 } else if (action.type === state.BOOKING_POLICY) {
                     bookingPolicy.openPage()
                     this.changeState(state.BOOKING_POLICY)
+                } else if (action.type === state.ABOUT_ME) {
+                    aboutMePage.openPage()
+                    this.changeState(state.ABOUT_ME)
+                } else {
+                    console.error("this should never get to this state, im in "
+                    + "file \'state-machine.js\' file in the else block of navigation")
                 }
             }
         },
@@ -62,7 +69,6 @@ export const machine = {
         'booking_policy': {
             navigation: function(action) {
                 if (action.type === 'returnWhereYouCameFrom') {
-                    // close the booking policy page
                     bookingPolicy.closePage()
 
                     switch (this.previousState) {
@@ -85,6 +91,29 @@ export const machine = {
             }
         },
         'about_me': {
+            navigation: function(action) {
+                if (action.type === 'returnWhereYouCameFrom') {
+                        // close the about me page
+                        aboutMePage.closePage()
+
+                        switch (this.previousState) {
+                            case state.HOME:
+                                homePage.openPage()
+                                this.changeState(state.HOME)
+                                break;
+                            case null:
+                                console.log('this only happens if you get to the prices page without navigating to it. AKA impossible');
+                                break;
+                            default:
+                                console.error("default in state-machine.js, inside price navigation")
+                                break;
+                        }
+
+                } else {
+                    console.log("the action.type is not \'returnWhereYouCameFrom\'," +
+                    "but this page is only meant to visit and navigate back to where you came from");
+                }
+            }
 
         },
         'know_your_cutsomer': {
