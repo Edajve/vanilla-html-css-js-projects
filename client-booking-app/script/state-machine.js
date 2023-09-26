@@ -28,9 +28,12 @@ export const machine = {
                 } else if (action.type === state.ABOUT_ME) {
                     aboutMePage.openPage()
                     this.changeState(state.ABOUT_ME, true)
-                } else {
-                    console.error("this should never get to this state, im in "
-                    + "file \'state-machine.js\' file in the else block of navigation")
+                }
+            },
+            navToNav: function(action) {
+                console.log(action.type);
+                if (action.type === state.BOOKING_POLICY) {
+                    bookingPolicy.closePage()
                 }
             }
         },
@@ -52,16 +55,17 @@ export const machine = {
                             this.changeState(state.HOME)
                             break;
                         case null:
-                            console.log('this only happens if you get to the prices page without navigating to it. AKA impossible');
+                            console.error('this only happens if you get to the prices page without navigating to it. AKA impossible');
                             break;
                         default:
                             console.error("default in state-machine.js, inside price navigation")
                             break;
                     }
-
-                } else if (action.type === 'nav-to-nav') {
+                }
+            },
+            navToNav: function (action) {
+                if (action.type === 'nav-to-nav') {
                     pricesPage.closePage()
-
                     switch(this.state) {
                         case state.NAV_PRICE:
                             bookingPolicy.openPage()
@@ -82,12 +86,27 @@ export const machine = {
                             this.changeState(state.HOME)
                             break;
                         case null:
-                            console.log('this only happens if you get to the prices page without navigating to it. AKA impossible');
+                            console.error('this only happens if you get to the prices page without navigating to it. AKA impossible');
                             break;
                         default:
                             console.error("default in state-machine.js, inside price navigation")
                             break;
                     }
+                }
+            },
+            navToNav: function (action) {
+                if (action.type === state.NAV_PRICE) {
+                    bookingPolicy.closePage()
+                    switch(this.state) {
+                        case state.BOOKING_POLICY:
+                            pricesPage.navigate()
+                            this.changeState(state.NAV_PRICE)
+                            break;
+                    }
+                } else if (action.type === state.BOOKING_POLICY) {
+                    bookingPolicy.closePage()
+                    aboutMePage.openPage()
+                    this.changeState(state.ABOUT_ME)
                 }
             }
         },
@@ -102,19 +121,28 @@ export const machine = {
                                 this.changeState(state.HOME)
                                 break;
                             case null:
-                                console.log('this only happens if you get to the prices page without navigating to it. AKA impossible');
+                                console.error('this only happens if you get to the prices page without navigating to it. AKA impossible');
                                 break;
                             default:
                                 console.error("default in state-machine.js, inside price navigation")
                                 break;
                         }
-
-                } else {
-                    console.log("the action.type is not \'returnWhereYouCameFrom\'," +
-                    "but this page is only meant to visit and navigate back to where you came from");
+                }
+            },
+            navToNav: function (action) {
+                if (action.type === state.BOOKING_POLICY) {
+                    aboutMePage.closePage()
+                    switch(this.state) {
+                        case state.ABOUT_ME:
+                            bookingPolicy.openPage()
+                            this.changeState(state.BOOKING_POLICY)
+                        }  this.changeState(state.BOOKING_POLICY)
+                } else if (action.type === state.NAV_PRICE) {
+                    aboutMePage.closePage()
+                    pricesPage.navigate()
+                    this.changeState(state.NAV_PRICE)
                 }
             }
-
         },
         'know_your_cutsomer': {
 
@@ -132,7 +160,7 @@ export const machine = {
         if (action) {
             action.apply(machine, ...payload);
         } else {
-            console.log("action is not valid for current state");
+            console.error("action is not valid for current state");
         }
     },
         /*only save previous state when you are navigating from 
@@ -145,3 +173,7 @@ export const machine = {
         this.state = newState;
     }
 };
+
+export default {
+    machine
+}
