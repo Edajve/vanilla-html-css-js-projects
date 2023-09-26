@@ -24,7 +24,10 @@ page.pricesPage.elements.leftChevron.addEventListener('click', function() {
 
 // homepage -> booking policy in nav
 page.navBar.elements.bookingPolicyText.addEventListener('click', function() {
-    machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
+        if (state.state !== state.NAV_PRICE && state.state !== state.BOOKING_POLICY && state.state !== state.ABOUT_ME) {
+            machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
+        }
+         machine.dispatch('navigation', [{type: 'nav-to-nav'}])
 })
 
 // back button in booking policy page

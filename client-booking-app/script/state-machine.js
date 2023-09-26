@@ -45,7 +45,6 @@ export const machine = {
             navigation: function(action) {
                 if (action.type === 'returnWhereYouCameFrom') {
                     pricesPage.closePage()
-                    console.log('this is the previous state ', this.previousState);
 
                     switch (this.previousState) {
                         case state.HOME:
@@ -60,9 +59,15 @@ export const machine = {
                             break;
                     }
 
-                } else {
-                    console.log("the action.type is not \'returnWhereYouCameFrom\'," +
-                    "but this page is only meant to visit and navigate back to where you came from");
+                } else if (action.type === 'nav-to-nav') {
+                    pricesPage.closePage()
+
+                    switch(this.state) {
+                        case state.NAV_PRICE:
+                            bookingPolicy.openPage()
+                            this.changeState(state.BOOKING_POLICY)
+                            break;
+                    }
                 }
             }
         },
@@ -83,17 +88,12 @@ export const machine = {
                             console.error("default in state-machine.js, inside price navigation")
                             break;
                     }
-
-                } else {
-                    console.log("the action.type is not \'returnWhereYouCameFrom\'," +
-                    "but this page is only meant to visit and navigate back to where you came from");
                 }
             }
         },
         'about_me': {
             navigation: function(action) {
                 if (action.type === 'returnWhereYouCameFrom') {
-                        // close the about me page
                         aboutMePage.closePage()
 
                         switch (this.previousState) {
