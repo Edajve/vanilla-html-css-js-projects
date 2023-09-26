@@ -14,7 +14,14 @@ page.footer.elements.prevBtn.addEventListener('click', function() {
 
 // homepage -> prices in nav
 page.navBar.elements.pricesText.addEventListener('click', function() {
-    machine.dispatch('navigation', [{type: state.NAV_PRICE}])
+    if (machine.state !== state.NAV_PRICE && machine.state !== state.BOOKING_POLICY && machine.state !== state.ABOUT_ME) {
+        machine.dispatch('navigation', [{type: state.NAV_PRICE}])
+    } else if (machine.state === state.BOOKING_POLICY) {
+        machine.dispatch('navToNav', [{type: state.NAV_PRICE}])
+    } else if (machine.state === state.ABOUT_ME) {
+        console.log(machine.state);
+        machine.dispatch('navToNav', [{type: state.NAV_PRICE}])
+    }
 })
 
 // back button in prices
@@ -24,10 +31,14 @@ page.pricesPage.elements.leftChevron.addEventListener('click', function() {
 
 // homepage -> booking policy in nav
 page.navBar.elements.bookingPolicyText.addEventListener('click', function() {
-        if (state.state !== state.NAV_PRICE && state.state !== state.BOOKING_POLICY && state.state !== state.ABOUT_ME) {
+        if (machine.state !== state.NAV_PRICE && machine.state !== state.BOOKING_POLICY && machine.state !== state.ABOUT_ME) {
             machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
+        } else if (machine.state === state.NAV_PRICE) {
+            console.log(machine.state);
+            machine.dispatch('navToNav', [{type: 'nav-to-nav'}])
+        } else if (machine.state === state.ABOUT_ME) {
+            machine.dispatch('navToNav', [{type: state.BOOKING_POLICY}])
         }
-         machine.dispatch('navigation', [{type: 'nav-to-nav'}])
 })
 
 // back button in booking policy page
@@ -37,7 +48,13 @@ page.bookinPolicyPage.elements.leftChevron.addEventListener('click', function() 
 
 // homepage -> about me page in nav
 page.navBar.elements.aboutMeText.addEventListener('click', () => {
-    machine.dispatch('navigation', [{type: state.ABOUT_ME}])
+    if (machine.state !== state.NAV_PRICE && machine.state !== state.BOOKING_POLICY && machine.state !== state.ABOUT_ME) {
+        machine.dispatch('navigation', [{type: state.ABOUT_ME}])
+    } else if (machine.state === state.NAV_PRICE) {
+        machine.dispatch('navToNav', [{type: 'nav-to-nav'}])
+    } else if (machine.state === state.BOOKING_POLICY) {
+        machine.dispatch('navToNav', [{type: state.BOOKING_POLICY}])
+    }
 })
 
 // back button in about me page
