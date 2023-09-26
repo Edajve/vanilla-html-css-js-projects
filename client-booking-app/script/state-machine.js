@@ -4,6 +4,7 @@ import setStylesPage from "./page-operations/set-style-page.js";
 import footerComponent from "./page-operations/footer-component.js";
 import progressBar from "./page-operations/progress-bar.js";
 import pricesPage from "./page-operations/prices-page.js";
+import bookingPolicy from "./page-operations/booking-policy.js";
 
 export const machine = {
     state: state.HOME,
@@ -11,15 +12,18 @@ export const machine = {
     transitions: {
         'home': {
             navigation: function (action) {
+                homePage.closePage()
+
                 if (action.type === state.PICK_SERVICE) {
                     progressBar.increaseBarIcon()
-                    homePage.closeHomePage()
                     setStylesPage.openSetBookingPage()
                     this.changeState(state.PICK_SERVICE)
                 } else if (action.type === state.NAV_PRICE) {
-                    homePage.closeHomePage()
                     pricesPage.navigate()
                     this.changeState(state.NAV_PRICE)
+                } else if (action.type === state.BOOKING_POLICY) {
+                    // open booking policy page
+                    bookingPolicy.openPage()
                 }
             }
         },
@@ -32,7 +36,7 @@ export const machine = {
         },
         'price_navigation': {
             navigation: function(action) {
-                if(action.type === 'returnWhereYouCameFrom') {
+                if (action.type === 'returnWhereYouCameFrom') {
                     pricesPage.closePage()
 
                     switch (this.previousState) {

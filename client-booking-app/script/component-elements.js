@@ -28,6 +28,11 @@ export const page = {
             leftChevron: document.querySelector('.prices-back-btn')
         }
     },
+    bookinPolicyPage: {
+        elements: {
+            container: document.querySelector('.mainner')
+        }
+    },
     footer: {
         elements: {
             prevBtn: document.getElementById('prev-btn'),
