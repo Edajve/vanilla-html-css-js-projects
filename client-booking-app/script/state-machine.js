@@ -21,13 +21,13 @@ export const machine = {
                     this.changeState(state.PICK_SERVICE)
                 } else if (action.type === state.NAV_PRICE) {
                     pricesPage.navigate()
-                    this.changeState(state.NAV_PRICE)
+                    this.changeState(state.NAV_PRICE, true)
                 } else if (action.type === state.BOOKING_POLICY) {
                     bookingPolicy.openPage()
-                    this.changeState(state.BOOKING_POLICY)
+                    this.changeState(state.BOOKING_POLICY, true)
                 } else if (action.type === state.ABOUT_ME) {
                     aboutMePage.openPage()
-                    this.changeState(state.ABOUT_ME)
+                    this.changeState(state.ABOUT_ME, true)
                 } else {
                     console.error("this should never get to this state, im in "
                     + "file \'state-machine.js\' file in the else block of navigation")
@@ -45,7 +45,6 @@ export const machine = {
             navigation: function(action) {
                 if (action.type === 'returnWhereYouCameFrom') {
                     pricesPage.closePage()
-                    console.log('this is the previous state ', this.previousState);
 
                     switch (this.previousState) {
                         case state.HOME:
@@ -60,9 +59,15 @@ export const machine = {
                             break;
                     }
 
-                } else {
-                    console.log("the action.type is not \'returnWhereYouCameFrom\'," +
-                    "but this page is only meant to visit and navigate back to where you came from");
+                } else if (action.type === 'nav-to-nav') {
+                    pricesPage.closePage()
+
+                    switch(this.state) {
+                        case state.NAV_PRICE:
+                            bookingPolicy.openPage()
+                            this.changeState(state.BOOKING_POLICY)
+                            break;
+                    }
                 }
             }
         },
@@ -83,17 +88,12 @@ export const machine = {
                             console.error("default in state-machine.js, inside price navigation")
                             break;
                     }
-
-                } else {
-                    console.log("the action.type is not \'returnWhereYouCameFrom\'," +
-                    "but this page is only meant to visit and navigate back to where you came from");
                 }
             }
         },
         'about_me': {
             navigation: function(action) {
                 if (action.type === 'returnWhereYouCameFrom') {
-                        // close the about me page
                         aboutMePage.closePage()
 
                         switch (this.previousState) {
@@ -135,8 +135,13 @@ export const machine = {
             console.log("action is not valid for current state");
         }
     },
-    changeState(newState) {
-        this.previousState = this.state;
+        /*only save previous state when you are navigating from 
+        a non-nav page to a nav page. dont save when 
+        going from nav to nav, non-nav to non-nav
+        or from nav to non-nav, only
+        from non-nav to nav*/
+    changeState(newState, savePrevState = false) {
+        if (savePrevState) {this.previousState = this.state; }
         this.state = newState;
     }
 };
