@@ -26,3 +26,8 @@ page.pricesPage.elements.leftChevron.addEventListener('click', function() {
 page.navBar.elements.bookingPolicyText.addEventListener('click', function() {
     machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
 })
+
+// back button in booking policy page
+page.bookinPolicyPage.elements.leftChevron.addEventListener('click', function() {
+    machine.dispatch('navigation', [{type: 'returnWhereYouCameFrom'}])
+})
