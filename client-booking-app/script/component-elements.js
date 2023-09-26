@@ -34,6 +34,12 @@ export const page = {
             leftChevron: document.getElementById('back-btn-in-policy-page')
         }
     },
+    aboutMePage: {
+        elements: {
+            container: document.getElementById('about-me-id'),
+            leftChevron: document.getElementById('back-btn-in-about-me-page')
+        }
+    },
     footer: {
         elements: {
             prevBtn: document.getElementById('prev-btn'),
