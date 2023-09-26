@@ -1,9 +1,10 @@
 import { page } from "./script/component-elements.js";
 import { machine } from "./script/state-machine.js";
+import { state } from "./script/state.js";
 
 // homepage
 page.homePage.elements.setBookingBtn.addEventListener('click', function() {
-    machine.dispatch('navigation', [{ type: 'pick_service' }]);
+    machine.dispatch('navigation', [{ type: state.PICK_SERVICE}]);
 })
 
 // selecting service page
@@ -13,10 +14,10 @@ page.footer.elements.prevBtn.addEventListener('click', function() {
 
 // prices navigation
 page.navBar.elements.pricesText.addEventListener('click', function() {
-    machine.dispatch('navigation', [{type: 'price_navigation'}])
+    machine.dispatch('navigation', [{type: state.NAV_PRICE}])
 })
 
-// back button in pries
+// back button in prices
 page.pricesPage.elements.leftChevron.addEventListener('click', function() {
-    machine.dispatch('navigation', [{type: machine.state}])
+    machine.dispatch('navigation', [{type: 'returnWhereYouCameFrom'}])
 })
