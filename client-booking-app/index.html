@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="./styles/prices-page.css">
     <link rel="stylesheet" href="./styles/booking-policy-page.css">
     <link rel="stylesheet" href="./styles/about-me.css">
+    <link rel="stylesheet" href="./styles/set-bookin-sub-pages/set-booking-page.css">
+    <link rel="stylesheet" href="./styles/set-bookin-sub-pages/month-and-year-page.css">
+    <link rel="stylesheet" href="./styles/set-bookin-sub-pages/specific-day-page.css">
+    <link rel="stylesheet" href="./styles/set-bookin-sub-pages/finalize-date-page.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inclusive+Sans&family=Lora&family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
@@ -53,7 +57,7 @@
         </div>
     </main>
     <!-- step 1:  styles -->
-    <main class="set-styles-main-container">
+    <main class="set-styles-main-container" style="display: none;">
         <div class="step-1-body-container">
             <div class="backlog-styles-div">
                 <h2 class="title">Select Service</h2>
@@ -86,7 +90,7 @@
                         </tbody>
                         <tbody id="1" class="item">
                           <tr>
-                            <td>Service 1</td>
+                            <td>Service 2</td>
                             <td>LOREM </td>
                             <td>$150.00</td>
                             <td>+2.01</td>
@@ -95,6 +99,39 @@
                             </div></td>
                           </tr>
                         </tbody>
+                        <tbody id="2" class="item">
+                            <tr>
+                              <td>Service 3</td>
+                              <td>LOREM </td>
+                              <td>$150.00</td>
+                              <td>+2.01</td>
+                              <td><div class="select-button-div">
+                                  <button role="button" class="select-button"></button>
+                              </div></td>
+                            </tr>
+                          </tbody>
+                          <tbody id="3" class="item">
+                            <tr>
+                              <td>Service 4</td>
+                              <td>LOREM </td>
+                              <td>$150.00</td>
+                              <td>+2.01</td>
+                              <td><div class="select-button-div">
+                                  <button role="button" class="select-button"></button>
+                              </div></td>
+                            </tr>
+                          </tbody>
+                          <tbody id="4" class="item">
+                            <tr>
+                              <td>Other</td>
+                              <td>Explain in text area</td>
+                              <td>To be determined...</td>
+                              <td>+2.01</td>
+                              <td><div class="select-button-div">
+                                  <button role="button" class="select-button"></button>
+                              </div></td>
+                            </tr>
+                          </tbody>
                       </table>
                     </div>
                   </section>
@@ -161,14 +198,70 @@
                     </div>
                 </div>
         </div>
-        <footer class="footer-navigation-container">
-            <div id="previous-step-btn">
-                <button id="prev-btn" class="navigation-button" role="button">Prev</button>
+       
+    </main>
+    <!-- step 2: users information -->
+    <main class="main-kyc-container">
+        <div class="month-year-container">
+            <h1 class="calendar-header">Calendar</h1>
+            <div class="display-date-container">
+                <p class="choosen-date">
+                    <i class="fas fa-calendar-day"></i>
+                     Wednesday, 27 September 2023
+                </p>
+                <div class="left-right-container">
+                    <button><i class="fas fa-chevron-left"></i></button>
+                    <button><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
-            <div id="next-step-btn">
-                <button id="next-btn" class="navigation-button" role="button">Next</button>
+            <div class="calendar-and-header-container">
+                <div id="space-0" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-1" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-2" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-3" class="day-item-space-highlighted"><p class="date-num">1</p></div>
+                <div id="space-4" class="day-item-space-highlighted"><p class="date-num">1</p></div>
+                <div id="space-5" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-6" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-7" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-8" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-9" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-10" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-11" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-12" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-13" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-14" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-15" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-16" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-17" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-18" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-19" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-20" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-21" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-22" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-23" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-24" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-25" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-26" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-27" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-28" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-29" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-30" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-31" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-32" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-33" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-34" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-35" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-36" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-37" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-38" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-39" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-40" class="day-item-space"><p class="date-num">1</p></div>
+                <div id="space-41" class="day-item-space"><p class="date-num">1</p></div>
             </div>
-        </footer>
+            <button class="next-btn" role="button">NEXT</button>
+        </div>
+        <div class="specific-day disable" style="display: none;"></div>
+        <div class="finalize-date disable" style="display: none;"></div>
     </main>
     <!-- Prices page -->
     <div class="main-prices-container" style="display: none;">
@@ -338,6 +431,14 @@
             </div>
         </div>
     </div>
+    <footer class="footer-navigation-container">
+        <div id="previous-step-btn">
+            <button id="prev-btn" class="navigation-button" role="button">Prev</button>
+        </div>
+        <div id="next-step-btn">
+            <button id="next-btn" class="navigation-button" role="button">Next</button>
+        </div>
+    </footer>
 </body>
 <script type="module" src="./app.js"></script>
 </html>
