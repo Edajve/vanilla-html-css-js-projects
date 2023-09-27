@@ -20,13 +20,13 @@
 body {
     margin: 0;
     background-image: linear-gradient(to right top, #151636, #1e2141, #282c4d, #323858, #3c4464);
-    height: 220vh;
+    height: 130vh;
     display: flex;
     flex-direction: column;
 }
 
 .nav-container {
-    height: 7rem;
+    height: 4rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -35,7 +35,7 @@ body {
 .nav-button-container {
     order: 1;
     width: 25rem;
-    padding-top: 5rem;
+    padding-top: 1rem;
 }
 
 .nav-buttons {
@@ -57,7 +57,7 @@ body {
     height: 2rem;
     border-radius: 25px;
     margin-left: 2rem;
-    margin-top: 5rem;
+    margin-top: 1rem;
     padding-left: 2.2rem;
 
     /* flex work for child div's */
