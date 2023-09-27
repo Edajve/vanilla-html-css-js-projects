@@ -41,7 +41,7 @@
         </div>
     </nav>
     <!-- homepage -->
-    <main class="homepage-main-container">
+    <main class="homepage-main-container" style="display: none">
         <div class="homepage-call-to-action-container">
             <h1 class="homepage-h1">
                 <h1 class="home-page-header">Set an appointment with Sophistocated Salon</h1>
@@ -53,66 +53,55 @@
         </div>
     </main>
     <!-- step 1:  styles -->
-    <main class="set-styles-main-container" style="display: none;">
+    <main class="set-styles-main-container">
         <div class="step-1-body-container">
             <div class="backlog-styles-div">
                 <h2 class="title">Select Service</h2>
-                <div class="scrollable-style-div">
-                    <div id="1" class="individual-style item">
-                        <div class="header-and-description-container">
-                            <h3 class="individual-service-header">Service Number One</h3>
-                            <p class="price-text">  . . . $125</p>
-                            <p class="individual-service-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe nihil at tempora.</p>
-                        </div>
-                        <div class="select-button-div">
-                            <button class="select-button" role="button">Select</button>
-                        </div>
+                <section>
+                    <div class="tbl-header">
+                      <table cellpadding="0" cellspacing="0">
+                        <thead>
+                          <tr>
+                            <th>Service</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>lorem</th>
+                            <th>Selected</th>
+                          </tr>
+                        </thead>
+                      </table>
                     </div>
-                    <div id="2" class="individual-style item">
-                        <div class="header-and-description-container">
-                            <h3 class="individual-service-header">Service Number Two</h3>
-                            <p class="price-text">  . . . $85</p>
-                            <p class="individual-service-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe nihil at tempora.</p>
-                        </div>
-                        <div class="select-button-div">
-                            <button class="select-button" role="button">Select</button>
-                        </div>
+                    <div class="tbl-content">
+                      <table cellpadding="0" cellspacing="0">
+                        <tbody id="0" class="item">
+                          <tr>
+                            <td>Service 1</td>
+                            <td>LOREM </td>
+                            <td>$150.00</td>
+                            <td>+2.01</td>
+                            <td><div class="select-button-div">
+                                <button role="button" class="select-button selected"></button>
+                            </div></td>
+                          </tr>
+                        </tbody>
+                        <tbody id="1" class="item">
+                          <tr>
+                            <td>Service 1</td>
+                            <td>LOREM </td>
+                            <td>$150.00</td>
+                            <td>+2.01</td>
+                            <td><div class="select-button-div">
+                                <button role="button" class="select-button"></button>
+                            </div></td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
-                    <div id="3" class="individual-style item">
-                        <div class="header-and-description-container">
-                            <h3 class="individual-service-header">Service Number Three</h3>
-                            <p class="price-text">  . . . $100</p>
-                            <p class="individual-service-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe nihil at tempora.</p>
-                        </div>
-                        <div class="select-button-div">
-                            <button class="select-button" role="button">Select</button>
-                        </div>
-                    </div>
-                    <div id="4" class="individual-style item">
-                        <div class="header-and-description-container">
-                            <h3 class="individual-service-header">Service Number Four</h3>
-                            <p class="price-text">  . . . $150</p>
-                            <p class="individual-service-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe nihil at tempora.</p>
-                        </div>
-                        <div class="select-button-div">
-                            <button class="select-button" role="button">Select</button>
-                        </div>
-                    </div>
-                    <div id="5" class="individual-style item">
-                        <div class="header-and-description-container">
-                            <h3 class="individual-service-header">Service Number Five</h3>
-                            <p class="price-text">  . . . $120</p>
-                            <p class="individual-service-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe nihil at tempora.</p>
-                        </div>
-                        <div class="select-button-div">
-                            <button class="select-button" role="button">Select</button>
-                        </div>
-                    </div>
-                </div>
+                  </section>
                 <textarea id="comment" name="comment" rows="4" cols="50" placeholder="If you do not choose from the services above. Please explain the service you want with an uploaded picture"></textarea>
                 <form action="/action_page.php">
                     <input type="file" id="myFile" name="filename">
-                  </form>
+                </form>
             </div>
                 <div class="invoice-div">
                     <div class="invoice-children-divs header-div">
@@ -299,11 +288,12 @@
             <h1 class="booking-policy-header">Booking Policy</h1>
             <ul class="list-container-parent">
                 <li class="item-for-booking-policy">Please Be on time</li>
-                <li class="item-for-booking-policy"></i> Please be reasonably responsive and messages/calls</li>
-                <li class="item-for-booking-policy"></i> Children are okay</li>
+                <li class="item-for-booking-policy"></i> Please be reasonably responsive with messages/calls</li>
+                <li class="item-for-booking-policy"></i> Children are okay to bring</li>
                 <li class="item-for-booking-policy"></i> No smoking in facility</li>
                 <li class="item-for-booking-policy"></i> If any changes happen, please let me know ASAP</li>
                 <li class="item-for-booking-policy">10-Minute grace period</li>
+                <li class="item-for-booking-policy">I do travel, but I also have a dedicated salon if you want to come to me</li>
             </ul>
         </div>
     </div>
