@@ -20,7 +20,7 @@
 body {
     margin: 0;
     background-image: linear-gradient(to right top, #151636, #1e2141, #282c4d, #323858, #3c4464);
-    height: 130vh;
+    height: 160vh;
     display: flex;
     flex-direction: column;
 }
