@@ -17,9 +17,10 @@ export const page = {
     setServicePage: {
         elements: {
             container: document.querySelector('.set-styles-main-container'),
-            allSetBtn: document.querySelectorAll('.items'),
             textArea: document.getElementById('comment'),
-            browseBtn: document.getElementById('myFile')
+            browseBtn: document.getElementById('myFile'),
+            selectedBar: document.getElementById('selected-bar'),
+            allServices: document.querySelectorAll('.item')
         }
     },
     pricesPage: {

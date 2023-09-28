@@ -1,19 +1,17 @@
 import { page } from "./script/component-elements.js";
 import { machine } from "./script/state-machine.js";
 import { state } from "./script/state.js";
+import setStylePage from "./script/page-operations/set-style-page.js";
 
-// homepage -> step one
-page.homePage.elements.setBookingBtn.addEventListener('click', function() {
-    machine.dispatch('navigation', [{ type: state.PICK_SERVICE}])
-})
+const RETURN_STATE = 'returnWhereYouCameFrom'
 
-// clicking back button from step one
-page.footer.elements.prevBtn.addEventListener('click', function() {
-    machine.dispatch('navigation', [{type: 'previous_button'}])
-})
+const handleSetBookingBtnInRootPage = ()  => machine.dispatch('navigation', [{type: state.PICK_SERVICE}])
+const handlePrevBtnInSetServicePage = () => machine.dispatch('navigation', [{type: 'previous_button_in_footer'}])
+const handlePrevButtonInNavPricesPage = () => machine.dispatch('navigation', [{type: RETURN_STATE}])
+const handleBackButtonInPolicyPageInNav = () => machine.dispatch('navigation', [{type: RETURN_STATE}])
+const handleBackButtonInAboutMePageInNav = () => machine.dispatch('navigation', [{type: RETURN_STATE}])
 
- // nav price button
-page.navBar.elements.pricesText.addEventListener('click', function() {
+const handleNavPriceButtonClick = () => {
     if (machine.state !== state.NAV_PRICE && machine.state !== state.BOOKING_POLICY && machine.state !== state.ABOUT_ME) {
          if (machine.state === state.HOME) {
             machine.dispatch('navigation', [{type: state.NAV_PRICE}])
@@ -25,35 +23,23 @@ page.navBar.elements.pricesText.addEventListener('click', function() {
     } else if (machine.state === state.ABOUT_ME) {
         machine.dispatch('navToNav', [{type: state.NAV_PRICE}])
     }
-})
+}
 
-// back button in prices
-page.pricesPage.elements.leftChevron.addEventListener('click', function() {
-    machine.dispatch('navigation', [{type: 'returnWhereYouCameFrom'}])
-})
-
-// booking policy button in nav
-page.navBar.elements.bookingPolicyText.addEventListener('click', function() {
-        if (machine.state !== state.NAV_PRICE && machine.state !== state.BOOKING_POLICY && machine.state !== state.ABOUT_ME) {
-            if (machine.state === state.HOME) {
-                machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
-            } else if (machine.state === state.PICK_SERVICE) {
-                machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
-            }
-        } else if (machine.state === state.NAV_PRICE) {
-            machine.dispatch('navToNav', [{type: state.BOOKING_POLICY}])
-        } else if (machine.state === state.ABOUT_ME) {
-            machine.dispatch('navToNav', [{type: state.BOOKING_POLICY}])
+const handleBookingPolicyButtonInNav = () => {
+    if (machine.state !== state.NAV_PRICE && machine.state !== state.BOOKING_POLICY && machine.state !== state.ABOUT_ME) {
+        if (machine.state === state.HOME) {
+            machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
+        } else if (machine.state === state.PICK_SERVICE) {
+            machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
         }
-})
+    } else if (machine.state === state.NAV_PRICE) {
+        machine.dispatch('navToNav', [{type: state.BOOKING_POLICY}])
+    } else if (machine.state === state.ABOUT_ME) {
+        machine.dispatch('navToNav', [{type: state.BOOKING_POLICY}])
+    }
+}
 
-// back button in booking policy page
-page.bookinPolicyPage.elements.leftChevron.addEventListener('click', function() {
-    machine.dispatch('navigation', [{type: 'returnWhereYouCameFrom'}])
-})
-
-// about me button in nav
-page.navBar.elements.aboutMeText.addEventListener('click', () => {
+const handleAboutMeButtonInNav = () => {
     if (machine.state !== state.NAV_PRICE && machine.state !== state.BOOKING_POLICY && machine.state !== state.ABOUT_ME) {
         if (machine.state === state.HOME) {
             machine.dispatch('navigation', [{type: state.ABOUT_ME}])
@@ -65,9 +51,17 @@ page.navBar.elements.aboutMeText.addEventListener('click', () => {
     } else if (machine.state === state.BOOKING_POLICY) {
         machine.dispatch('navToNav', [{type: state.BOOKING_POLICY}])
     }
-})
+}
 
-// back button in about me page
-page.aboutMePage.elements.leftChevron.addEventListener('click', function() {
-    machine.dispatch('navigation', [{type: 'returnWhereYouCameFrom'}])
+page.homePage.elements.setBookingBtn.addEventListener('click', handleSetBookingBtnInRootPage)
+page.footer.elements.prevBtn.addEventListener('click', handlePrevBtnInSetServicePage)
+page.navBar.elements.pricesText.addEventListener('click', handleNavPriceButtonClick)
+page.pricesPage.elements.leftChevron.addEventListener('click', handlePrevButtonInNavPricesPage)
+page.navBar.elements.bookingPolicyText.addEventListener('click', handleBookingPolicyButtonInNav)
+page.bookinPolicyPage.elements.leftChevron.addEventListener('click', handleBackButtonInPolicyPageInNav)
+page.navBar.elements.aboutMeText.addEventListener('click', handleAboutMeButtonInNav)
+page.aboutMePage.elements.leftChevron.addEventListener('click', handleBackButtonInAboutMePageInNav)
+
+page.setServicePage.elements.allServices.forEach(service => {
+    service.addEventListener('click', () => setStylePage.toggleColor())
 })

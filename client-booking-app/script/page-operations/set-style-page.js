@@ -3,6 +3,10 @@ import footerComponent from "./footer-component.js";
 
 const setBookingContainerDiv = page.setServicePage.elements.container;
 
+export function toggleColor() {
+   console.log("here");
+}
+
 export function openPage() {
     setBookingContainerDiv.style.display = ""
     footerComponent.showFooter()
@@ -15,5 +19,6 @@ export function closePage() {
 
 export default {
     openPage,
-    closePage
+    closePage,
+    toggleColor
 }

@@ -40,7 +40,7 @@ export const machine = {
         },
         'pick_service': {
             navigation: function (action) {
-                if (action.type === 'previous_button') {
+                if (action.type === 'previous_button_in_footer') {
                     footerComponent.prevBtnClicked() //this doesnt do anything yet
                 } else if (action.type === state.PICK_SERVICE) {
                     setStylesPage.closePage()
