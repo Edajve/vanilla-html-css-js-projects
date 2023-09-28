@@ -38,7 +38,6 @@ page.navBar.elements.bookingPolicyText.addEventListener('click', function() {
             if (machine.state === state.HOME) {
                 machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
             } else if (machine.state === state.PICK_SERVICE) {
-                
                 machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
             }
         } else if (machine.state === state.NAV_PRICE) {

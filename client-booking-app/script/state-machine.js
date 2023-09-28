@@ -60,8 +60,7 @@ export const machine = {
         'price_navigation': {
             navigation: function(action) {
                 if (action.type === 'returnWhereYouCameFrom') {
-                    console.log(this.previousState);
-
+                    pricesPage.closePage()
                     switch (this.previousState) {
                         case state.HOME:
                             homePage.openPage()
