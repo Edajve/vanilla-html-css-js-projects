@@ -1,10 +1,19 @@
 import { page } from "../component-elements.js";
+import footerComponent from "./footer-component.js";
 
-export function openSetBookingPage() {
-    const setBookingContainerDiv = page.setServicePage.elements.container;
+const setBookingContainerDiv = page.setServicePage.elements.container;
+
+export function openPage() {
     setBookingContainerDiv.style.display = ""
+    footerComponent.showFooter()
+}
+
+export function closePage() {
+    setBookingContainerDiv.style.display = 'none'
+    footerComponent.closeFooter()
 }
 
 export default {
-    openSetBookingPage
+    openPage,
+    closePage
 }

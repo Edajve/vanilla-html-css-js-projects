@@ -17,7 +17,7 @@ export const machine = {
 
                 if (action.type === state.PICK_SERVICE) {
                     progressBar.increaseBarIcon()
-                    setStylesPage.openSetBookingPage()
+                    setStylesPage.openPage()
                     this.changeState(state.PICK_SERVICE)
                 } else if (action.type === state.NAV_PRICE) {
                     pricesPage.navigate()
@@ -41,6 +41,10 @@ export const machine = {
             navigation: function (action) {
                 if (action.type === 'previous_button') {
                     footerComponent.prevBtnClicked() //this doesnt do anything yet
+                } else if (action.type === state.PICK_SERVICE) {
+                    setStylesPage.closePage()
+                    pricesPage.navigate()
+                    this.changeState(state.NAV_PRICE, true)
                 }
             }
         },
@@ -48,11 +52,16 @@ export const machine = {
             navigation: function(action) {
                 if (action.type === 'returnWhereYouCameFrom') {
                     pricesPage.closePage()
+                    console.log(this.previousState);
 
                     switch (this.previousState) {
                         case state.HOME:
                             homePage.openPage()
                             this.changeState(state.HOME)
+                            break;
+                        case state.PICK_SERVICE:
+                            setStylesPage.openPage()
+                            this.changeState(state.PICK_SERVICE)
                             break;
                         case null:
                             console.error('this only happens if you get to the prices page without navigating to it. AKA impossible');

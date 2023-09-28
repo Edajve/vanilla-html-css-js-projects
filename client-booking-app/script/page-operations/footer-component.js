@@ -1,4 +1,7 @@
 import { isFirstStep } from "./progress-bar.js"
+import { page } from "../component-elements.js"
+
+const container = page.footer.elements.container
 
 function prevBtnClicked(){
     const onStepOne = isFirstStep()
@@ -10,6 +13,16 @@ function prevBtnClicked(){
     }
 }
 
+function showFooter() {
+    container.style.display = ''
+}
+
+function closeFooter() {
+    container.style.display = 'none'
+}
+
 export default {
-    prevBtnClicked
+    prevBtnClicked,
+    showFooter,
+    closeFooter      
 }

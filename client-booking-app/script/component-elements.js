@@ -42,6 +42,7 @@ export const page = {
     },
     footer: {
         elements: {
+            container: document.getElementById('footer-container'),
             prevBtn: document.getElementById('prev-btn'),
             nextBtn: document.getElementById('next-btn')
         }

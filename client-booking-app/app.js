@@ -12,10 +12,14 @@ page.footer.elements.prevBtn.addEventListener('click', function() {
     machine.dispatch('navigation', [{type: 'previous_button'}])
 })
 
-// homepage -> prices in nav
+ // nav price button
 page.navBar.elements.pricesText.addEventListener('click', function() {
     if (machine.state !== state.NAV_PRICE && machine.state !== state.BOOKING_POLICY && machine.state !== state.ABOUT_ME) {
-        machine.dispatch('navigation', [{type: state.NAV_PRICE}])
+         if (machine.state === state.HOME) {
+            machine.dispatch('navigation', [{type: state.NAV_PRICE}])
+        } else if (machine.state === state.PICK_SERVICE) {
+            machine.dispatch('navigation', [{type: state.PICK_SERVICE}])
+        }
     } else if (machine.state === state.BOOKING_POLICY) {
         machine.dispatch('navToNav', [{type: state.NAV_PRICE}])
     } else if (machine.state === state.ABOUT_ME) {
