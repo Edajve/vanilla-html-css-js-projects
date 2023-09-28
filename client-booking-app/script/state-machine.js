@@ -85,10 +85,14 @@ export const machine = {
                     pricesPage.closePage()
                     switch(this.state) {
                         case state.NAV_PRICE:
-                            bookingPolicy.openPage()
-                            this.changeState(state.BOOKING_POLICY)
+                            aboutMePage.openPage()
+                            this.changeState(state.ABOUT_ME)
                             break;
                     }
+                } else if (action.type === state.BOOKING_POLICY){
+                    pricesPage.closePage()
+                    bookingPolicy.openPage()
+                    this.changeState(state.BOOKING_POLICY)
                 }
             }
         },

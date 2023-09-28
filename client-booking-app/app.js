@@ -23,7 +23,6 @@ page.navBar.elements.pricesText.addEventListener('click', function() {
     } else if (machine.state === state.BOOKING_POLICY) {
         machine.dispatch('navToNav', [{type: state.NAV_PRICE}])
     } else if (machine.state === state.ABOUT_ME) {
-        console.log(machine.state);
         machine.dispatch('navToNav', [{type: state.NAV_PRICE}])
     }
 })
@@ -43,7 +42,7 @@ page.navBar.elements.bookingPolicyText.addEventListener('click', function() {
                 machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
             }
         } else if (machine.state === state.NAV_PRICE) {
-            machine.dispatch('navToNav', [{type: 'nav-to-nav'}])
+            machine.dispatch('navToNav', [{type: state.BOOKING_POLICY}])
         } else if (machine.state === state.ABOUT_ME) {
             machine.dispatch('navToNav', [{type: state.BOOKING_POLICY}])
         }
