@@ -1,444 +1,798 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="./styles/navbar.css">
-    <link rel="stylesheet" href="./styles/home-page.css">
-    <link rel="stylesheet" href="./styles/set-style-page.css">
-    <link rel="stylesheet" href="./styles/footer-styles.css">
-    <link rel="stylesheet" href="./styles/prices-page.css">
-    <link rel="stylesheet" href="./styles/booking-policy-page.css">
-    <link rel="stylesheet" href="./styles/about-me.css">
-    <link rel="stylesheet" href="./styles/set-bookin-sub-pages/set-booking-page.css">
-    <link rel="stylesheet" href="./styles/set-bookin-sub-pages/month-and-year-page.css">
-    <link rel="stylesheet" href="./styles/set-bookin-sub-pages/specific-day-page.css">
-    <link rel="stylesheet" href="./styles/set-bookin-sub-pages/finalize-date-page.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inclusive+Sans&family=Lora&family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inclusive+Sans&family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Client Booking</title>
-</head>
-<body>
-    <!-- navbar -->
-    <nav class="nav-container">
-        <div class="progress-bar-container">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="./styles/navbar.css">
+      <link rel="stylesheet" href="./styles/home-page.css">
+      <link rel="stylesheet" href="./styles/set-style-page.css">
+      <link rel="stylesheet" href="./styles/footer-styles.css">
+      <link rel="stylesheet" href="./styles/prices-page.css">
+      <link rel="stylesheet" href="./styles/booking-policy-page.css">
+      <link rel="stylesheet" href="./styles/about-me.css">
+      <link rel="stylesheet" href="./styles/set-bookin-sub-pages/set-booking-page.css">
+      <link rel="stylesheet" href="./styles/set-bookin-sub-pages/month-and-year-page.css">
+      <link rel="stylesheet" href="./styles/set-bookin-sub-pages/specific-day-page.css">
+      <link rel="stylesheet" href="./styles/set-bookin-sub-pages/finalize-date-page.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inclusive+Sans&family=Lora&family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inclusive+Sans&family=Roboto:wght@100&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+      <title>Client Booking</title>
+   </head>
+   <body>
+      <!-- navbar -->
+      <nav class="nav-container">
+         <div class="progress-bar-container">
             <div class="progression-increments-container">
-                <div id="progression_0" class="single-progress-bar"></div>
-                <div id="progression_1" class="single-progress-bar"></div>
-                <div id="progression_2" class="single-progress-bar"></div>
-                <div id="progression_3" class="single-progress-bar"></div>
+               <div id="progression_0" class="single-progress-bar"></div>
+               <div id="progression_1" class="single-progress-bar"></div>
+               <div id="progression_2" class="single-progress-bar"></div>
+               <div id="progression_3" class="single-progress-bar"></div>
             </div>
             <div class="progression-comment-container">Step 0: Intro</div>
-        </div>
-        <div class="nav-button-container">
+         </div>
+         <div class="nav-button-container">
             <p class="nav-buttons" id="prices">Prices</p>
             <p class="nav-buttons" id="booking-rules">Booking Policy</p>
             <p class="nav-buttons" id="about-me">About Me</p>
-        </div>
-    </nav>
-    <!-- homepage -->
-    <main class="homepage-main-container" style="display: none">
-        <div class="homepage-call-to-action-container">
+         </div>
+      </nav>
+      <!-- homepage -->
+      <main class="homepage-main-container" style="display: none">
+         <div class="homepage-call-to-action-container">
             <h1 class="homepage-h1">
-                <h1 class="home-page-header">Set an appointment with Sophistocated Salon</h1>
-                <p class="homepage-call-to-action-description">
-                    *Please review the Booking Policy page before booking for efficent service
-                </p>
+               <h1 class="home-page-header">Set an appointment with Sophistocated Salon</h1>
+               <p class="homepage-call-to-action-description">
+                  *Please review the Booking Policy page before booking for efficent service
+               </p>
             </h1>
             <button type="button" id="set-booking-btn" class="homepage-cta-button" role="button">Set Booking</button>
-        </div>
-    </main>
-    <!-- step 1:  styles -->
-    <main class="set-styles-main-container" style="display: none;">
-        <div class="step-1-body-container">
+         </div>
+      </main>
+      <!-- step 1:  styles -->
+      <main class="set-styles-main-container" style="display: none;">
+         <div class="step-1-body-container">
             <div class="backlog-styles-div">
-                <h2 class="title">Select Service</h2>
-                <section>
-                    <div class="tbl-header">
-                      <table cellpadding="0" cellspacing="0">
+               <h2 class="title">Select Service</h2>
+               <section>
+                  <div class="tbl-header">
+                     <table cellpadding="0" cellspacing="0">
                         <thead>
-                          <tr>
-                            <th>Service</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                            <th>lorem</th>
-                            <th>Selected</th>
-                          </tr>
+                           <tr>
+                              <th>Service</th>
+                              <th>Description</th>
+                              <th>Price</th>
+                              <th>lorem</th>
+                              <th>Selected</th>
+                           </tr>
                         </thead>
-                      </table>
-                    </div>
-                    <div class="tbl-content">
-                      <table cellpadding="0" cellspacing="0">
+                     </table>
+                  </div>
+                  <div class="tbl-content">
+                     <table cellpadding="0" cellspacing="0">
                         <tbody id="0" class="item">
-                          <tr>
-                            <td>Service 1</td>
-                            <td>LOREM </td>
-                            <td>$150.00</td>
-                            <td>+2.01</td>
-                            <td><div class="select-button-div">
-                                <button role="button" class="select-button selected"></button>
-                            </div></td>
-                          </tr>
+                           <tr>
+                              <td>Service 1</td>
+                              <td>LOREM </td>
+                              <td>$150.00</td>
+                              <td>+2.01</td>
+                              <td>
+                                 <div class="select-button-div">
+                                    <button role="button" class="select-button selected"></button>
+                                 </div>
+                              </td>
+                           </tr>
                         </tbody>
                         <tbody id="1" class="item">
-                          <tr>
-                            <td>Service 2</td>
-                            <td>LOREM </td>
-                            <td>$150.00</td>
-                            <td>+2.01</td>
-                            <td><div class="select-button-div">
-                                <button role="button" class="select-button"></button>
-                            </div></td>
-                          </tr>
+                           <tr>
+                              <td>Service 2</td>
+                              <td>LOREM </td>
+                              <td>$150.00</td>
+                              <td>+2.01</td>
+                              <td>
+                                 <div class="select-button-div">
+                                    <button role="button" class="select-button"></button>
+                                 </div>
+                              </td>
+                           </tr>
                         </tbody>
                         <tbody id="2" class="item">
-                            <tr>
+                           <tr>
                               <td>Service 3</td>
                               <td>LOREM </td>
                               <td>$150.00</td>
                               <td>+2.01</td>
-                              <td><div class="select-button-div">
-                                  <button role="button" class="select-button"></button>
-                              </div></td>
-                            </tr>
-                          </tbody>
-                          <tbody id="3" class="item">
-                            <tr>
+                              <td>
+                                 <div class="select-button-div">
+                                    <button role="button" class="select-button"></button>
+                                 </div>
+                              </td>
+                           </tr>
+                        </tbody>
+                        <tbody id="3" class="item">
+                           <tr>
                               <td>Service 4</td>
                               <td>LOREM </td>
                               <td>$150.00</td>
                               <td>+2.01</td>
-                              <td><div class="select-button-div">
-                                  <button role="button" class="select-button"></button>
-                              </div></td>
-                            </tr>
-                          </tbody>
-                          <tbody id="4" class="item">
-                            <tr>
+                              <td>
+                                 <div class="select-button-div">
+                                    <button role="button" class="select-button"></button>
+                                 </div>
+                              </td>
+                           </tr>
+                        </tbody>
+                        <tbody id="4" class="item">
+                           <tr>
                               <td>Other</td>
                               <td>Explain in text area</td>
                               <td>To be determined...</td>
                               <td>+2.01</td>
-                              <td><div class="select-button-div">
-                                  <button role="button" class="select-button"></button>
-                              </div></td>
-                            </tr>
-                          </tbody>
-                      </table>
-                    </div>
-                  </section>
-                <textarea id="comment" name="comment" rows="4" cols="50" placeholder="If you do not choose from the services above. Please explain the service you want with an uploaded picture"></textarea>
-                <form action="/action_page.php">
-                    <input type="file" id="myFile" name="filename">
-                </form>
+                              <td>
+                                 <div class="select-button-div">
+                                    <button role="button" class="select-button"></button>
+                                 </div>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </section>
+               <textarea id="comment" name="comment" rows="4" cols="50" placeholder="If you do not choose from the services above. Please explain the service you want with an uploaded picture"></textarea>
+               <form action="/action_page.php">
+                  <input type="file" id="myFile" name="filename">
+               </form>
             </div>
-                <div class="invoice-div">
-                    <div class="invoice-children-divs header-div">
-                       <h4 class="invoice-header-text">Invoice</h4>
-                       <div class="price-div">
-                        <strong class="price-text">Price</strong>
-                        <p class="number-price">$750.00</p>
-                       </div>
-                    </div>
-                    <hr class="divider">
-                    <div class="invoice-children-divs service-info-div">
-                       <div id="invoice-1" class="single-invoice">
-                            <div class="invoice-text-div">
-                                <strong class="invoice-name">Service Number Four</strong>
-                            </div>
-                            <div class="invoice-price-div">
-                                <p class="invoice-price-text">$150.00</p>
-                            </div>
-                       </div>
-                       <div id="invoice-1" class="single-invoice">
-                            <div class="invoice-text-div">
-                                <strong class="invoice-name">Service Number Four</strong>
-                            </div>
-                            <div class="invoice-price-div">
-                                <p class="invoice-price-text">$150.00</p>
-                            </div>
-                        </div>
-                        <div id="invoice-1" class="single-invoice">
-                             <div class="invoice-text-div">
-                                <strong class="invoice-name">Service Number Four</strong>
-                            </div>
-                            <div class="invoice-price-div">
-                                <p class="invoice-price-text">$150.00</p>
-                            </div>
-                        </div>
-                        <div id="invoice-1" class="single-invoice">
-                            <div class="invoice-text-div">
-                               <strong class="invoice-name">Service Number Four</strong>
-                           </div>
-                           <div class="invoice-price-div">
-                               <p class="invoice-price-text">$150.00</p>
-                           </div>
-                       </div>
-                       <div id="invoice-1" class="single-invoice">
-                            <div class="invoice-text-div">
-                                <strong class="invoice-name">Service Number Four</strong>
-                            </div>
-                            <div class="invoice-price-div">
-                                <p class="invoice-price-text">$150.00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="divider">
-                    <div class="users-comment-and-pic">
-                        <stong class="comment-verification">Comment <i class="far fa-check-circle icon" style="color: #41ab41;"></i></stong>
-                        <stong class="photo-verification">Photo <i class="fas fa-times icon" style="color: #d4372a;"></i></stong>
-                    </div>
-                </div>
-        </div>
-       
-    </main>
-    <!-- step 2: users information -->
-    <main class="main-kyc-container">
-        <div class="month-year-container">
+            <div class="invoice-div">
+               <div class="invoice-children-divs header-div">
+                  <h4 class="invoice-header-text">Invoice</h4>
+                  <div class="price-div">
+                     <strong class="price-text">Price</strong>
+                     <p class="number-price">$750.00</p>
+                  </div>
+               </div>
+               <hr class="divider">
+               <div class="invoice-children-divs service-info-div">
+                  <div id="invoice-1" class="single-invoice">
+                     <div class="invoice-text-div">
+                        <strong class="invoice-name">Service Number Four</strong>
+                     </div>
+                     <div class="invoice-price-div">
+                        <p class="invoice-price-text">$150.00</p>
+                     </div>
+                  </div>
+                  <div id="invoice-1" class="single-invoice">
+                     <div class="invoice-text-div">
+                        <strong class="invoice-name">Service Number Four</strong>
+                     </div>
+                     <div class="invoice-price-div">
+                        <p class="invoice-price-text">$150.00</p>
+                     </div>
+                  </div>
+                  <div id="invoice-1" class="single-invoice">
+                     <div class="invoice-text-div">
+                        <strong class="invoice-name">Service Number Four</strong>
+                     </div>
+                     <div class="invoice-price-div">
+                        <p class="invoice-price-text">$150.00</p>
+                     </div>
+                  </div>
+                  <div id="invoice-1" class="single-invoice">
+                     <div class="invoice-text-div">
+                        <strong class="invoice-name">Service Number Four</strong>
+                     </div>
+                     <div class="invoice-price-div">
+                        <p class="invoice-price-text">$150.00</p>
+                     </div>
+                  </div>
+                  <div id="invoice-1" class="single-invoice">
+                     <div class="invoice-text-div">
+                        <strong class="invoice-name">Service Number Four</strong>
+                     </div>
+                     <div class="invoice-price-div">
+                        <p class="invoice-price-text">$150.00</p>
+                     </div>
+                  </div>
+               </div>
+               <hr class="divider">
+               <div class="users-comment-and-pic">
+                  <stong class="comment-verification">Comment <i class="far fa-check-circle icon" style="color: #41ab41;"></i></stong>
+                  <stong class="photo-verification">Photo <i class="fas fa-times icon" style="color: #d4372a;"></i></stong>
+               </div>
+            </div>
+         </div>
+      </main>
+      <!-- step 2: users information -->
+      <main class="main-kyc-container">
+         <div class="month-year-container" style="display: none;">
             <h1 class="calendar-header">Calendar</h1>
             <div class="display-date-container">
-                <p class="choosen-date">
-                    <i class="fas fa-calendar-day"></i>
-                     Wednesday, 27 September 2023
-                </p>
-                <div class="left-right-container">
-                    <button><i class="fas fa-chevron-left"></i></button>
-                    <button><i class="fas fa-chevron-right"></i></button>
-                </div>
+               <p class="choosen-date">
+                  <i class="fas fa-calendar-day"></i>
+                  Wednesday, 27 September 2023
+               </p>
+               <div class="left-right-container">
+                  <button><i class="fas fa-chevron-left"></i></button>
+                  <button><i class="fas fa-chevron-right"></i></button>
+               </div>
             </div>
             <div class="calendar-and-header-container">
-                <div id="space-0" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-1" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-2" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-3" class="day-item-space-highlighted"><p class="date-num">1</p></div>
-                <div id="space-4" class="day-item-space-highlighted"><p class="date-num">1</p></div>
-                <div id="space-5" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-6" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-7" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-8" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-9" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-10" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-11" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-12" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-13" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-14" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-15" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-16" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-17" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-18" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-19" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-20" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-21" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-22" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-23" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-24" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-25" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-26" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-27" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-28" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-29" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-30" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-31" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-32" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-33" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-34" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-35" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-36" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-37" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-38" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-39" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-40" class="day-item-space"><p class="date-num">1</p></div>
-                <div id="space-41" class="day-item-space"><p class="date-num">1</p></div>
+               <div id="space-0" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-1" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-2" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-3" class="day-item-space-highlighted">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-4" class="day-item-space-highlighted">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-5" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-6" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-7" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-8" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-9" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-10" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-11" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-12" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-13" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-14" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-15" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-16" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-17" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-18" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-19" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-20" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-21" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-22" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-23" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-24" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-25" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-26" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-27" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-28" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-29" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-30" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-31" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-32" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-33" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-34" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-35" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-36" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-37" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-38" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-39" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-40" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
+               <div id="space-41" class="day-item-space">
+                  <p class="date-num">1</p>
+               </div>
             </div>
             <button class="next-btn" role="button">NEXT</button>
-        </div>
-        <div class="specific-day disable" style="display: none;"></div>
-        <div class="finalize-date disable" style="display: none;"></div>
-    </main>
-    <!-- Prices page -->
-    <div class="main-prices-container" style="display: none;">
-        <div class="prices-description">
-                <i class="prices-back-btn fas fa-chevron-left fa-2x"></i>
+         </div>
+         <div class="specific-day">
+            <h1 class="calendar-header-to-book-date">Pick Time time of day</h1>
+            <div class="date-and-time-div">
+                <div class="display-date-container-for-specific-date">
+                   <p class="choosen-date">
+                      <i class="fas fa-calendar-day"></i>
+                      Wednesday, 12:00 AM
+                   </p>
+                   <div class="time-setter">
+                    <input class="input-text-field" type="text" name="" id="specific-time-of-day" placeholder="e.g. 12:00AM" value="">
+                </div>
+                </div>
+                
+            </div>
+            <div class="single-day-scrollable-div">
+               <div class="todays-schedule-text-container">
+                  <p class="todays-schedule-text">Today's schedule</p>
+               </div>
+               <div class="daily-UI">
+                  <div id="0" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">1AM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="1" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">2AM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="2" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">3AM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="3" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">4AM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="4" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">5AM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="5" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">6AM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="6" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">7AM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="7" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">8AM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="8" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">9AM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="9" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">10AM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="10" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">11AM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="11" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">12AM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="13" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">1PM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="14" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">2PM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="15" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">3PM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="16" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">4PM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="17" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">5PM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="18" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">6PM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="19" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">7PM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="20" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">8PM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="21" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">9PM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="22" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">10PM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="23" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">11PM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+                  <div id="24" class="time-slot">
+                     <div class="specific-time">
+                        <p class="exact-time">12PM</p>
+                     </div>
+                     <div class="time-box">
+                        <div class="colored-slit"></div>
+                        <div class="bottom-border-for-time-slot"></div>
+                     </div>
+                     <div class="empty-space"></div>
+                  </div>
+               </div>
+            </div>
+            <div class="next-button-div">
+                <button class="next-btn-for-specific-day" role="button">NEXT</button>
+            </div>
+         </div>
+         <div class="finalize-date disable" style="display: none;"></div>
+      </main>
+      <!-- Prices page -->
+      <div class="main-prices-container" style="display: none;">
+         <div class="prices-description">
+            <i class="prices-back-btn fas fa-chevron-left fa-2x"></i>
             <h1 class="prices-text">Base Prices & Services</h1>
             <div class="prices-subtext-container">
-                <p>* If you want a service outside of these prices, please include
-                    a description of what you want along with a picture. I will
-                    contact you with prices once complete with booking process.
-                </p>
+               <p>* If you want a service outside of these prices, please include
+                  a description of what you want along with a picture. I will
+                  contact you with prices once complete with booking process.
+               </p>
             </div>
-        </div>
-        <div class="prices-container">
+         </div>
+         <div class="prices-container">
             <div class="price-card" id="price_0">
-                <div class="card-header-div card-component">
-                    <h2 class="card-price">$125</h2>
-                    <p class="card-name">Lorem, ipsum.</p>
-                </div>
-                <hr class="divider">
-                <div class="card-body-div card-component">
-                    <ul class="list-container">
-                        <ul class="list-item">Lorem ipsum dolor sit.</ul>
-                        <ul class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</ul>
-                        <ul class="list-item">Lorem, ipsum.</ul>
-                        <ul class="list-item">Lorem ipsum dolor sit amet.</ul>
-                    </ul>
-                </div>
-                <hr class="divider">
-                <div class="card-footer-div card-component">
-                    <p class="depsit-price">20% Deposit at least three days before service date</p>
-                </div>
+               <div class="card-header-div card-component">
+                  <h2 class="card-price">$125</h2>
+                  <p class="card-name">Lorem, ipsum.</p>
+               </div>
+               <hr class="divider">
+               <div class="card-body-div card-component">
+                  <ul class="list-container">
+                     <ul class="list-item">Lorem ipsum dolor sit.</ul>
+                     <ul class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</ul>
+                     <ul class="list-item">Lorem, ipsum.</ul>
+                     <ul class="list-item">Lorem ipsum dolor sit amet.</ul>
+                  </ul>
+               </div>
+               <hr class="divider">
+               <div class="card-footer-div card-component">
+                  <p class="depsit-price">20% Deposit at least three days before service date</p>
+               </div>
             </div>
             <div class="price-card" id="price_1">
-                <div class="card-header-div card-component">
-                    <h2 class="card-price">$85</h2>
-                    <p class="card-name">Lorem, ipsum.</p>
-                </div>
-                <hr class="divider">
-                <div class="card-body-div card-component">
-                    <ul class="list-container">
-                        <ul class="list-item">Lorem ipsum dolor sit.</ul>
-                        <ul class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</ul>
-                        <ul class="list-item">Lorem, ipsum.</ul>
-                        <ul class="list-item">Lorem ipsum dolor sit amet.</ul>
-                    </ul>
-                </div>
-                <hr class="divider">
-                <div class="card-footer-div card-component">
-                    <p class="depsit-price">10% Deposit at least three days before service date</p>
-                </div>
+               <div class="card-header-div card-component">
+                  <h2 class="card-price">$85</h2>
+                  <p class="card-name">Lorem, ipsum.</p>
+               </div>
+               <hr class="divider">
+               <div class="card-body-div card-component">
+                  <ul class="list-container">
+                     <ul class="list-item">Lorem ipsum dolor sit.</ul>
+                     <ul class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</ul>
+                     <ul class="list-item">Lorem, ipsum.</ul>
+                     <ul class="list-item">Lorem ipsum dolor sit amet.</ul>
+                  </ul>
+               </div>
+               <hr class="divider">
+               <div class="card-footer-div card-component">
+                  <p class="depsit-price">10% Deposit at least three days before service date</p>
+               </div>
             </div>
             <div class="price-card" id="price_2">
-                <div class="card-header-div card-component">
-                    <h2 class="card-price">$205</h2>
-                    <p class="card-name">Lorem, ipsum.</p>
-                </div>
-                <hr class="divider">
-                <div class="card-body-div card-component">
-                    <ul class="list-container">
-                        <ul class="list-item">Lorem ipsum dolor sit.</ul>
-                        <ul class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</ul>
-                        <ul class="list-item">Lorem, ipsum.</ul>
-                        <ul class="list-item">Lorem ipsum dolor sit amet.</ul>
-                    </ul>
-                </div>
-                <hr class="divider">
-                <div class="card-footer-div card-component">
-                    <p class="depsit-price">20% Deposit at least three days before service date</p>
-                </div>
+               <div class="card-header-div card-component">
+                  <h2 class="card-price">$205</h2>
+                  <p class="card-name">Lorem, ipsum.</p>
+               </div>
+               <hr class="divider">
+               <div class="card-body-div card-component">
+                  <ul class="list-container">
+                     <ul class="list-item">Lorem ipsum dolor sit.</ul>
+                     <ul class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</ul>
+                     <ul class="list-item">Lorem, ipsum.</ul>
+                     <ul class="list-item">Lorem ipsum dolor sit amet.</ul>
+                  </ul>
+               </div>
+               <hr class="divider">
+               <div class="card-footer-div card-component">
+                  <p class="depsit-price">20% Deposit at least three days before service date</p>
+               </div>
             </div>
             <div class="price-card" id="price_3">
-                <div class="card-header-div card-component">
-                    <h2 class="card-price">$155</h2>
-                    <p class="card-name">Lorem, ipsum.</p>
-                </div>
-                <hr class="divider">
-                <div class="card-body-div card-component">
-                    <ul class="list-container">
-                        <ul class="list-item">Lorem ipsum dolor sit.</ul>
-                        <ul class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</ul>
-                        <ul class="list-item">Lorem, ipsum.</ul>
-                        <ul class="list-item">Lorem ipsum dolor sit amet.</ul>
-                    </ul>
-                </div>
-                <hr class="divider">
-                <div class="card-footer-div card-component">
-                    <p class="depsit-price">20% Deposit at least three days before service date</p>
-                </div>
+               <div class="card-header-div card-component">
+                  <h2 class="card-price">$155</h2>
+                  <p class="card-name">Lorem, ipsum.</p>
+               </div>
+               <hr class="divider">
+               <div class="card-body-div card-component">
+                  <ul class="list-container">
+                     <ul class="list-item">Lorem ipsum dolor sit.</ul>
+                     <ul class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</ul>
+                     <ul class="list-item">Lorem, ipsum.</ul>
+                     <ul class="list-item">Lorem ipsum dolor sit amet.</ul>
+                  </ul>
+               </div>
+               <hr class="divider">
+               <div class="card-footer-div card-component">
+                  <p class="depsit-price">20% Deposit at least three days before service date</p>
+               </div>
             </div>
             <div class="price-card" id="price_4">
-                <div class="card-header-div card-component">
-                    <h2 class="card-price">$90</h2>
-                    <p class="card-name">Lorem, ipsum.</p>
-                </div>
-                <hr class="divider">
-                <div class="card-body-div card-component">
-                    <ul class="list-container">
-                        <ul class="list-item">Lorem ipsum dolor sit.</ul>
-                        <ul class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</ul>
-                        <ul class="list-item">Lorem, ipsum.</ul>
-                        <ul class="list-item">Lorem ipsum dolor sit amet.</ul>
-                    </ul>
-                </div>
-                <hr class="divider">
-                <div class="card-footer-div card-component">
-                    <p class="depsit-price">10% Deposit at least three days before service date</p>
-                </div>
+               <div class="card-header-div card-component">
+                  <h2 class="card-price">$90</h2>
+                  <p class="card-name">Lorem, ipsum.</p>
+               </div>
+               <hr class="divider">
+               <div class="card-body-div card-component">
+                  <ul class="list-container">
+                     <ul class="list-item">Lorem ipsum dolor sit.</ul>
+                     <ul class="list-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</ul>
+                     <ul class="list-item">Lorem, ipsum.</ul>
+                     <ul class="list-item">Lorem ipsum dolor sit amet.</ul>
+                  </ul>
+               </div>
+               <hr class="divider">
+               <div class="card-footer-div card-component">
+                  <p class="depsit-price">10% Deposit at least three days before service date</p>
+               </div>
             </div>
-        
-        </div>
-    </div>
-    <!-- Booking policy page -->
-    <div class="mainner" style="display: none;">
-        <i id="back-btn-in-policy-page" class="prices-back-btn fas fa-chevron-left fa-2x"></i>
-        <div class="booking-policy-container">
+         </div>
+      </div>
+      <!-- Booking policy page -->
+      <div class="mainner" style="display: none;">
+         <i id="back-btn-in-policy-page" class="prices-back-btn fas fa-chevron-left fa-2x"></i>
+         <div class="booking-policy-container">
             <h1 class="booking-policy-header">Booking Policy</h1>
             <ul class="list-container-parent">
-                <li class="item-for-booking-policy">Please Be on time</li>
-                <li class="item-for-booking-policy"></i> Please be reasonably responsive with messages/calls</li>
-                <li class="item-for-booking-policy"></i> Children are okay to bring</li>
-                <li class="item-for-booking-policy"></i> No smoking in facility</li>
-                <li class="item-for-booking-policy"></i> If any changes happen, please let me know ASAP</li>
-                <li class="item-for-booking-policy">10-Minute grace period</li>
-                <li class="item-for-booking-policy">I do travel, but I also have a dedicated salon if you want to come to me</li>
+               <li class="item-for-booking-policy">Please Be on time</li>
+               <li class="item-for-booking-policy"></i> Please be reasonably responsive with messages/calls</li>
+               <li class="item-for-booking-policy"></i> Children are okay to bring</li>
+               <li class="item-for-booking-policy"></i> No smoking in facility</li>
+               <li class="item-for-booking-policy"></i> If any changes happen, please let me know ASAP</li>
+               <li class="item-for-booking-policy">10-Minute grace period</li>
+               <li class="item-for-booking-policy">I do travel, but I also have a dedicated salon if you want to come to me</li>
             </ul>
-        </div>
-    </div>
-    <!-- About me page -->
-    <div id="about-me-id" class="about-me-container" style="display: none;">
-        <div class="all-text">
+         </div>
+      </div>
+      <!-- About me page -->
+      <div id="about-me-id" class="about-me-container" style="display: none;">
+         <div class="all-text">
             <i id="back-btn-in-about-me-page" class="prices-back-btn fas fa-chevron-left fa-2x"></i>
             <h1 class="header-text">About Me</h1>
             <h2 class="subtext_1 subtext">Lorem ipsum dolor sit</h2>
             <p class="paragraph_1 paragraph">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Odio eum, illo eos ducimus molestiae blanditiis iste numquam
-                et inventore deleniti alias, repellat ad? Magni a distinctio
-                tempore ipsum obcaecati fuga?
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+               Odio eum, illo eos ducimus molestiae blanditiis iste numquam
+               et inventore deleniti alias, repellat ad? Magni a distinctio
+               tempore ipsum obcaecati fuga?
             </p>
             <h2 class="subtext_2 subtext">Lorem ipsum dolor sit.</h2>
             <p class="paragraph_2 paragraph">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Ullam impedit possimus nisi, rem voluptate fugit odio
-                blanditiis! Animi quos ducimus expedita rerum possimus
-                tenetur vel esse eligendi ullam sunt alias est quas
-                exercitationem nobis accusamus minima perferendis sint,
-                dolores illo
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+               Ullam impedit possimus nisi, rem voluptate fugit odio
+               blanditiis! Animi quos ducimus expedita rerum possimus
+               tenetur vel esse eligendi ullam sunt alias est quas
+               exercitationem nobis accusamus minima perferendis sint,
+               dolores illo
             </p>
-        </div>
-        <div class="vertical-line"></div>
-        <div class="personal-information container">
+         </div>
+         <div class="vertical-line"></div>
+         <div class="personal-information container">
             <div class="circle"><i class="fas fa-regular fa-user"></i></div>
             <div class="profile-card square">
-                <h3 class="main-name">Lorem, ipsum.s</h3>
-                <p class="social-media-tag">@Lorem87</p>
-                <div class="location-circle">
-                    <p class="location">Chicago, IL</p>
-                </div>
-                <hr class="divider">
-                <div class="social-media-icons">
-                    <i class="icon fab fa-twitter fa-2x x"></i>
-                    <i class="icon fab fa-facebook-f facebook fa-2x"></i>
-                    <i class="icon fab fa-instagram instagram fa-2x"></i>
-                    <i class="icon fab fa-linkedin linkedIn fa-2x"></i>
-                </div>
+               <h3 class="main-name">Lorem, ipsum.s</h3>
+               <p class="social-media-tag">@Lorem87</p>
+               <div class="location-circle">
+                  <p class="location">Chicago, IL</p>
+               </div>
+               <hr class="divider">
+               <div class="social-media-icons">
+                  <i class="icon fab fa-twitter fa-2x x"></i>
+                  <i class="icon fab fa-facebook-f facebook fa-2x"></i>
+                  <i class="icon fab fa-instagram instagram fa-2x"></i>
+                  <i class="icon fab fa-linkedin linkedIn fa-2x"></i>
+               </div>
             </div>
-        </div>
-    </div>
-    <footer class="footer-navigation-container">
-        <div id="previous-step-btn">
+         </div>
+      </div>
+      <footer class="footer-navigation-container">
+         <div id="previous-step-btn">
             <button id="prev-btn" class="navigation-button" role="button">Prev</button>
-        </div>
-        <div id="next-step-btn">
+         </div>
+         <div id="next-step-btn">
             <button id="next-btn" class="navigation-button" role="button">Next</button>
-        </div>
-    </footer>
-</body>
-<script type="module" src="./app.js"></script>
+         </div>
+      </footer>
+   </body>
+   <script type="module" src="./app.js"></script>
 </html>
