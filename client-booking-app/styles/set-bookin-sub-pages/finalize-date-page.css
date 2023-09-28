@@ -1,6 +1,29 @@
 .finalize-date {
-    width: 50rem;
-    height: 38rem;
+    width: 26rem;
+    height: 30rem;
     margin: 1.5rem auto;
-    border: 1px solid cadetblue;
+    background-color: var(--primary-background-color);
+    border-radius: 10px;
+    padding: 1rem 3rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.finalize-date:hover {
+    /* Add other styles for the hover state here */
+    background-color: var(--secondary-background-color);
+}
+
+.finalize-date:active {
+    padding: 1.5rem 3.5rem;
+}
+
+.finalize-date-and-time-h2, 
+.date-and-time {
+    color: white;
+    font-family: var(--primary-font);
+}
+
+.finalize-date-and-time-h2 {
+    margin-top: 3rem;
 }
