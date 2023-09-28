@@ -6,6 +6,7 @@ import progressBar from "./page-operations/progress-bar.js";
 import pricesPage from "./page-operations/prices-page.js";
 import bookingPolicy from "./page-operations/booking-policy.js";
 import aboutMePage from "./page-operations/about-me-page.js";
+import setStylePage from "./page-operations/set-style-page.js";
 
 export const machine = {
     state: state.HOME,
@@ -49,6 +50,10 @@ export const machine = {
                     setStylesPage.closePage()
                     bookingPolicy.openPage();
                     this.changeState(state.BOOKING_POLICY, true)
+                } else if (action.type === state.ABOUT_ME) {
+                    setStylePage.closePage()
+                    aboutMePage.openPage()
+                    this.changeState(state.ABOUT_ME, true)
                 }
             }
         },
@@ -135,6 +140,10 @@ export const machine = {
                             case state.HOME:
                                 homePage.openPage()
                                 this.changeState(state.HOME)
+                                break;
+                            case state.PICK_SERVICE:
+                                setStylePage.openPage()
+                                this.changeState(state.PICK_SERVICE)
                                 break;
                             case null:
                                 console.error('this only happens if you get to the prices page without navigating to it. AKA impossible');
