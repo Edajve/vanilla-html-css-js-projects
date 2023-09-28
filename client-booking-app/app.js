@@ -63,5 +63,5 @@ page.navBar.elements.aboutMeText.addEventListener('click', handleAboutMeButtonIn
 page.aboutMePage.elements.leftChevron.addEventListener('click', handleBackButtonInAboutMePageInNav)
 
 page.setServicePage.elements.allServices.forEach(service => {
-    service.addEventListener('click', () => setStylePage.toggleColor())
+    service.addEventListener('click', (element) => setStylePage.toggleColor(element))
 })

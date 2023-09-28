@@ -3,8 +3,10 @@ import footerComponent from "./footer-component.js";
 
 const setBookingContainerDiv = page.setServicePage.elements.container;
 
-export function toggleColor() {
-   console.log("here");
+export function toggleColor(element) {
+    const id = element.currentTarget.id;
+    const parentElement = document.getElementById(id);
+    if (parentElement) parentElement.querySelector('.select-button').classList.toggle('selected')
 }
 
 export function openPage() {

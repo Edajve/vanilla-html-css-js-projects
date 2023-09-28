@@ -21,6 +21,10 @@ export const page = {
             browseBtn: document.getElementById('myFile'),
             selectedBar: document.getElementById('selected-bar'),
             allServices: document.querySelectorAll('.item')
+        },
+        states: {
+            classToHighLightBar: 'selected',
+            classToUnhighLightABar:  'select-button'
         }
     },
     pricesPage: {
