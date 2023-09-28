@@ -45,13 +45,16 @@ export const machine = {
                     setStylesPage.closePage()
                     pricesPage.navigate()
                     this.changeState(state.NAV_PRICE, true)
+                } else if (action.type === state.BOOKING_POLICY) {
+                    setStylesPage.closePage()
+                    bookingPolicy.openPage();
+                    this.changeState(state.BOOKING_POLICY, true)
                 }
             }
         },
         'price_navigation': {
             navigation: function(action) {
                 if (action.type === 'returnWhereYouCameFrom') {
-                    pricesPage.closePage()
                     console.log(this.previousState);
 
                     switch (this.previousState) {
@@ -93,6 +96,10 @@ export const machine = {
                         case state.HOME:
                             homePage.openPage()
                             this.changeState(state.HOME)
+                            break;
+                        case state.PICK_SERVICE:
+                            setStylesPage.openPage()
+                            this.changeState(state.PICK_SERVICE)
                             break;
                         case null:
                             console.error('this only happens if you get to the prices page without navigating to it. AKA impossible');

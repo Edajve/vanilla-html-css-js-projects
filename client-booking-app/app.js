@@ -33,10 +33,15 @@ page.pricesPage.elements.leftChevron.addEventListener('click', function() {
     machine.dispatch('navigation', [{type: 'returnWhereYouCameFrom'}])
 })
 
-// homepage -> booking policy in nav
+// booking policy button in nav
 page.navBar.elements.bookingPolicyText.addEventListener('click', function() {
         if (machine.state !== state.NAV_PRICE && machine.state !== state.BOOKING_POLICY && machine.state !== state.ABOUT_ME) {
-            machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
+            if (machine.state === state.HOME) {
+                machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
+            } else if (machine.state === state.PICK_SERVICE) {
+                
+                machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
+            }
         } else if (machine.state === state.NAV_PRICE) {
             machine.dispatch('navToNav', [{type: 'nav-to-nav'}])
         } else if (machine.state === state.ABOUT_ME) {
