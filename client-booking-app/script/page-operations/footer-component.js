@@ -1,7 +1,7 @@
 import { isFirstStep } from "./progress-bar.js"
 import { page } from "../component-elements.js"
 
-const container = page.footer.elements.container
+const container = page.footer.elements.pageContainer
 
 function prevBtnClicked(){
     const onStepOne = isFirstStep()

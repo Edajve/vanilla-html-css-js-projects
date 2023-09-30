@@ -10,44 +10,42 @@ export const page = {
     },
     homePage: {
         elements : {
-            containerDiv: document.querySelector('.homepage-main-container'),
+            pageContainer: document.querySelector('.homepage-main-container'),
             setBookingBtn: document.querySelector('.homepage-cta-button')
         }
     },
     setServicePage: {
         elements: {
-            container: document.querySelector('.set-styles-main-container'),
+            pageContainer: document.querySelector('.set-styles-main-container'),
             textArea: document.getElementById('comment'),
-            browseBtn: document.getElementById('myFile'),
+            fileDownloadBtn: document.getElementById('myFile'),
             selectedBar: document.getElementById('selected-bar'),
-            allServices: document.querySelectorAll('.item')
-        },
-        states: {
-            classToHighLightBar: 'selected',
-            classToUnhighLightABar:  'select-button'
+            allIndividualServices: document.querySelectorAll('.item'),
+            mainPriceInInvoive: document.querySelector('.number-price'),
+            divWithIndividualServices: document.getElementById('table-container-for-available-items')
         }
     },
     pricesPage: {
         elements: {
-            container: document.querySelector('.main-prices-container'),
+            pageContainer: document.querySelector('.main-prices-container'),
             leftChevron: document.querySelector('.prices-back-btn')
         }
     },
     bookinPolicyPage: {
         elements: {
-            container: document.querySelector('.mainner'),
+            pageContainer: document.querySelector('.mainner'),
             leftChevron: document.getElementById('back-btn-in-policy-page')
         }
     },
     aboutMePage: {
         elements: {
-            container: document.getElementById('about-me-id'),
+            pageContainer: document.getElementById('about-me-id'),
             leftChevron: document.getElementById('back-btn-in-about-me-page')
         }
     },
     footer: {
         elements: {
-            container: document.getElementById('footer-container'),
+            pageContainer: document.getElementById('footer-container'),
             prevBtn: document.getElementById('prev-btn'),
             nextBtn: document.getElementById('next-btn')
         }

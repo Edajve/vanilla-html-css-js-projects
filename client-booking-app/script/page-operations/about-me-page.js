@@ -1,6 +1,6 @@
 import { page } from "../component-elements.js"
 
-const container = page.aboutMePage.elements.container
+const container = page.aboutMePage.elements.pageContainer
 
 export function openPage() {
     container.style.display = ''

@@ -1,6 +1,6 @@
 import { page } from "../component-elements.js";
 
-const container = page.bookinPolicyPage.elements.container
+const container = page.bookinPolicyPage.elements.pageContainer
 
 export function openPage() {
     container.style.display = ""

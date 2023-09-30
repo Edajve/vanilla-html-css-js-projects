@@ -1,6 +1,6 @@
 import { page } from "../component-elements.js"
 
-const pricesContainer = page.pricesPage.elements.container
+const pricesContainer = page.pricesPage.elements.pageContainer
 
 export function navigate() {
     pricesContainer.style.display = ""

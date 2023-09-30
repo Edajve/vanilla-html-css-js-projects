@@ -62,6 +62,6 @@ page.bookinPolicyPage.elements.leftChevron.addEventListener('click', handleBackB
 page.navBar.elements.aboutMeText.addEventListener('click', handleAboutMeButtonInNav)
 page.aboutMePage.elements.leftChevron.addEventListener('click', handleBackButtonInAboutMePageInNav)
 
-page.setServicePage.elements.allServices.forEach(service => {
+page.setServicePage.elements.allIndividualServices.forEach(service => {
     service.addEventListener('click', (element) => setStylePage.toggleColor(element))
 })
