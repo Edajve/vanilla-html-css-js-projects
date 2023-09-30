@@ -22,7 +22,8 @@ export const page = {
             selectedBar: document.getElementById('selected-bar'),
             allIndividualServices: document.querySelectorAll('.item'),
             mainPriceInInvoive: document.querySelector('.number-price'),
-            divWithIndividualServices: document.getElementById('table-container-for-available-items')
+            divWithIndividualServices: document.getElementById('table-container-for-available-items'),
+            invoiceListContainer: document.querySelector('.invoice-children-divs')
         }
     },
     pricesPage: {
