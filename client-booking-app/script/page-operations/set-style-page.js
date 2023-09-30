@@ -15,6 +15,7 @@ function pushChoosenServicesToGlobal() {
     const selectedPills = getIdOfGreenPills(allPills)
 
     selectedServiceIds = []
+
     selectedPills.map(element => {
         const elementId = traverseToParent(element)
         selectedServiceIds.push(elementId)
@@ -22,6 +23,52 @@ function pushChoosenServicesToGlobal() {
 
     // update UI based on choosen services from user
     addInvoicePrice(selectedServiceIds)
+    addServiceItemToInvoice(selectedServiceIds)
+}
+
+function addServiceItemToInvoice(services) {
+    const invoiceListContainer = page.setServicePage.elements.invoiceListContainer
+    clearListItemContainer(invoiceListContainer)
+    services.forEach(a => {
+        const item = createInvoiceElement('Test 123', 50)
+        invoiceListContainer.appendChild(item)
+    })
+}
+
+const clearListItemContainer = containerDiv => containerDiv.innerHTML = ''
+
+function createInvoiceElement(serviceName, serviceAmount) {
+    const parentDiv = document.createElement('div');
+    parentDiv.classList.add('single-invoice');
+
+    parentDiv.id = Math.floor(Math.random() * (50000 - 0) + 50000).toString() // generated id
+
+    const textDiv = document.createElement('div');
+    textDiv.classList.add('invoice-text-div');
+
+    const text = document.createElement('strong');
+    text.classList.add('invoice-name');
+    text.innerHTML = `${serviceName}`
+
+    const priceDiv = document.createElement('div');
+    priceDiv.classList.add('invoice-price-div');
+    priceDiv.innerHTML = `$${serviceAmount}.00`
+
+    const price = document.createElement('p');
+    price.classList.add('invoice-price-text');
+
+    //clear items before adding fresh list of selected
+    if (parentDiv.children.length > 0) {
+
+    }
+
+    textDiv.appendChild(text);
+    priceDiv.appendChild(price);
+
+    parentDiv.appendChild(textDiv);
+    parentDiv.appendChild(priceDiv);
+    
+    return parentDiv
 }
 
 function addInvoicePrice(listOfChoosenIds) {
@@ -93,20 +140,6 @@ const getAllPillsId = () => {
 }
 
 const updateInvoicePriceUI = amount => page.setServicePage.elements.mainPriceInInvoive.innerHTML = `$${amount}.00`
-
-function addServiceItemToInvoice() {
-    //createInvoiceElement()
-    //addItemToInvoiceList('TestService', )
-    // add service to the 'invoiceListContainer' in pages alonw with the name and the price of the
-}
-
-function createInvoiceElement() {
-    //create a main div with the class name 'single-invoice' with an id of 'invoice-{incremented number}
-        //child div with the class 'invoice-text-div'
-            //strong tag with the class 'invoice-name' with the inner text the name of the service
-        //child div with the class 'invoice-price-div'
-            //p tag with the class name 'invoice-price-text' with the price in the inner text
-}
 
 const setBookingContainerDiv = page.setServicePage.elements.pageContainer;
 
