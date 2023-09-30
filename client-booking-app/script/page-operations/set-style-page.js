@@ -26,39 +26,41 @@ function pushChoosenServicesToGlobal() {
     addServiceItemToInvoice(selectedServiceIds)
 }
 
-
-function addServiceItemToInvoice() {
-    const item = createInvoiceElement()
-    page.setServicePage.elements.invoiceListContainer.appendChild(item)
-
+function addServiceItemToInvoice(services) {
+    const invoiceListContainer = page.setServicePage.elements.invoiceListContainer
+    clearListItemContainer(invoiceListContainer)
+    services.forEach(a => {
+        const item = createInvoiceElement('Test 123', 50)
+        invoiceListContainer.appendChild(item)
+    })
 }
 
-/*
-TODOS
-- make dynamic by passing dynamic name and service amount.
-- add a dynamic id to parentDiv
-- find out why the dont is working
-*/
+const clearListItemContainer = containerDiv => containerDiv.innerHTML = ''
 
-function createInvoiceElement() {
+function createInvoiceElement(serviceName, serviceAmount) {
     const parentDiv = document.createElement('div');
     parentDiv.classList.add('single-invoice');
 
-    // parentDiv.id = Math.floor(Math.random() * (50 - 0) + 50).toString() // generated it
+    parentDiv.id = Math.floor(Math.random() * (50000 - 0) + 50000).toString() // generated id
 
     const textDiv = document.createElement('div');
     textDiv.classList.add('invoice-text-div');
 
     const text = document.createElement('strong');
     text.classList.add('invoice-name');
-    text.innerHTML = "EXAMPLE ONE"
+    text.innerHTML = `${serviceName}`
 
     const priceDiv = document.createElement('div');
     priceDiv.classList.add('invoice-price-div');
-    priceDiv.innerHTML = "1234"
+    priceDiv.innerHTML = `$${serviceAmount}.00`
 
     const price = document.createElement('p');
     price.classList.add('invoice-price-text');
+
+    //clear items before adding fresh list of selected
+    if (parentDiv.children.length > 0) {
+
+    }
 
     textDiv.appendChild(text);
     priceDiv.appendChild(price);
