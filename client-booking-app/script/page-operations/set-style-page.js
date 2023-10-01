@@ -199,6 +199,8 @@ function onPhotoSubmit(event) {
         const photoTextInInvoice = page.setServicePage.elements.photoTextInInvoice
         photoTextInInvoice.innerHTML = "Photo Recieved"
         photoTextInInvoice.classList.add('green')
+
+        //need to do something with the photo, but just leaving it here
     } else {
         console.log("No file selected.");
     }
