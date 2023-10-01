@@ -1,5 +1,8 @@
 import { page } from "../component-elements.js";
 import footerComponent from "./footer-component.js";
+import database from "../db/database.js";
+import databaseOperations from "../db/database-operations.js";
+
 let selectedServiceIds = []
 
 export function toggleColor(element) {
@@ -23,29 +26,52 @@ function pushChoosenServicesToGlobal() {
 
     // update UI based on choosen services from user
     addInvoicePrice(selectedServiceIds)
-    addServiceItemToInvoice(selectedServiceIds)
+    displayServicesInInvoice(selectedServiceIds)
+    
 }
 
-function addServiceItemToInvoice(services) {
+function displayServicesInInvoice(services) {
     const invoiceListContainer = page.setServicePage.elements.invoiceListContainer
 
-    clearListItemContainer(invoiceListContainer)
+    clearInvoiceServices(invoiceListContainer)
+    databaseOperations.clearServices(database)
 
     services.forEach(parentContainer => {
         const nameOfProduct = fromParentTo("name", parentContainer).innerHTML
         const priceOfProduct = fromParentTo("price", parentContainer).innerHTML.substring(1).split('.')[0]
-        const item = createInvoiceElement(nameOfProduct, priceOfProduct)
-        invoiceListContainer.appendChild(item)
+        const parentDiv = createInvoiceElement(nameOfProduct, priceOfProduct)
+
+        invoiceListContainer.appendChild(parentDiv)
+        addServiceToDatabase(parentDiv, database)
     })
 }
 
-const clearListItemContainer = containerDiv => containerDiv.innerHTML = ''
+function addServiceToDatabase(element, db) {
+    const serviceTemplate = {
+        id: "",
+        name: "",
+        price: 0
+    }
+
+    const productId = element.id
+    const productName = fromParentTo("name", element).innerHTML
+    const productPrice = element.children[1].innerHTML.substring(1).split('.')[0]
+
+    serviceTemplate.id = productId
+    serviceTemplate.name = productName
+    serviceTemplate.price = productPrice    
+
+    databaseOperations.addService(serviceTemplate, db)
+}
+
+const clearInvoiceServices = containerDiv => containerDiv.innerHTML = ''
 
 function createInvoiceElement(serviceName, serviceAmount) {
     const parentDiv = document.createElement('div');
     parentDiv.classList.add('single-invoice');
 
-    parentDiv.id = Math.floor(Math.random() * (50000 - 0) + 50000).toString() // generated id
+    const itemId = Math.floor(Math.random() * (50000 - 0) + 50000).toString()
+    parentDiv.id = itemId
 
     const textDiv = document.createElement('div');
     textDiv.classList.add('invoice-text-div');
@@ -87,6 +113,8 @@ function addInvoicePrice(listOfChoosenIds) {
 
     updateInvoicePriceUI(sum)
 }
+
+const updateInvoicePriceUI = amount => page.setServicePage.elements.mainPriceInInvoive.innerHTML = `$${amount}.00`
 
 const traverseToParent = element => element.parentElement.parentElement.parentElement.parentElement
 
@@ -133,8 +161,6 @@ const getAllPillsId = () => {
 
     return arrayOfPills
 }
-
-const updateInvoicePriceUI = amount => page.setServicePage.elements.mainPriceInInvoive.innerHTML = `$${amount}.00`
 
 const setBookingContainerDiv = page.setServicePage.elements.pageContainer;
 
