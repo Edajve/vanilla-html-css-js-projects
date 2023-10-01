@@ -28,9 +28,13 @@ function pushChoosenServicesToGlobal() {
 
 function addServiceItemToInvoice(services) {
     const invoiceListContainer = page.setServicePage.elements.invoiceListContainer
+
     clearListItemContainer(invoiceListContainer)
-    services.forEach(a => {
-        const item = createInvoiceElement('Test 123', 50)
+
+    services.forEach(parentContainer => {
+        const nameOfProduct = fromParentTo("name", parentContainer).innerHTML
+        const priceOfProduct = fromParentTo("price", parentContainer).innerHTML.substring(1).split('.')[0]
+        const item = createInvoiceElement(nameOfProduct, priceOfProduct)
         invoiceListContainer.appendChild(item)
     })
 }
@@ -56,11 +60,6 @@ function createInvoiceElement(serviceName, serviceAmount) {
 
     const price = document.createElement('p');
     price.classList.add('invoice-price-text');
-
-    //clear items before adding fresh list of selected
-    if (parentDiv.children.length > 0) {
-
-    }
 
     textDiv.appendChild(text);
     priceDiv.appendChild(price);
@@ -95,16 +94,12 @@ function fromParentTo(columnName, element) {
     switch (columnName) {
         case "name":
             return element.children[0].children[0]
-            break;
         case "description":
             return element.children[0].children[1]
-            break;
         case "price":
             return element.children[0].children[2]
-            break;
         case "selected":
             return element.children[0].children[3]
-            break;
         default:
             console.error("invalid index")
             break;
