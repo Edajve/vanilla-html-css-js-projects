@@ -1,13 +1,11 @@
-const addService = (data, database) => {
-    database.database.services.push(data)
-    console.log(database)
-};
+const addService = (data, database) => database.database.services.push(data)
 
-const clearServices = (database) => {
-    database.database.services = []
-}
+const clearServices = database => database.database.services = []
+
+const addCommentToDb = (text, database) => database.database.serviceComment = text
 
 export default {
     addService,
-    clearServices
+    clearServices,
+    addCommentToDb
 }

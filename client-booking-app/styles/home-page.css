@@ -57,9 +57,7 @@
   will-change: transform;
 }
 
-.set-styles-main-container {
-    display: none;
-}
+
 
 .homepage-cta-button:disabled {
   pointer-events: none;

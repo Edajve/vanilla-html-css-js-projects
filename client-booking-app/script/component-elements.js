@@ -18,12 +18,16 @@ export const page = {
         elements: {
             pageContainer: document.querySelector('.set-styles-main-container'),
             textArea: document.getElementById('comment'),
+            submitButton: document.getElementById('submit-btn'),
             fileDownloadBtn: document.getElementById('myFile'),
+            formInput: document.getElementById('myForm'),
             selectedBar: document.getElementById('selected-bar'),
             allIndividualServices: document.querySelectorAll('.item'),
             mainPriceInInvoive: document.querySelector('.number-price'),
             divWithIndividualServices: document.getElementById('table-container-for-available-items'),
-            invoiceListContainer: document.querySelector('.service-info-div')
+            invoiceListContainer: document.querySelector('.service-info-div'),
+            commentTextInInvoice: document.querySelector('.xc'),
+            photoTextInInvoice: document.querySelector('.status')
         }
     },
     pricesPage: {

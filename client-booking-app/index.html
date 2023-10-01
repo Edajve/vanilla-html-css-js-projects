@@ -129,9 +129,9 @@
                         </tbody>
                         <tbody id="4" class="item">
                            <tr>
-                              <td>Other</td>
-                              <td>Explain in text area</td>
-                              <td>To be determined...</td>
+                              <td>Service 5</td>
+                              <td>LOREM</td>
+                              <td>$50.00</td>
                               <td>+2.01</td>
                               <td>
                                  <div class="select-button-div">
@@ -143,10 +143,14 @@
                      </table>
                   </div>
                </section>
-               <textarea id="comment" name="comment" rows="4" cols="50" placeholder="If you do not choose from the services above. Please explain the service you want with an uploaded picture"></textarea>
-               <form action="/action_page.php">
-                  <input type="file" id="myFile" name="filename">
-               </form>
+               <div class="comment-and-submit-btn">
+                  <textarea id="comment" name="comment" rows="4" cols="50" placeholder="If you do not choose from the services above. Please explain the service you want with an uploaded picture"></textarea>
+                  <button id="submit-btn" classs="button-28" role="button">Submit Comment</button>
+               </div>
+                  <form action="/action_page.php" id="myForm">
+                     <input type="file" id="myFile" name="filename">
+                     <input type="submit" value="Submit">
+               </form>  
             </div>
             <div class="invoice-div">
                <div class="invoice-children-divs header-div">
@@ -161,8 +165,8 @@
                </div>
                <hr class="divider">
                <div class="users-comment-and-pic">
-                  <stong class="comment-verification">Comment <i class="far fa-check-circle icon" style="color: #41ab41;"></i></stong>
-                  <stong class="photo-verification">Photo <i class="fas fa-times icon" style="color: #d4372a;"></i></stong>
+                  <strong class="xc comment-verification red">Comment</strong>
+                  <strong class="status photo-verification red">Photo</strong>
                </div>
             </div>
          </div>

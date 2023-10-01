@@ -174,6 +174,39 @@ export function closePage() {
     footerComponent.closeFooter()
 }
 
+function onSubmit() {
+    const textArea = page.setServicePage.elements.textArea
+    const input = textArea.value
+    if (input === '') return
+    databaseOperations.addCommentToDb(input, database)
+
+    const commentTextInInvoice = page.setServicePage.elements.commentTextInInvoice
+    commentTextInInvoice.innerHTML = "Comment Received"
+    commentTextInInvoice.classList.add('green')
+}
+
+function onPhotoSubmit(event) {
+    const file = page.setServicePage.elements.fileDownloadBtn
+
+    event.preventDefault()
+    const selectedFile = file.files[0]
+
+
+    if (selectedFile) {
+        console.log("Selected file name: " + selectedFile.name);
+        console.log("Selected file type: " + selectedFile.type);
+
+        const photoTextInInvoice = page.setServicePage.elements.photoTextInInvoice
+        photoTextInInvoice.innerHTML = "Photo Recieved"
+        photoTextInInvoice.classList.add('green')
+    } else {
+        console.log("No file selected.");
+    }
+}
+
+page.setServicePage.elements.submitButton.addEventListener('click', onSubmit)
+page.setServicePage.elements.formInput.addEventListener('submit', event => onPhotoSubmit(event))
+
 export default {
     openPage,
     closePage,
