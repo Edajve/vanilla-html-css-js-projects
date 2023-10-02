@@ -7,6 +7,7 @@ import pricesPage from "./page-operations/prices-page.js";
 import bookingPolicy from "./page-operations/booking-policy.js";
 import aboutMePage from "./page-operations/about-me-page.js";
 import setStylePage from "./page-operations/set-style-page.js";
+import setBookingPage from "./page-operations/set-booking-page.js";
 
 export const machine = {
     state: state.HOME,
@@ -81,6 +82,10 @@ export const machine = {
                             setStylesPage.openPage()
                             this.changeState(state.PICK_SERVICE)
                             break;
+                        case state.BOOKING:
+                            setBookingPage.openPage()
+                            this.changeState(state.BOOKING)
+                            break;
                         case null:
                             console.error('this only happens if you get to the prices page without navigating to it. AKA impossible');
                             break;
@@ -119,6 +124,10 @@ export const machine = {
                         case state.PICK_SERVICE:
                             setStylesPage.openPage()
                             this.changeState(state.PICK_SERVICE)
+                            break;
+                        case state.BOOKING:
+                            setBookingPage.openPage()
+                            this.changeState(state.BOOKING)
                             break;
                         case null:
                             console.error('this only happens if you get to the prices page without navigating to it. AKA impossible');
@@ -159,6 +168,10 @@ export const machine = {
                                 setStylePage.openPage()
                                 this.changeState(state.PICK_SERVICE)
                                 break;
+                            case state.BOOKING:
+                                setBookingPage.openPage()
+                                this.changeState(state.BOOKING)
+                                break;
                             case null:
                                 console.error('this only happens if you get to the prices page without navigating to it. AKA impossible');
                                 break;
@@ -187,6 +200,20 @@ export const machine = {
 
         },
         'booking_step': {
+            navigation: function(action) {
+                setBookingPage.closePage()
+                if (action.type === state.BOOKING) {
+                    pricesPage.navigate()
+                    this.changeState(state.NAV_PRICE, true)
+                } else if (action.type === state.BOOKING_POLICY) {
+                    bookingPolicy.openPage()
+                    this.changeState(state.BOOKING_POLICY, true)
+                } else if (action.type === state.ABOUT_ME) {
+                    setBookingPage.closePage()
+                    aboutMePage.openPage()
+                    this.changeState(state.ABOUT_ME, true)
+                }
+            },
             bookingSteps: function(action) {
                 console.log('here')
             },

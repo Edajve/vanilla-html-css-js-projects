@@ -1,4 +1,5 @@
 import { page } from "../component-elements.js"
+import footerComponent from "./footer-component.js"
 
 const subPages = page.setBookingPage.elements.allSubPages
 
@@ -19,6 +20,20 @@ function indexOfShownPage() {
     return index
 }
 
+const container = page.setBookingPage.elements.mainContainer
+
+function closePage() {
+    container.style.display = 'none'
+    footerComponent.closeFooter()
+}
+
+function openPage() {
+    container.style.display = ''
+    footerComponent.showFooter()
+}
+
 export default {
-    handleNextButtonInKycPage
+    handleNextButtonInKycPage,
+    closePage,
+    openPage
 }

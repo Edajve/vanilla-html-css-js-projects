@@ -19,6 +19,8 @@ const handleNavPriceButtonClick = () => {
             machine.dispatch('navigation', [{type: state.NAV_PRICE}])
         } else if (machine.state === state.PICK_SERVICE) {
             machine.dispatch('navigation', [{type: state.PICK_SERVICE}])
+        } else if (machine.state === state.BOOKING) {
+            machine.dispatch('navigation', [{type: state.BOOKING}])
         }
     } else if (machine.state === state.BOOKING_POLICY) {
         machine.dispatch('navToNav', [{type: state.NAV_PRICE}])
@@ -34,6 +36,8 @@ const handleBookingPolicyButtonInNav = () => {
             machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
         } else if (machine.state === state.PICK_SERVICE) {
             machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
+        } else if (machine.state === state.BOOKING) {
+            machine.dispatch('navigation', [{type: state.BOOKING_POLICY}])
         }
     } else if (machine.state === state.NAV_PRICE) {
         machine.dispatch('navToNav', [{type: state.BOOKING_POLICY}])
@@ -48,6 +52,8 @@ const handleAboutMeButtonInNav = () => {
             machine.dispatch('navigation', [{type: state.ABOUT_ME}])
         } else if (machine.state === state.PICK_SERVICE) {
             machine.dispatch('navigation', [{type: state.ABOUT_ME}])
+        } else if (machine.state === state.BOOKING) {
+            machine.dispatch('navigation', [{type: state.ABOUT_ME}])
         }
     } else if (machine.state === state.NAV_PRICE) {
         machine.dispatch('navToNav', [{type: 'nav-to-nav'}])
@@ -58,8 +64,8 @@ const handleAboutMeButtonInNav = () => {
 
 page.homePage.elements.setBookingBtn.addEventListener('click', handleSetBookingBtnInRootPage)
 page.navBar.elements.pricesText.addEventListener('click', handleNavPriceButtonClick)
-page.navBar.elements.aboutMeText.addEventListener('click', handleAboutMeButtonInNav)
 page.navBar.elements.bookingPolicyText.addEventListener('click', handleBookingPolicyButtonInNav)
+page.navBar.elements.aboutMeText.addEventListener('click', handleAboutMeButtonInNav)
 page.pricesPage.elements.leftChevron.addEventListener('click', handlePrevButtonInNavPricesPage)
 page.bookinPolicyPage.elements.leftChevron.addEventListener('click', handleBackButtonInPolicyPageInNav)
 page.aboutMePage.elements.leftChevron.addEventListener('click', handleBackButtonInAboutMePageInNav)
