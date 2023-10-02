@@ -57,6 +57,7 @@ export const machine = {
             footer: function (action) {
                 if (action.type === 'previous_button_in_footer') {
                     footerComponent.previousClicked()
+                    progressBar.decreaseBarIcon()
                     const currentIndex = footerComponent.getCurrentPageIndex();
                     const state = stepsOrder[currentIndex]
                     this.changeState(state);
@@ -192,6 +193,7 @@ export const machine = {
             footer: function(action) {
                 if (action.type === 'previous_button_in_footer') {
                     footerComponent.previousClicked()
+                    progressBar.decreaseBarIcon()
                     const currentIndex = footerComponent.getCurrentPageIndex()
                     const state = stepsOrder[currentIndex]
                     this.changeState(state)

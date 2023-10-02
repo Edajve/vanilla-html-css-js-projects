@@ -30,16 +30,10 @@ export function increaseBarIcon(){
 }
 
 export function decreaseBarIcon(){
-    const targetIndex = lastHighlightedBar()
-    if (targetIndex === 0) {
-        console.log("here")
-        updateNavText(3)
-    } {
-        for (let i = targetIndex; i > 0; i--) {
-            document.getElementById(`progression_${i}`).classList.add('highlighted-bar')
-        }
-        updateNavText(targetIndex)
-    }
+    const currentIndex = lastHighlightedBar()
+    const newTargetIndex = currentIndex - 1
+    arrayOfBars[newTargetIndex].classList.remove('highlighted-bar')
+    updateNavText(newTargetIndex)
 }
 
 export default {
