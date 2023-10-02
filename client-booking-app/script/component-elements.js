@@ -33,6 +33,29 @@ export const page = {
             photoTextInInvoice: document.querySelector('.status')
         }
     },
+    setBookingPage: {
+        elements: {
+            mainContainer: document.querySelector('.main-kyc-container'),
+            allSubPages: document.querySelectorAll('.kyc-sub-pages')
+        },
+        subPage: {
+            monthUI: {
+                elements: {
+                    container: document.querySelector('.month-year-container')
+                }
+            },
+            dayUI: {
+                elements: {
+                    container: document.querySelector('.specific-day')
+                }
+            },
+            finalizeUI: {
+                elements: {
+                    container: document.querySelector('.finalize-date')
+                }
+            }
+        }
+    },
     pricesPage: {
         elements: {
             pageContainer: document.querySelector('.main-prices-container'),

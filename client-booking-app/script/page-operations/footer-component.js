@@ -1,4 +1,3 @@
-import { isFirstStep } from "./progress-bar.js"
 import { page } from "../component-elements.js"
 import footer from "./progress-bar.js"
 
@@ -21,7 +20,7 @@ function previousClicked(){
     allPageSteps[currentIndex].style.display = 'none'
     allPageSteps[currentIndex - 1].style.display = ''
     if (currentIndex === 1) closeFooter()
-    footer.decreaseBarIcon()
+    // footer.decreaseBarIcon()
 }
 
 function nextClicked() {

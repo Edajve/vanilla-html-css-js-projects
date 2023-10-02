@@ -60,9 +60,9 @@ export const machine = {
                     const currentIndex = footerComponent.getCurrentPageIndex();
                     const state = stepsOrder[currentIndex]
                     this.changeState(state);
-                    console.log(state)
                 } else if (action.type === 'next_button_in_footer') {
                     footerComponent.nextClicked()
+                    progressBar.increaseBarIcon()
                     this.changeState(state.BOOKING)
                 }         
             }
@@ -186,7 +186,17 @@ export const machine = {
 
         },
         'booking_step': {
-
+            bookingSteps: function(action) {
+                console.log('here')
+            },
+            footer: function(action) {
+                if (action.type === 'previous_button_in_footer') {
+                    footerComponent.previousClicked()
+                    const currentIndex = footerComponent.getCurrentPageIndex()
+                    const state = stepsOrder[currentIndex]
+                    this.changeState(state)
+                }
+            }
         },
         'finalize': {
 

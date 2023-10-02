@@ -2,6 +2,7 @@ import { page } from "./script/component-elements.js";
 import { machine } from "./script/state-machine.js";
 import { state } from "./script/state.js";
 import setStylePage from "./script/page-operations/set-style-page.js";
+import setBookingPage from "./script/page-operations/set-booking-page.js";
 
 const RETURN_STATE = 'returnWhereYouCameFrom'
 
@@ -62,6 +63,8 @@ page.navBar.elements.bookingPolicyText.addEventListener('click', handleBookingPo
 page.pricesPage.elements.leftChevron.addEventListener('click', handlePrevButtonInNavPricesPage)
 page.bookinPolicyPage.elements.leftChevron.addEventListener('click', handleBackButtonInPolicyPageInNav)
 page.aboutMePage.elements.leftChevron.addEventListener('click', handleBackButtonInAboutMePageInNav)
+page.setBookingPage.subPage.monthUI.elements.container.addEventListener('click', setBookingPage.handleNextButtonInKycPage)
+page.setBookingPage.subPage.dayUI.elements.container.addEventListener('click', setBookingPage.handleNextButtonInKycPage)
 page.footer.elements.prevBtn.addEventListener('click', handleFooterPreviousClick)
 page.footer.elements.nextBtn.addEventListener('click', handleFooterNextClick)
 
