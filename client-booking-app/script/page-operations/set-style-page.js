@@ -193,14 +193,13 @@ function onPhotoSubmit(event) {
 
 
     if (selectedFile) {
-        console.log("Selected file name: " + selectedFile.name);
-        console.log("Selected file type: " + selectedFile.type);
-
         const photoTextInInvoice = page.setServicePage.elements.photoTextInInvoice
         photoTextInInvoice.innerHTML = "Photo Recieved"
         photoTextInInvoice.classList.add('green')
 
         //need to do something with the photo, but just leaving it here
+        // const fileName =  selectedFile.name
+        // const fileType =  selectedFile.type
     } else {
         console.log("No file selected.");
     }

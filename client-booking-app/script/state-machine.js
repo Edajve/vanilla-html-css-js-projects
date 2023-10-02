@@ -1,4 +1,4 @@
-import { state } from "./state.js"
+import { state, stepsOrder } from "./state.js"
 import homePage from "./page-operations/home-page.js"
 import setStylesPage from "./page-operations/set-style-page.js";
 import footerComponent from "./page-operations/footer-component.js";
@@ -40,9 +40,7 @@ export const machine = {
         },
         'pick_service': {
             navigation: function (action) {
-                if (action.type === 'previous_button_in_footer') {
-                    footerComponent.prevBtnClicked() //this doesnt do anything yet
-                } else if (action.type === state.PICK_SERVICE) {
+                if (action.type === state.PICK_SERVICE) {
                     setStylesPage.closePage()
                     pricesPage.navigate()
                     this.changeState(state.NAV_PRICE, true)
@@ -55,6 +53,18 @@ export const machine = {
                     aboutMePage.openPage()
                     this.changeState(state.ABOUT_ME, true)
                 }
+            },
+            footer: function (action) {
+                if (action.type === 'previous_button_in_footer') {
+                    footerComponent.previousClicked()
+                    const currentIndex = footerComponent.getCurrentPageIndex();
+                    const state = stepsOrder[currentIndex]
+                    this.changeState(state);
+                    console.log(state)
+                } else if (action.type === 'next_button_in_footer') {
+                    footerComponent.nextClicked()
+                    this.changeState(state.BOOKING)
+                }         
             }
         },
         'price_navigation': {

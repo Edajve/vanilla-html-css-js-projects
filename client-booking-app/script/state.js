@@ -8,3 +8,5 @@ export const state = {
     BOOKING: 'booking_step',
     FINALIZE: 'finalize'
 }
+
+export const stepsOrder = ["home", "pick_service", "booking_step"]

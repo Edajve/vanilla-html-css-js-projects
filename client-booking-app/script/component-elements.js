@@ -1,4 +1,7 @@
 export const page = {
+    allPages: {
+        pageContainerClasses: document.querySelectorAll('.page-step'),
+    },
     navBar: {
         elements: {
             allProgressionBars: document.querySelectorAll('.single-progress-bar'),

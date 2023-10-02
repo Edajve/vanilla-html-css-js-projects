@@ -7,6 +7,8 @@ export function closePage() {
 
 export function openPage() {
     homePageContainerDiv.style.display = ''
+    const footer = page.footer.elements.pageContainer
+    footer.style.display = "none"
 }
 
 export default {
