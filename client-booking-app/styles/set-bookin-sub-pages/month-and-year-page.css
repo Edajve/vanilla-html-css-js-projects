@@ -68,13 +68,13 @@
     cursor: pointer;
 }
 
-.day-item-space-highlighted :active {
+/* .day-item-space-highlighted :active {
     width: 80px;
     text-align: center;
     border-radius: 6px;
     background-color: orange;
     cursor: pointer;
-}
+} */
 
 .date-num {
     padding: 0;
@@ -152,3 +152,19 @@ button {
   box-shadow: none;
   transform: translateY(0);
 }
+
+/* 
+{
+ "kind": "calendar#calendar",
+ "etag": "\"cO1SzuxNJvRvnVU4VMMLYZWttFA\"",
+ "id": "dechols87@gmail.com",
+ "summary": "dechols87@gmail.com",
+ "timeZone": "America/Chicago",
+ "conferenceProperties": {
+  "allowedConferenceSolutionTypes": [
+   "hangoutsMeet"
+  ]
+ }
+}
+
+*/

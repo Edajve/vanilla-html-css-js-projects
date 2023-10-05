@@ -3,7 +3,7 @@
 .set-styles-main-container {
     display: flex;
     width: 1020vw;
-    height: 100vh;
+    height: 80vh;
     flex-direction: column;
 }
 
@@ -203,6 +203,7 @@ th, td  {
     display: flex;
     flex-direction: column;
     padding: 0;
+    height: 40rem;
 }
 
 .header-div {
