@@ -29,7 +29,6 @@ const handleNavPriceButtonClick = () => {
     }
 }
 
-
 const handleBookingPolicyButtonInNav = () => {
     if (machine.state !== state.NAV_PRICE && machine.state !== state.BOOKING_POLICY && machine.state !== state.ABOUT_ME) {
         if (machine.state === state.HOME) {
@@ -69,8 +68,8 @@ page.navBar.elements.aboutMeText.addEventListener('click', handleAboutMeButtonIn
 page.pricesPage.elements.leftChevron.addEventListener('click', handlePrevButtonInNavPricesPage)
 page.bookinPolicyPage.elements.leftChevron.addEventListener('click', handleBackButtonInPolicyPageInNav)
 page.aboutMePage.elements.leftChevron.addEventListener('click', handleBackButtonInAboutMePageInNav)
-page.setBookingPage.subPage.monthUI.elements.container.addEventListener('click', setBookingPage.handleNextButtonInKycPage)
-page.setBookingPage.subPage.dayUI.elements.container.addEventListener('click', setBookingPage.handleNextButtonInKycPage)
+page.setBookingPage.subPage.monthUI.elements.nextButton.addEventListener('click', setBookingPage.handleNextButtonInKycPage)
+page.setBookingPage.subPage.dayUI.elements.nextButton.addEventListener('click', setBookingPage.handleNextButtonInKycPage)
 page.footer.elements.prevBtn.addEventListener('click', handleFooterPreviousClick)
 page.footer.elements.nextBtn.addEventListener('click', handleFooterNextClick)
 

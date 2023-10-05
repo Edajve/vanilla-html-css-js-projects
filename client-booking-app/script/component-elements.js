@@ -41,12 +41,14 @@ export const page = {
         subPage: {
             monthUI: {
                 elements: {
-                    container: document.querySelector('.month-year-container')
+                    container: document.querySelector('.month-year-container'),
+                    nextButton: document.getElementById('date-next-btn')
                 }
             },
             dayUI: {
                 elements: {
-                    container: document.querySelector('.specific-day')
+                    container: document.querySelector('.specific-day'),
+                    nextButton: document.getElementById('specific-day-next-btn')
                 }
             },
             finalizeUI: {
