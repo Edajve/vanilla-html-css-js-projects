@@ -1,6 +1,6 @@
 import { page } from "./script/component-elements.js";
-import { machine } from "./script/state-machine.js";
-import { state } from "./script/state.js";
+import { machine } from "./script/state-design-pattern/state-machine.js";
+import { state } from "./script/state-design-pattern/state.js";
 import setStylePage from "./script/page-operations/set-style-page.js";
 import setBookingPage from "./script/page-operations/set-booking-page.js";
 
@@ -61,18 +61,32 @@ const handleAboutMeButtonInNav = () => {
     }
 }
 
+// Homepage
 page.homePage.elements.setBookingBtn.addEventListener('click', handleSetBookingBtnInRootPage)
+
+// Nav bar
 page.navBar.elements.pricesText.addEventListener('click', handleNavPriceButtonClick)
 page.navBar.elements.bookingPolicyText.addEventListener('click', handleBookingPolicyButtonInNav)
 page.navBar.elements.aboutMeText.addEventListener('click', handleAboutMeButtonInNav)
+
+// Prices element in nav
 page.pricesPage.elements.leftChevron.addEventListener('click', handlePrevButtonInNavPricesPage)
+
+// Booking policy element in nav
 page.bookinPolicyPage.elements.leftChevron.addEventListener('click', handleBackButtonInPolicyPageInNav)
+
+// About me page in nav
 page.aboutMePage.elements.leftChevron.addEventListener('click', handleBackButtonInAboutMePageInNav)
+
+// Set booking price elements
 page.setBookingPage.subPage.monthUI.elements.nextButton.addEventListener('click', setBookingPage.handleNextButtonInKycPage)
 page.setBookingPage.subPage.dayUI.elements.nextButton.addEventListener('click', setBookingPage.handleNextButtonInKycPage)
+
+// Footer elements
 page.footer.elements.prevBtn.addEventListener('click', handleFooterPreviousClick)
 page.footer.elements.nextBtn.addEventListener('click', handleFooterNextClick)
 
+// Set service elements
 page.setServicePage.elements.allIndividualServices.forEach(service => {
     service.addEventListener('click', (element) => setStylePage.toggleColor(element))
 })

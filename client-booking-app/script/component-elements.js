@@ -42,7 +42,8 @@ export const page = {
             monthUI: {
                 elements: {
                     container: document.querySelector('.month-year-container'),
-                    nextButton: document.getElementById('date-next-btn')
+                    nextButton: document.getElementById('date-next-btn'),
+                    allCalendarSpaces: document.querySelectorAll('.day-item-space')
                 }
             },
             dayUI: {

@@ -153,18 +153,7 @@ button {
   transform: translateY(0);
 }
 
-/* 
-{
- "kind": "calendar#calendar",
- "etag": "\"cO1SzuxNJvRvnVU4VMMLYZWttFA\"",
- "id": "dechols87@gmail.com",
- "summary": "dechols87@gmail.com",
- "timeZone": "America/Chicago",
- "conferenceProperties": {
-  "allowedConferenceSolutionTypes": [
-   "hangoutsMeet"
-  ]
- }
+.days-of-week-container {
+    padding-right: 2rem;
+    padding-top: 1.5rem;
 }
-
-*/

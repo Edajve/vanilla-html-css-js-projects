@@ -1,13 +1,13 @@
 import { state, stepsOrder } from "./state.js"
-import homePage from "./page-operations/home-page.js"
-import setStylesPage from "./page-operations/set-style-page.js";
-import footerComponent from "./page-operations/footer-component.js";
-import progressBar from "./page-operations/progress-bar.js";
-import pricesPage from "./page-operations/prices-page.js";
-import bookingPolicy from "./page-operations/booking-policy.js";
-import aboutMePage from "./page-operations/about-me-page.js";
-import setStylePage from "./page-operations/set-style-page.js";
-import setBookingPage from "./page-operations/set-booking-page.js";
+import homePage from "../page-operations/home-page.js"
+import setStylesPage from "../page-operations/set-style-page.js";
+import footerComponent from "../page-operations/footer-component.js";
+import progressBar from "../page-operations/progress-bar.js";
+import pricesPage from "../page-operations/prices-page.js";
+import bookingPolicy from "../page-operations/booking-policy.js";
+import aboutMePage from "../page-operations/about-me-page.js";
+import setStylePage from "../page-operations/set-style-page.js";
+import setBookingPage from "../page-operations/set-booking-page.js";
 
 export const machine = {
     state: state.HOME,
@@ -41,16 +41,15 @@ export const machine = {
         },
         'pick_service': {
             navigation: function (action) {
+                setStylesPage.closePage()
+
                 if (action.type === state.PICK_SERVICE) {
-                    setStylesPage.closePage()
                     pricesPage.navigate()
                     this.changeState(state.NAV_PRICE, true)
                 } else if (action.type === state.BOOKING_POLICY) {
-                    setStylesPage.closePage()
                     bookingPolicy.openPage();
                     this.changeState(state.BOOKING_POLICY, true)
                 } else if (action.type === state.ABOUT_ME) {
-                    setStylePage.closePage()
                     aboutMePage.openPage()
                     this.changeState(state.ABOUT_ME, true)
                 }
@@ -65,6 +64,7 @@ export const machine = {
                 } else if (action.type === 'next_button_in_footer') {
                     footerComponent.nextClicked()
                     progressBar.increaseBarIcon()
+                    setBookingPage.displayCalendar()
                     this.changeState(state.BOOKING)
                 }         
             }
@@ -209,7 +209,6 @@ export const machine = {
                     bookingPolicy.openPage()
                     this.changeState(state.BOOKING_POLICY, true)
                 } else if (action.type === state.ABOUT_ME) {
-                    setBookingPage.closePage()
                     aboutMePage.openPage()
                     this.changeState(state.ABOUT_ME, true)
                 }
