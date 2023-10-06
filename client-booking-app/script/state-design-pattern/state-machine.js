@@ -8,6 +8,7 @@ import bookingPolicy from "../page-operations/booking-policy.js";
 import aboutMePage from "../page-operations/about-me-page.js";
 import setStylePage from "../page-operations/set-style-page.js";
 import setBookingPage from "../page-operations/set-booking-page.js";
+import setMonthPage from "../page-operations/setMonth-page.js";
 
 export const machine = {
     state: state.HOME,
@@ -64,7 +65,7 @@ export const machine = {
                 } else if (action.type === 'next_button_in_footer') {
                     footerComponent.nextClicked()
                     progressBar.increaseBarIcon()
-                    setBookingPage.displayCalendar()
+                    setMonthPage.displayCalendar()
                     this.changeState(state.BOOKING)
                 }         
             }

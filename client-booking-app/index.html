@@ -176,13 +176,13 @@
          <div class="kyc-sub-pages month-year-container" month-year-container>
             <h1 class="calendar-header">Calendar</h1>
             <div class="display-date-container">
-               <p class="choosen-date">
+               <p id="calendar-month-year" class="choosen-date">
                   <i class="fas fa-calendar-day"></i>
                   Wednesday, 27 September 2023
                </p>
                <div class="left-right-container">
-                  <button><i class="fas fa-chevron-left"></i></button>
-                  <button><i class="fas fa-chevron-right"></i></button>
+                  <button><i id="left-month-slider" class="fas fa-chevron-left"></i></button>
+                  <button><i id="right-month-slider" class="fas fa-chevron-right"></i></button>
                </div>
             </div>
             <div class="calendar-and-header-container">
@@ -753,6 +753,7 @@
             </div>
          </div>
       </div>
+      <!-- Footer -->
       <footer id="footer-container" class="footer-navigation-container" style="display: none;">
          <div id="previous-step-btn">
             <button id="prev-btn" class="navigation-button" role="button">Prev</button>

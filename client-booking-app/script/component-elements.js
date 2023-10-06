@@ -43,7 +43,10 @@ export const page = {
                 elements: {
                     container: document.querySelector('.month-year-container'),
                     nextButton: document.getElementById('date-next-btn'),
-                    allCalendarSpaces: document.querySelectorAll('.day-item-space')
+                    allCalendarSpaces: document.querySelectorAll('.day-item-space'),
+                    leftMonthSlider: document.getElementById('left-month-slider'),
+                    rightMonthSlider: document.getElementById('right-month-slider'),
+                    calendayTime: document.getElementById('calendar-month-year')
                 }
             },
             dayUI: {

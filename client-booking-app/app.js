@@ -3,6 +3,7 @@ import { machine } from "./script/state-design-pattern/state-machine.js";
 import { state } from "./script/state-design-pattern/state.js";
 import setStylePage from "./script/page-operations/set-style-page.js";
 import setBookingPage from "./script/page-operations/set-booking-page.js";
+import setMonthPage from "./script/page-operations/setMonth-page.js";
 
 const RETURN_STATE = 'returnWhereYouCameFrom'
 
@@ -79,8 +80,10 @@ page.bookinPolicyPage.elements.leftChevron.addEventListener('click', handleBackB
 page.aboutMePage.elements.leftChevron.addEventListener('click', handleBackButtonInAboutMePageInNav)
 
 // Set booking price elements
-page.setBookingPage.subPage.monthUI.elements.nextButton.addEventListener('click', setBookingPage.handleNextButtonInKycPage)
-page.setBookingPage.subPage.dayUI.elements.nextButton.addEventListener('click', setBookingPage.handleNextButtonInKycPage)
+page.setBookingPage.subPage.monthUI.elements.nextButton.addEventListener('click', setBookingPage.handleNextButtonInSubPagesPage)
+page.setBookingPage.subPage.dayUI.elements.nextButton.addEventListener('click', setBookingPage.handleNextButtonInSubPagesPage)
+page.setBookingPage.subPage.monthUI.elements.leftMonthSlider.addEventListener('click', setMonthPage.handleLeftSlider)
+page.setBookingPage.subPage.monthUI.elements.rightMonthSlider.addEventListener('click', setMonthPage.handleRightSlider)
 
 // Footer elements
 page.footer.elements.prevBtn.addEventListener('click', handleFooterPreviousClick)
