@@ -118,13 +118,19 @@ function highlightCalendarSlot(element) {
       element.target.classList.contains('day-name')
     ) return
 
+    if (!element.target.classList.contains('highlighted')) return
+
     if (element.target.classList.contains('date-num')) {
       parentEl = element.target.parentNode
     } else {
       parentEl = element.target
     }
     
-    parentEl.style.backgroundColor = 'purple'
+    page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces.forEach(slot => {
+      slot.classList.remove('clicked-time-slot')
+    })
+
+    parentEl.classList.add('clicked-time-slot')
 
   } catch (error) {
     console.error(error)

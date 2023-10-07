@@ -101,12 +101,16 @@
 button {
     background-color: transparent;
     border: transparent;
+
+}
+.clicked-time-slot {
+    background-color: rgba(245, 222, 179, 0.708);
 }
 
 /* button style */
 .next-btn {
-  appearance: none;
-  background-color: transparent;
+    appearance: none;
+    background-color: transparent;
   border: 2px solid var(--secondary-background-color);
   border-radius: 15px;
   box-sizing: border-box;
