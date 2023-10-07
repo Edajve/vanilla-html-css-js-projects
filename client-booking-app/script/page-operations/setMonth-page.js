@@ -1,6 +1,5 @@
 import { calendar } from "../calendar/calendar.js";
 import { page } from "../component-elements.js";
-import { closePage } from "./home-page.js";
 
 const months = [
   "January", "February", "March", "April", "May", "June",
