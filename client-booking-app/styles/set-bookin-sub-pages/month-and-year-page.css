@@ -59,22 +59,17 @@
     border-radius: 6px;
 }
 
-/* use this when you want to highlight a specific date */
-.day-item-space-highlighted {
+.highlighted {
     width: 80px;
     text-align: center;
     border-radius: 6px;
     background-color: var(--secondary-background-color);
-    cursor: pointer;
+    cursor: pointer;  
 }
 
-/* .day-item-space-highlighted :active {
-    width: 80px;
-    text-align: center;
-    border-radius: 6px;
-    background-color: orange;
-    cursor: pointer;
-} */
+.doubleDigit {
+    left: -5%;
+}
 
 .date-num {
     padding: 0;
