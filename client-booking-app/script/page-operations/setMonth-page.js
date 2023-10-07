@@ -79,11 +79,6 @@ function renderCalendarBody(monthName) {
     allCalendarSpaces[calendarSlot].children[0].innerHTML = dateCalendarUI
     dateCalendarUI++
   }
-
-  //give the clickable days a event listner
-  page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces.forEach(slot => {
-    slot.addEventListener('click', element => handleCalendarBoxClick(element))
-  })
 }
 
 function addIndexDependingOnFirstDay(day) {
@@ -106,16 +101,33 @@ function addIndexDependingOnFirstDay(day) {
       console.error("This is not a day of the week")
   }
 }
+
 /*
   TODOS: Add the date that the user has choosen and add it to a json file acting as a DB
 */
 function handleCalendarBoxClick(element) {
+    highlightCalendarSlot(element)
+}
+
+function highlightCalendarSlot(element) {
   try {
-    const innerText = element.target.children[0].innerHTML
-    // console.log(innerText)
-    console.log(element)
+    let parentEl;
+    
+    if (
+      element.target.classList.contains('days-of-week-container') ||
+      element.target.classList.contains('day-name')
+    ) return
+
+    if (element.target.classList.contains('date-num')) {
+      parentEl = element.target.parentNode
+    } else {
+      parentEl = element.target
+    }
+    
+    parentEl.style.backgroundColor = 'purple'
+
   } catch (error) {
-    // no need to catch this error 
+    console.error(error)
   }
 }
 
@@ -137,6 +149,11 @@ function handleRightSlider() {
   clearCalendarBody()
   renderCalendarBody(targetMonth)
 }
+
+//give the clickable days a event listner
+page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces.forEach(slot => {
+  slot.addEventListener('click', element => handleCalendarBoxClick(element))
+})
 
 export default {
   dayOfFirstDateOfTheMonth: getMonthDayAndDateFromJson,
