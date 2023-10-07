@@ -1,5 +1,6 @@
 import { calendar } from "../calendar/calendar.js";
 import { page } from "../component-elements.js";
+import { closePage } from "./home-page.js";
 
 const months = [
   "January", "February", "March", "April", "May", "June",
@@ -7,9 +8,8 @@ const months = [
 ];
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-function dayOfFirstDateOfTheMonth(monthIndex) {
-  return calendar.October[monthIndex].day;
-}
+function getMonthDayAndDateFromJson(monthIndex, dayIndex) { return calendar[monthIndex][dayIndex] }
+function getMonthFromJson(monthIndex) { return calendar[monthIndex] }
 
 function returnPreviousMonth(currentCalDate) {
   const literalElement = currentCalDate.split('</i>')[1];
@@ -29,32 +29,59 @@ function returnNextMonth(currentCalDate) {
 
 function returnCurrentDate() {
   var dateObject = new Date()
-  const day = days[dateObject.getDay()]
-  const date = dateObject.getDate()
-  const month = months[dateObject.getMonth()]
-  const year = dateObject.getFullYear()
-  return `${day}, ${date} ${month} ${year}`
+  const currentDay = days[dateObject.getDay()]
+  const currentDate = dateObject.getDate()
+  const currentMonth = months[dateObject.getMonth()]
+  const currentYear = dateObject.getFullYear()
+  return [currentDay, currentDate, currentMonth, currentYear]
 }
 
 const calendayTime = page.setBookingPage.subPage.monthUI.elements.calendayTime;
 
 function displayCalendar() {
   // display current day in UI of calendar
-  calendayTime.innerHTML = `<i class="fas fa-calendar-day"></i>${returnCurrentDate()}`
+  const [currentDay, currentDate, currentMonth, currentYear] = returnCurrentDate()
+  calendayTime.innerHTML =
+   `<i class="fas fa-calendar-day"></i>${currentDay}, ${currentDate} ${currentMonth} ${currentYear}`
 
   // display body of calendar based off the current day and month
   const allCalendarSpaces = page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces;
-  /*
-  TODO refactor the json object so that you can dynamically change the month
-  depending on the index of what you pass in
-  */
-  const firstDay = dayOfFirstDateOfTheMonth(0);
-  const j = days.indexOf(firstDay);
 
-  let calendarNum = 1;
-  for (let i = 7 + j; i < 35; i++) {
-    allCalendarSpaces[i].children[0].innerHTML = calendarNum;
-    calendarNum += 1;
+  const monthIndex = months.indexOf(currentMonth)
+
+  const dayOfTheMonth = 0 // 0 based
+  const day = getMonthDayAndDateFromJson(monthIndex, dayOfTheMonth).day;
+
+  const daysInThisMonth = getMonthFromJson(monthIndex).length
+  let dateCalendarUI = 1
+
+  // starting at index 7 because the calendar UI's first row is the day
+  for (let calendarSlot = 7; calendarSlot < daysInThisMonth + 7; calendarSlot++) {
+    const indexToStartFrom = addIndexDependingOnFirstDay(day)
+    if (calendarSlot < indexToStartFrom) continue
+    allCalendarSpaces[calendarSlot].children[0].innerHTML = dateCalendarUI
+    dateCalendarUI++
+  }
+}
+
+function addIndexDependingOnFirstDay(day) {
+  switch (day) {
+    case "Sunday":
+      return 0
+    case "Monday":
+      return 1
+    case "Tuesday":
+      return 2
+    case "Wednesday":
+      return 3
+    case "Thursday":
+      return 4
+    case "Friday":
+      return 5
+    case "Saturday":
+      return 6
+    default:
+      console.error("This is not a day of the week")
   }
 }
 
@@ -74,7 +101,7 @@ function handleRightSlider() {
 }
 
 export default {
-  dayOfFirstDateOfTheMonth,
+  dayOfFirstDateOfTheMonth: getMonthDayAndDateFromJson,
   returnPreviousMonth,
   returnNextMonth,
   displayCalendar,
