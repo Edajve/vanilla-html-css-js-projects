@@ -1,11 +1,14 @@
 import { calendar } from "../calendar/calendar.js";
 import { page } from "../component-elements.js";
 
+const calendayTime = page.setBookingPage.subPage.monthUI.elements.calendayTime;
+const allCalendarSpaces = page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces;
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const months = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const [currentDay, currentDate, monthName, currentYear] = returnCurrentDate()
 
 function getMonthDayAndDateFromJson(monthIndex, dayIndex) { return calendar[monthIndex][dayIndex] }
 function getMonthFromJson(monthIndex) { return calendar[monthIndex] }
@@ -34,10 +37,6 @@ function returnCurrentDate() {
   const currentYear = dateObject.getFullYear()
   return [currentDay, currentDate, monthName, currentYear]
 }
-
-const calendayTime = page.setBookingPage.subPage.monthUI.elements.calendayTime;
-const [currentDay, currentDate, monthName, currentYear] = returnCurrentDate()
-const allCalendarSpaces = page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces;
 
 function clearCalendarBody() {
   for (let calendarSlot = 7; calendarSlot < allCalendarSpaces.length; calendarSlot++) {
@@ -102,9 +101,6 @@ function addIndexDependingOnFirstDay(day) {
   }
 }
 
-/*
-  TODOS: Add the date that the user has choosen and add it to a json file acting as a DB
-*/
 function handleCalendarBoxClick(element) {
     highlightCalendarSlot(element)
 }
@@ -127,11 +123,20 @@ function highlightCalendarSlot(element) {
     }
     
     clearChoosenCalSlot()
-    parentEl.classList.add('clicked-time-slot')
+    parentEl.classList.add('clicked-time-slot') // adds color when slot is clicked
+    updateUIUponChoosingCalSlot(parentEl.children[0].innerHTML)
     
   } catch (error) {
     console.error(error)
   }
+}
+
+function updateUIUponChoosingCalSlot(date) {
+  const showDate = date.length === 1 ? `0${date}` : date
+  const literalElement = calendayTime.innerHTML.split('</i>')[1];
+  const month = literalElement.trim().split(' ')[2];
+  calendayTime.innerHTML =
+   `<i class="fas fa-calendar-day"></i>${currentDay}, ${showDate} ${monthName} ${currentYear}`
 }
 
 function clearChoosenCalSlot() {
