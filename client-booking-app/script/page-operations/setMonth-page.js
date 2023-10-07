@@ -126,15 +126,18 @@ function highlightCalendarSlot(element) {
       parentEl = element.target
     }
     
-    page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces.forEach(slot => {
-      slot.classList.remove('clicked-time-slot')
-    })
-
+    clearChoosenCalSlot()
     parentEl.classList.add('clicked-time-slot')
-
+    
   } catch (error) {
     console.error(error)
   }
+}
+
+function clearChoosenCalSlot() {
+  page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces.forEach(slot => {
+    slot.classList.remove('clicked-time-slot')
+  })
 }
 
 function updateMonthUI(currentDay, targetMonth) {
@@ -145,6 +148,7 @@ function updateMonthUI(currentDay, targetMonth) {
 function handleLeftSlider() {    
   const targetMonth = returnPreviousMonth(calendayTime.innerHTML);
   updateMonthUI(currentDay, targetMonth);
+  clearChoosenCalSlot()
   clearCalendarBody()
   renderCalendarBody(targetMonth)
 }
@@ -152,6 +156,7 @@ function handleLeftSlider() {
 function handleRightSlider() {
   const targetMonth = returnNextMonth(calendayTime.innerHTML);
   updateMonthUI(currentDay, targetMonth);
+  clearChoosenCalSlot()
   clearCalendarBody()
   renderCalendarBody(targetMonth)
 }
