@@ -1,5 +1,8 @@
 import { calendar } from "../calendar/calendar.js";
 import { page } from "../component-elements.js";
+import databaseOperations from "../db/database-operations.js";
+import database from "../db/database.js";
+
 
 const calendayTime = page.setBookingPage.subPage.monthUI.elements.calendayTime;
 const allCalendarSpaces = page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces;
@@ -106,9 +109,8 @@ function handleCalendarBoxClick(element) {
 }
 
 function highlightCalendarSlot(element) {
+  let parentEl;
   try {
-    let parentEl;
-    
     if (
       element.target.classList.contains('days-of-week-container') ||
       element.target.classList.contains('day-name')
@@ -121,22 +123,35 @@ function highlightCalendarSlot(element) {
     } else {
       parentEl = element.target
     }
-    
-    clearChoosenCalSlot()
-    parentEl.classList.add('clicked-time-slot') // adds color when slot is clicked
-    updateUIUponChoosingCalSlot(parentEl.children[0].innerHTML)
-    
   } catch (error) {
     console.error(error)
   }
+  
+  clearChoosenCalSlot()
+  parentEl.classList.add('clicked-time-slot') // adds color when slot is clicked
+  updateUIUponChoosingCalSlot(parentEl)
 }
 
-function updateUIUponChoosingCalSlot(date) {
+function updateUIUponChoosingCalSlot(parentEl) {
+  const date = parentEl.children[0].innerHTML
   const showDate = date.length === 1 ? `0${date}` : date
-  const literalElement = calendayTime.innerHTML.split('</i>')[1];
-  const month = literalElement.trim().split(' ')[2];
-  calendayTime.innerHTML =
-   `<i class="fas fa-calendar-day"></i>${currentDay}, ${showDate} ${monthName} ${currentYear}`
+
+  const wholeElement = calendayTime.innerHTML.split('</i>')[1];
+  const month = wholeElement.trim().split(' ')[2];
+
+  const dayInNumber = new Date(currentYear, months.indexOf(month), date).getDay();
+  const dayOfWeek =  days[dayInNumber]
+
+  calendayTime.innerHTML =`<i class="fas fa-calendar-day"></i>${dayOfWeek}, ${showDate} ${month} ${currentYear}`
+
+  const bookingObject = {
+    month: month,
+    day: dayOfWeek,
+    date: showDate,
+    year: currentYear
+}
+  databaseOperations.addBookingDate(bookingObject, database)
+  console.log(database)
 }
 
 function clearChoosenCalSlot() {
