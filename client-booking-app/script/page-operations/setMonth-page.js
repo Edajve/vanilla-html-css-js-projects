@@ -38,6 +38,13 @@ function returnCurrentDate() {
 
 const calendayTime = page.setBookingPage.subPage.monthUI.elements.calendayTime;
 const [currentDay, currentDate, monthName, currentYear] = returnCurrentDate()
+const allCalendarSpaces = page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces;
+
+function clearCalendarBody() {
+  for (let calendarSlot = 7; calendarSlot < allCalendarSpaces.length; calendarSlot++) {
+    allCalendarSpaces[calendarSlot].children[0].innerHTML = ''
+  }
+}
 
 function displayCalendar() {
   // display current day in UI of calendar
@@ -48,7 +55,6 @@ function displayCalendar() {
 }
 
 function renderCalendarBody(monthName) {
-  const allCalendarSpaces = page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces;
 
   const monthIndex = months.indexOf(monthName)
 
@@ -57,16 +63,18 @@ function renderCalendarBody(monthName) {
 
   const daysInThisMonth = getMonthFromJson(monthIndex).length
   let dateCalendarUI = 1
+  const TOTAL_SQUARES = 49
 
   // starting at index 7 because the calendar UI's first row is the day
-  for (let calendarSlot = 7; calendarSlot < daysInThisMonth + 7; calendarSlot++) {
+  for (let calendarSlot = 7; calendarSlot < TOTAL_SQUARES; calendarSlot++) {
     const indexToStartAfter = addIndexDependingOnFirstDay(day) + 7
-    if (calendarSlot < indexToStartAfter){
-      continue
-      } else {
-      allCalendarSpaces[calendarSlot].children[0].innerHTML = dateCalendarUI
-      dateCalendarUI++
-      }
+    const indexIsBeforeStartLimit = calendarSlot < indexToStartAfter
+    const indexIsOutOfEndLimit = dateCalendarUI > daysInThisMonth
+
+    if (indexIsBeforeStartLimit || indexIsOutOfEndLimit) continue
+
+    allCalendarSpaces[calendarSlot].children[0].innerHTML = dateCalendarUI
+    dateCalendarUI++
   }
 }
 
@@ -99,11 +107,15 @@ function updateMonthUI(targetMonth) {
 function handleLeftSlider() {    
   const targetMonth = returnPreviousMonth(calendayTime.innerHTML);
   updateMonthUI(targetMonth);
+  clearCalendarBody()
+  renderCalendarBody(targetMonth)
 }
 
 function handleRightSlider() {
   const targetMonth = returnNextMonth(calendayTime.innerHTML);
   updateMonthUI(targetMonth);
+  clearCalendarBody()
+  renderCalendarBody(targetMonth)
 }
 
 export default {
