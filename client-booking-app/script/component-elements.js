@@ -46,7 +46,8 @@ export const page = {
                     allCalendarSpaces: document.querySelectorAll('.day-item-space'),
                     leftMonthSlider: document.getElementById('left-month-slider'),
                     rightMonthSlider: document.getElementById('right-month-slider'),
-                    calendayTime: document.getElementById('calendar-month-year')
+                    calendayTime: document.getElementById('calendar-month-year'),
+                    highlightedCalendarSlot: document.querySelectorAll('.highlighted')
                 }
             },
             dayUI: {

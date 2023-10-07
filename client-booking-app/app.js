@@ -91,5 +91,5 @@ page.footer.elements.nextBtn.addEventListener('click', handleFooterNextClick)
 
 // Set service elements
 page.setServicePage.elements.allIndividualServices.forEach(service => {
-    service.addEventListener('click', (element) => setStylePage.toggleColor(element))
+    service.addEventListener('click', element => setStylePage.toggleColor(element))
 })

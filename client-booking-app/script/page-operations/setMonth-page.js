@@ -41,6 +41,8 @@ const allCalendarSpaces = page.setBookingPage.subPage.monthUI.elements.allCalend
 
 function clearCalendarBody() {
   for (let calendarSlot = 7; calendarSlot < allCalendarSpaces.length; calendarSlot++) {
+    allCalendarSpaces[calendarSlot].classList.remove('highlighted')
+    allCalendarSpaces[calendarSlot].classList.remove('doubleDigit')
     allCalendarSpaces[calendarSlot].children[0].innerHTML = ''
   }
 }
@@ -72,9 +74,16 @@ function renderCalendarBody(monthName) {
 
     if (indexIsBeforeStartLimit || indexIsOutOfEndLimit) continue
 
+    if (dateCalendarUI > 9) allCalendarSpaces[calendarSlot].children[0].classList.add('doubleDigit')
+    allCalendarSpaces[calendarSlot].classList.add('highlighted')
     allCalendarSpaces[calendarSlot].children[0].innerHTML = dateCalendarUI
     dateCalendarUI++
   }
+
+  //give the clickable days a event listner
+  page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces.forEach(slot => {
+    slot.addEventListener('click', element => handleCalendarBoxClick(element))
+  })
 }
 
 function addIndexDependingOnFirstDay(day) {
@@ -95,6 +104,18 @@ function addIndexDependingOnFirstDay(day) {
       return 6
     default:
       console.error("This is not a day of the week")
+  }
+}
+/*
+  TODOS: Add the date that the user has choosen and add it to a json file acting as a DB
+*/
+function handleCalendarBoxClick(element) {
+  try {
+    const innerText = element.target.children[0].innerHTML
+    // console.log(innerText)
+    console.log(element)
+  } catch (error) {
+    // no need to catch this error 
   }
 }
 
@@ -123,5 +144,6 @@ export default {
   returnNextMonth,
   displayCalendar,
   handleLeftSlider,
-  handleRightSlider
+  handleRightSlider,
+  handleCalendarBoxClick
 };
