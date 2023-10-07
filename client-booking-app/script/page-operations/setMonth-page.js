@@ -1,6 +1,5 @@
 import { calendar } from "../calendar/calendar.js";
 import { page } from "../component-elements.js";
-import { closePage } from "./home-page.js";
 
 const months = [
   "January", "February", "March", "April", "May", "June",
@@ -49,7 +48,7 @@ function clearCalendarBody() {
 function displayCalendar() {
   // display current day in UI of calendar
   calendayTime.innerHTML =
-   `<i class="fas fa-calendar-day"></i>${currentDay}, ${currentDate} ${monthName} ${currentYear}`
+   `<i class="fas fa-calendar-day"></i>${currentDay}, 00 ${monthName} ${currentYear}`
   
    renderCalendarBody(monthName)
 }
@@ -99,21 +98,21 @@ function addIndexDependingOnFirstDay(day) {
   }
 }
 
-function updateMonthUI(targetMonth) {
-  const newDate = `<i class="fas fa-calendar-day"></i> Wednesday, 27 ${targetMonth} 2023`;
+function updateMonthUI(currentDay, targetMonth) {
+  const newDate = `<i class="fas fa-calendar-day"></i> ${currentDay}, 00 ${targetMonth} 2023`;
   calendayTime.innerHTML = newDate;
 }
 
 function handleLeftSlider() {    
   const targetMonth = returnPreviousMonth(calendayTime.innerHTML);
-  updateMonthUI(targetMonth);
+  updateMonthUI(currentDay, targetMonth);
   clearCalendarBody()
   renderCalendarBody(targetMonth)
 }
 
 function handleRightSlider() {
   const targetMonth = returnNextMonth(calendayTime.innerHTML);
-  updateMonthUI(targetMonth);
+  updateMonthUI(currentDay, targetMonth);
   clearCalendarBody()
   renderCalendarBody(targetMonth)
 }
