@@ -1,8 +1,13 @@
 const database = {
-    services: [
-
-    ],
+    services: [],
     serviceComment: "",
+    booking: {
+        month: "",
+        day: "",
+        date: "",
+        year: "",
+        time: ""
+    }
 }
 
 export default {

@@ -1,11 +1,17 @@
 import { calendar } from "../calendar/calendar.js";
 import { page } from "../component-elements.js";
+import databaseOperations from "../db/database-operations.js";
+import database from "../db/database.js";
 
+
+const calendayTime = page.setBookingPage.subPage.monthUI.elements.calendayTime;
+const allCalendarSpaces = page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces;
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const months = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const [currentDay, currentDate, monthName, currentYear] = returnCurrentDate()
 
 function getMonthDayAndDateFromJson(monthIndex, dayIndex) { return calendar[monthIndex][dayIndex] }
 function getMonthFromJson(monthIndex) { return calendar[monthIndex] }
@@ -34,10 +40,6 @@ function returnCurrentDate() {
   const currentYear = dateObject.getFullYear()
   return [currentDay, currentDate, monthName, currentYear]
 }
-
-const calendayTime = page.setBookingPage.subPage.monthUI.elements.calendayTime;
-const [currentDay, currentDate, monthName, currentYear] = returnCurrentDate()
-const allCalendarSpaces = page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces;
 
 function clearCalendarBody() {
   for (let calendarSlot = 7; calendarSlot < allCalendarSpaces.length; calendarSlot++) {
@@ -79,11 +81,6 @@ function renderCalendarBody(monthName) {
     allCalendarSpaces[calendarSlot].children[0].innerHTML = dateCalendarUI
     dateCalendarUI++
   }
-
-  //give the clickable days a event listner
-  page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces.forEach(slot => {
-    slot.addEventListener('click', element => handleCalendarBoxClick(element))
-  })
 }
 
 function addIndexDependingOnFirstDay(day) {
@@ -106,17 +103,61 @@ function addIndexDependingOnFirstDay(day) {
       console.error("This is not a day of the week")
   }
 }
-/*
-  TODOS: Add the date that the user has choosen and add it to a json file acting as a DB
-*/
+
 function handleCalendarBoxClick(element) {
+    highlightCalendarSlot(element)
+}
+
+function highlightCalendarSlot(element) {
+  let parentEl;
   try {
-    const innerText = element.target.children[0].innerHTML
-    // console.log(innerText)
-    console.log(element)
+    if (
+      element.target.classList.contains('days-of-week-container') ||
+      element.target.classList.contains('day-name')
+    ) return
+
+    if (!element.target.classList.contains('highlighted')) return
+
+    if (element.target.classList.contains('date-num')) {
+      parentEl = element.target.parentNode
+    } else {
+      parentEl = element.target
+    }
   } catch (error) {
-    // no need to catch this error 
+    console.error(error)
   }
+  
+  clearChoosenCalSlot()
+  parentEl.classList.add('clicked-time-slot') // adds color when slot is clicked
+  updateUIUponChoosingCalSlot(parentEl)
+}
+
+function updateUIUponChoosingCalSlot(parentEl) {
+  const date = parentEl.children[0].innerHTML
+  const showDate = date.length === 1 ? `0${date}` : date
+
+  const wholeElement = calendayTime.innerHTML.split('</i>')[1];
+  const month = wholeElement.trim().split(' ')[2];
+
+  const dayInNumber = new Date(currentYear, months.indexOf(month), date).getDay();
+  const dayOfWeek =  days[dayInNumber]
+
+  calendayTime.innerHTML =`<i class="fas fa-calendar-day"></i>${dayOfWeek}, ${showDate} ${month} ${currentYear}`
+
+  const bookingObject = {
+    month: month,
+    day: dayOfWeek,
+    date: showDate,
+    year: currentYear
+}
+  databaseOperations.addBookingDate(bookingObject, database)
+  console.log(database)
+}
+
+function clearChoosenCalSlot() {
+  page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces.forEach(slot => {
+    slot.classList.remove('clicked-time-slot')
+  })
 }
 
 function updateMonthUI(currentDay, targetMonth) {
@@ -127,6 +168,7 @@ function updateMonthUI(currentDay, targetMonth) {
 function handleLeftSlider() {    
   const targetMonth = returnPreviousMonth(calendayTime.innerHTML);
   updateMonthUI(currentDay, targetMonth);
+  clearChoosenCalSlot()
   clearCalendarBody()
   renderCalendarBody(targetMonth)
 }
@@ -134,9 +176,15 @@ function handleLeftSlider() {
 function handleRightSlider() {
   const targetMonth = returnNextMonth(calendayTime.innerHTML);
   updateMonthUI(currentDay, targetMonth);
+  clearChoosenCalSlot()
   clearCalendarBody()
   renderCalendarBody(targetMonth)
 }
+
+//give the clickable days a event listner
+page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces.forEach(slot => {
+  slot.addEventListener('click', element => handleCalendarBoxClick(element))
+})
 
 export default {
   dayOfFirstDateOfTheMonth: getMonthDayAndDateFromJson,
