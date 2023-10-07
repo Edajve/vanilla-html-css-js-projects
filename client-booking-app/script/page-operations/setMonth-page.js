@@ -5,6 +5,7 @@ const months = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 function dayOfFirstDateOfTheMonth(monthIndex) {
   return calendar.January[monthIndex].day;
@@ -26,10 +27,24 @@ function returnNextMonth(currentCalDate) {
   return months[(months.indexOf(month) + 1) % 12];
 }
 
+function returnCurrentDate() {
+  var dateObject = new Date()
+  const day = days[dateObject.getDay()]
+  const date = dateObject.getDate()
+  const month = months[dateObject.getMonth()]
+  const year = dateObject.getFullYear()
+  return `${day}, ${date} ${month} ${year}`
+}
+
+const calendayTime = page.setBookingPage.subPage.monthUI.elements.calendayTime;
+
 function displayCalendar() {
+  // display current day in UI of calendar
+  calendayTime.innerHTML = `<i class="fas fa-calendar-day"></i>${returnCurrentDate()}`
+
+  // display body of calendar based off the current day and month
   const allCalendarSpaces = page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces;
   const firstDay = dayOfFirstDateOfTheMonth(0);
-  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const j = days.indexOf(firstDay);
 
   let calendarNum = 1;
@@ -39,21 +54,19 @@ function displayCalendar() {
   }
 }
 
-const calendayTime = page.setBookingPage.subPage.monthUI.elements.calendayTime;
-
-function updateCalendayTime(targetMonth) {
+function updateMonthUI(targetMonth) {
   const newDate = `<i class="fas fa-calendar-day"></i> Wednesday, 27 ${targetMonth} 2023`;
   calendayTime.innerHTML = newDate;
 }
 
 function handleLeftSlider() {    
   const targetMonth = returnPreviousMonth(calendayTime.innerHTML);
-  updateCalendayTime(targetMonth);
+  updateMonthUI(targetMonth);
 }
 
 function handleRightSlider() {
   const targetMonth = returnNextMonth(calendayTime.innerHTML);
-  updateCalendayTime(targetMonth);
+  updateMonthUI(targetMonth);
 }
 
 export default {
