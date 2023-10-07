@@ -8,7 +8,7 @@ const months = [
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 function dayOfFirstDateOfTheMonth(monthIndex) {
-  return calendar.January[monthIndex].day;
+  return calendar.October[monthIndex].day;
 }
 
 function returnPreviousMonth(currentCalDate) {
@@ -44,6 +44,10 @@ function displayCalendar() {
 
   // display body of calendar based off the current day and month
   const allCalendarSpaces = page.setBookingPage.subPage.monthUI.elements.allCalendarSpaces;
+  /*
+  TODO refactor the json object so that you can dynamically change the month
+  depending on the index of what you pass in
+  */
   const firstDay = dayOfFirstDateOfTheMonth(0);
   const j = days.indexOf(firstDay);
 
