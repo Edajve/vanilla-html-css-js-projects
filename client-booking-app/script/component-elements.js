@@ -53,7 +53,12 @@ export const page = {
             dayUI: {
                 elements: {
                     container: document.querySelector('.specific-day'),
-                    nextButton: document.getElementById('specific-day-next-btn')
+                    nextButton: document.getElementById('specific-day-next-btn'),
+                    titleDate: document.getElementById('specific-day-time'),
+                    timeSlots: document.querySelectorAll('.specific-time'),
+                    slider: document.getElementById('session-length'),
+                    sliderText: document.getElementById('slider-text'),
+                    allTimeSlots: document.querySelectorAll('.time-slot')
                 }
             },
             finalizeUI: {

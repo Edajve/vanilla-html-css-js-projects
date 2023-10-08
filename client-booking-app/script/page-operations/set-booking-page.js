@@ -1,5 +1,6 @@
 import { page } from "../component-elements.js"
 import footerComponent from "./footer-component.js"
+import setDayTime from "./set-day-time.js"
 
 const subPages = page.setBookingPage.elements.allSubPages
 
@@ -7,6 +8,8 @@ function handleNextButtonInSubPagesPage() {
     const currentPage = indexOfShownPage()
     subPages[currentPage].style.display = 'none'
     subPages[currentPage + 1].style.display = ''
+
+    setDayTime.showBookingTimeTitle()
 }
 
 function indexOfShownPage() {

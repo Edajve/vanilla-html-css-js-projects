@@ -149,9 +149,8 @@ function updateUIUponChoosingCalSlot(parentEl) {
     day: dayOfWeek,
     date: showDate,
     year: currentYear
-}
+  }
   databaseOperations.addBookingDate(bookingObject, database)
-  console.log(database)
 }
 
 function clearChoosenCalSlot() {

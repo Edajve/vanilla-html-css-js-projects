@@ -340,15 +340,17 @@
             <h1 class="calendar-header-to-book-date">Pick Time time of day</h1>
             <div class="date-and-time-div">
                 <div class="display-date-container-for-specific-date">
-                   <p class="choosen-date">
-                      <i class="fas fa-calendar-day"></i>
-                      Wednesday, 12:00 AM
-                   </p>
+                  <div>
+                     <i class="fas fa-calendar-day"></i>
+                     <p id="specific-day-time" class="choosen-date">
+                        Wednesday, October 12:00
+                     </p>
+                  </div>
                    <div class="time-setter">
-                    <input class="input-text-field" type="text" name="" id="specific-time-of-day" placeholder="e.g. 12:00AM" value="">
+                     <label id="slider-text" for="session-length">Length: 60 minutes</label>
+                     <input type="range" id="session-length" name="vol" min="0" max="110" value="50">
                 </div>
                 </div>
-                
             </div>
             <div class="single-day-scrollable-div">
                <div class="todays-schedule-text-container">
@@ -357,244 +359,150 @@
                <div class="daily-UI">
                   <div id="0" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">1AM</p>
+                        <p id="specific-time-0" class="exact-time">1AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
+                     
+                     
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="1" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">2AM</p>
+                        <p id="specific-time-1" class="exact-time">2AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="2" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">3AM</p>
+                        <p id="specific-time-2" class="exact-time">3AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="3" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">4AM</p>
+                        <p id="specific-time-3" class="exact-time">4AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="4" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">5AM</p>
+                        <p id="specific-time-4" class="exact-time">5AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="5" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">6AM</p>
+                        <p id="specific-time-5" class="exact-time">6AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="6" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">7AM</p>
+                        <p id="specific-time-6" class="exact-time">7AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="7" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">8AM</p>
+                        <p id="specific-time-7" class="exact-time">8AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="8" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">9AM</p>
+                        <p id="specific-time-8" class="exact-time">9AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="9" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">10AM</p>
+                        <p id="specific-time-9" class="exact-time">10AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="10" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">11AM</p>
+                        <p id="specific-time-10" class="exact-time">11AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="11" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">12AM</p>
+                        <p id="specific-time-11" class="exact-time">12PM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
+                  <div id="12" class="time-slot">
+                     <div class="specific-time">
+                        <p id="specific-time-12" class="exact-time">1AM</p>
+                     </div>
+                  </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="13" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">1PM</p>
+                        <p id="specific-time-13" class="exact-time">2AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="14" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">2PM</p>
+                        <p id="specific-time-14" class="exact-time">3AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="15" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">3PM</p>
+                        <p id="specific-time-15" class="exact-time">4AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="16" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">4PM</p>
+                        <p id="specific-time-16" class="exact-time">5AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="17" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">5PM</p>
+                        <p id="specific-time-17" class="exact-time">6AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="18" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">6PM</p>
+                        <p id="specific-time-18" class="exact-time">7AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="19" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">7PM</p>
+                        <p id="specific-time-19" class="exact-time">8AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="20" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">8PM</p>
+                        <p id="specific-time-20" class="exact-time">9AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="21" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">9PM</p>
+                        <p id="specific-time-21" class="exact-time">10AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="22" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">10PM</p>
+                        <p id="specific-time-22" class="exact-time">11AM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
+                  <div class="bottom-border-for-time-slot"></div>
                   <div id="23" class="time-slot">
                      <div class="specific-time">
-                        <p class="exact-time">11PM</p>
+                        <p id="specific-time-23" class="exact-time">12PM</p>
                      </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
                   </div>
-                  <div id="24" class="time-slot">
-                     <div class="specific-time">
-                        <p class="exact-time">12PM</p>
-                     </div>
-                     <div class="time-box">
-                        <div class="colored-slit"></div>
-                        <div class="bottom-border-for-time-slot"></div>
-                     </div>
-                     <div class="empty-space"></div>
-                  </div>
+                  <div class="bottom-border-for-time-slot"></div>
                </div>
             </div>
             <div class="next-button-div">

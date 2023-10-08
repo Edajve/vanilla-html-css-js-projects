@@ -23,6 +23,10 @@
     margin: 1rem auto   ;
 }
 
+.time-setter {
+    margin-top: .2rem;
+}
+
 .calendar-header-to-book-date {
     text-align: center;
     font-size: 1.3rem;
@@ -36,11 +40,18 @@
     justify-content: space-between;
 }
 
+#slider-text {
+    font-size: .8rem;
+    position: relative;
+    bottom: .3rem;
+}
+
 .input-text-field {
     background-color: transparent;
     border: transparent;
     border-bottom: 1px solid  #9195a7ae;
     color: white;
+    width: 12rem;
 }
 
 .input-text-field :focus {
@@ -80,11 +91,6 @@
     height: 3rem;
     display: flex;
     flex-direction: row;
-    cursor: pointer;
-}
-
-.time-slot :hover {
-background-color: var(--secondary-background-color);
 }
 
 .specific-time,
@@ -95,12 +101,18 @@ background-color: var(--secondary-background-color);
 
 .specific-time {
     width: 60px;
+    cursor: pointer;
+}
+
+.time-slot :hover {
+    background-color: rgba(245, 222, 179, 0.331);
 }
 
 .time-box {
     width: 350px;
     display: flex;
     flex-direction: row;
+    height: 50px;
 }
 
 .empty-space {
@@ -126,14 +138,14 @@ background-color: var(--secondary-background-color);
 }
 
 /* used to highlight the specific color slit for a specific time slot indidcating user has picked this time */
-.colored-slit-highlighted {
+.highlighted-slit {
     height: 100%;
     width: 5px;
     background-color: rgb(113, 0, 128);
 }
 
 /* used to highlight the specific time slot box indicated user has picked this time*/
-.bottom-border-for-time-slot-highlighted {
+.highlighted-slot {
     border-bottom: 2px solid  #9195a7ae;
     width: 94%;
     background-color: #9195a75d;
