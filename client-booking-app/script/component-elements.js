@@ -54,7 +54,10 @@ export const page = {
                 elements: {
                     container: document.querySelector('.specific-day'),
                     nextButton: document.getElementById('specific-day-next-btn'),
-                    titleDate: document.getElementById('specific-day-time')
+                    titleDate: document.getElementById('specific-day-time'),
+                    timeSlots: document.querySelectorAll('.specific-time'),
+                    slider: document.getElementById('session-length'),
+                    sliderText: document.getElementById('slider-text')
                 }
             },
             finalizeUI: {
