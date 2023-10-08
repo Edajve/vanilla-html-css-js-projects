@@ -57,7 +57,8 @@ export const page = {
                     titleDate: document.getElementById('specific-day-time'),
                     timeSlots: document.querySelectorAll('.specific-time'),
                     slider: document.getElementById('session-length'),
-                    sliderText: document.getElementById('slider-text')
+                    sliderText: document.getElementById('slider-text'),
+                    allTimeSlots: document.querySelectorAll('.time-slot')
                 }
             },
             finalizeUI: {
