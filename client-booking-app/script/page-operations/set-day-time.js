@@ -74,10 +74,3 @@ function fillerAnimation(slideVal) {
     const pixels = (slideVal / SLIDER_MAX) * 199
     return pixels;
 }
-//write a method that grows the filler in day calendar in proportion to the scroll bar
-
-// min 0 on scroll bar
-// max 240 on scroll bar
-// default scroll bar minutes is 60 minutes
-// 240 minutes is 4 hours
-// each hour is 48 pixels on the cal
