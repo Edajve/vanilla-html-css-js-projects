@@ -1,4 +1,5 @@
 import { page } from "../component-elements.js"
+import databaseOperations from "../db/database-operations.js";
 import database from "../db/database.js"
 
 const title = page.setBookingPage.subPage.dayUI.elements.titleDate
@@ -18,10 +19,14 @@ function onTimeSlotClick(slot) {
     }
 
     clearAnyPrevChosenTime()
-    const target = targetElement.parentNode.id
+    const targetId = targetElement.parentNode.id
     const guiTime = targetElement.parentNode.getAttribute("gui-date")
+
+    const newTime = { time: guiTime }
+    databaseOperations.addBookingDate(newTime, database)
+
     title.innerHTML = `${database.database.booking.month}, ${database.database.booking.date} @${guiTime}`
-    targetElement = document.getElementById(`specific-time-${target}`)
+    targetElement = document.getElementById(`specific-time-${targetId}`)
     targetElement.parentNode.insertAdjacentElement("afterend", createFillerElement())
 }
 
@@ -57,9 +62,12 @@ function onSliderMove() {
     page.setBookingPage.subPage.dayUI.elements.sliderText.innerHTML = `Length: ${value} minutes`
 
     const filler = document.getElementById('filler')
-    if (filler) filler.style.height = `${fillerAnimation(value)}px`
+    if (filler) {
+        filler.style.height = `${fillerAnimation(value)}px`
+        const newSessionLength = { sessionLengthInMinutes: value }
+        databaseOperations.addBookingDate(newSessionLength, database)
+    }
 }
-
 page.setBookingPage.subPage.dayUI.elements.timeSlots.forEach(slot => { slot.addEventListener('click', slot => onTimeSlotClick(slot)) })
 page.setBookingPage.subPage.dayUI.elements.slider.addEventListener('input', onSliderMove)
 

@@ -6,7 +6,8 @@ const database = {
         day: "",
         date: "",
         year: "",
-        time: ""
+        time: "",
+        sessionLengthInMinutes: ""
     }
 }
 
